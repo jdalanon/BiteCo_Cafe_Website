@@ -1,7 +1,7 @@
 // Default Cart Display
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addToCart(name, price, button) {
+function addToCart(name, price, image, button) {
 
     const existing = cart.find(item => item.name === name);
 
@@ -17,7 +17,6 @@ function addToCart(name, price, button) {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-
     updateCart();
 
     button.textContent = "✓ Added!";
@@ -39,7 +38,7 @@ function updateCart() {
 
     // Update cart icon count on every page
     if (count) {
-        count.innerText = cart.length;
+        count.innerText = cart.reduce((sum, item) => sum + item.quantity, 0);
     }
 
     // Stop here if this page doesn't have a cart section
@@ -115,6 +114,7 @@ function checkout() {
 
 
 updateCart();
+total.innerText = totalPrice.toFixed(2);
 
 window.addToCart = addToCart;
 window.removeItem = removeItem;

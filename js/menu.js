@@ -30,7 +30,7 @@ async function loadMenu() {
                     ₱${item.price}
                 </p>
 
-                <button onclick="addToCart('${item.menu_name}', ${item.price}, this)">
+                <button onclick="addToCart('${item.menu_name}',${item.price},'${item.image_url}', this)">
                     Buy Now
                 </button>
 
