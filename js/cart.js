@@ -10,7 +10,7 @@ function addToCart(name, price, image, button) {
     } else {
         cart.push({
             name,
-            price,
+            price: Number(price),
             image,
             quantity: 1
         });
@@ -77,7 +77,11 @@ function updateCart() {
 
     </div>
     `;
-    })
+    });
+
+    // Update total price
+    total.innerText = totalPrice.toFixed(2);
+
 }
 
 
@@ -114,7 +118,6 @@ function checkout() {
 
 
 updateCart();
-total.innerText = totalPrice.toFixed(2);
 
 window.addToCart = addToCart;
 window.removeItem = removeItem;
