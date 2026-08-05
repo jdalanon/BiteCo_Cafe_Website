@@ -28,4 +28,6 @@ form.addEventListener("submit", (e) => {
     alert("Registration successful!");
 
     // Insert into Supabase here
+    // Redirect to login page
+    window.location.href = "./user/login.html";
 });

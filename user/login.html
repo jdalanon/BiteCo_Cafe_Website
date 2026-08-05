@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Bite Co.</title>
+
+    <link rel="stylesheet" href="./css/login.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="login-card">
+
+        <img src="images/logo.png" class="logo" alt="Bite Co.">
+
+        <h2>Welcome Back!</h2>
+
+        <p>Sign in to continue ordering your favorite coffee and snacks.</p>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <p class="register-text">
+            Don't have an account?
+            <a href="./user/register.html">Register</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="./js/user/login.js"></script>
+
+</body>
+</html>

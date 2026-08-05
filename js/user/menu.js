@@ -1,4 +1,4 @@
-import { supabase } from "./supabase.js";
+import { supabase } from "./js/shared/supabase.js";
 
 async function loadMenu() {
 
@@ -8,7 +8,7 @@ async function loadMenu() {
 
     // Return to homepage if no category is selected
     if (!category) {
-        window.location.href = "index.html";
+        window.location.href = "./user/home.html";
         return;
     }
 
@@ -26,7 +26,7 @@ async function loadMenu() {
 
     // Validate category
     if (!categoryMap[category]) {
-        window.location.href = "index.html";
+        window.location.href = "./user/home.html";
         return;
     }
 
