@@ -11,16 +11,29 @@ async function loadMenu() {
         return;
     }
 
-    const menu = document.getElementById("menu");
+    const menu = document.getElementById("product-list");
 
     data.forEach(item => {
 
         menu.innerHTML += `
             <div class="card">
+
                 <img src="${item.image_url}" alt="${item.menu_name}">
+
                 <h3>${item.menu_name}</h3>
-                <p>${item.description}</p>
-                <p>₱${item.price}</p>
+
+                <p class="description">
+                    ${item.description}
+                </p>
+
+                <p class="price">
+                    ₱${item.price}
+                </p>
+
+                <button onclick="addToCart('${item.menu_name}', ${item.price}, this)">
+                    Buy Now
+                </button>
+
             </div>
         `;
 
