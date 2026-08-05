@@ -83,13 +83,10 @@ header{
 }
 
 .dropdown-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
 
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
     cursor: pointer;
     user-select: none;
 }
@@ -317,7 +314,7 @@ section{
 footer{
     background:#111827;
     color:white;
-    padding: 30px;
+    padding: 20px;
 }
 
 /* Animation */
