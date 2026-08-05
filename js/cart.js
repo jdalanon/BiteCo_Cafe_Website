@@ -36,9 +36,6 @@ function addToCart(name, price, image, button) {
 // Update Cart 
 function updateCart() {
 
-    // Always get the latest cart from localStorage
-    cart = JSON.parse(localStorage.getItem("cart")) || [];
-
     const cartItems = document.getElementById("cart-items");
     const total = document.getElementById("total");
     const count = document.getElementById("cart-count");
@@ -47,7 +44,6 @@ function updateCart() {
         count.innerText = cart.reduce((sum, item) => sum + item.quantity, 0);
     }
 
-    // Stop here if this page doesn't have a cart section
     if (!cartItems || !total) return;
 
     cartItems.innerHTML = "";
@@ -56,50 +52,76 @@ function updateCart() {
 
     cart.forEach((item, index) => {
 
-    const subtotal = item.price * item.quantity;
-    totalPrice += subtotal;
+        const subtotal = item.price * item.quantity;
 
-    cartItems.innerHTML += `
-    <div class="cart-item">
+        totalPrice += subtotal;
 
-        <div class="cart-info">
+        cartItems.innerHTML += `
+            <div class="cart-item">
 
-            <img src="${item.image}" alt="${item.name}">
+                <img class="cart-image"
+                    src="${item.image}"
+                    alt="${item.name}">
 
-            <div class="cart-details">
-                <h3>${item.name}</h3>
-                <p class="price">₱${item.price.toFixed(2)}</p>
-                <p>Quantity: ${item.quantity}</p>
-                <p class="subtotal">
-                Subtotal: ₱${(item.price * item.quantity).toFixed(2)}
-                </p>
+                <div class="cart-details">
+
+                    <h3>${item.name}</h3>
+
+                    <p class="price">
+                        ₱${item.price.toFixed(2)}
+                    </p>
+
+                    <div class="quantity-control">
+
+                        <button onclick="decreaseQuantity(${index})">
+                            −
+                        </button>
+
+                        <span>${item.quantity}</span>
+
+                        <button onclick="increaseQuantity(${index})">
+                            +
+                        </button>
+
+                    </div>
+
+                    <p class="subtotal">
+                        Subtotal:
+                        ₱${subtotal.toFixed(2)}
+                    </p>
+
+                </div>
+
             </div>
-
-        </div>
-
-        <button class="remove-btn" onclick="removeItem(${index})">
-            🗑 Remove
-        </button>
-
-    </div>
-    `;
+        `;
     });
 
-    // Update total price
     total.innerText = totalPrice.toFixed(2);
 
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 
-// Remove item from cart 
-function removeItem(index) {
+// Increase Quantity
+function increaseQuantity(index) {
 
-    cart.splice(index, 1);
-
-    localStorage.setItem("cart", JSON.stringify(cart));
+    cart[index].quantity++;
 
     updateCart();
+}
 
+// Decrease Quantity
+function decreaseQuantity(index) {
+
+    cart[index].quantity--;
+
+    if (cart[index].quantity <= 0) {
+
+        cart.splice(index, 1);
+
+    }
+
+    updateCart();
 }
 
 
@@ -126,5 +148,6 @@ function checkout() {
 updateCart();
 
 window.addToCart = addToCart;
-window.removeItem = removeItem;
 window.checkout = checkout;
+window.increaseQuantity = increaseQuantity;
+window.decreaseQuantity = decreaseQuantity;
