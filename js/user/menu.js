@@ -8,7 +8,7 @@ async function loadMenu() {
 
     // Return to homepage if no category is selected
     if (!category) {
-        window.location.href = "./user/home.html";
+        window.location.href = "home.html";
         return;
     }
 
@@ -26,7 +26,7 @@ async function loadMenu() {
 
     // Validate category
     if (!categoryMap[category]) {
-        window.location.href = "./user/home.html";
+        window.location.href = "home.html";
         return;
     }
 

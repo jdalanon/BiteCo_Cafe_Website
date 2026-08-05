@@ -1,6 +1,6 @@
 const form = document.getElementById("registerForm");
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
@@ -9,25 +9,59 @@ form.addEventListener("submit", (e) => {
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
 
+    const role = "user";
+
+    // Email validation
     const emailRegex =
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    const passwordRegex =
-        /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
     if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
+        alert("Invalid email format.");
         return;
     }
 
+    // Password validation
+    const passwordRegex =
+        /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
     if (!passwordRegex.test(password)) {
-        alert("Password must contain at least 8 characters, one uppercase letter, one number, and one special character.");
+        alert("Password does not meet the requirements.");
+        return;
+    }
+
+    const { error } = await supabase
+        .from("User")
+        .insert([
+            {
+                firstname,
+                lastname,
+                email,
+                password,   // For learning only
+                role
+            }
+        ]);
+
+    if (error) {
+        alert(error.message);
         return;
     }
 
     alert("Registration successful!");
 
-    // Insert into Supabase here
-    // Redirect to login page
-    window.location.href = "./user/login.html";
+    // Redirects to Login Page
+    window.location.href = "login.html";
+
 });
+
+
+// Check duplicate emails
+const { data: existingUser } = await supabase
+    .from("User")
+    .select("email")
+    .eq("email", email)
+    .single();
+
+if (existingUser) {
+    alert("Email already exists.");
+    return;
+}

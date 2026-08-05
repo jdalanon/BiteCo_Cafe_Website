@@ -7,22 +7,56 @@ form.addEventListener("submit", async (e) => {
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
 
+    // Required fields
     if (!email || !password) {
         alert("Please enter your email and password.");
         return;
     }
 
-    // Example login
-    // Replace this with your Supabase authentication logic
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    console.log({
-        email,
-        password
-    });
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
 
-    alert("Login successful!");
+    // Find user
+    const { data: user, error } = await supabase
+        .from("User")
+        .select("*")
+        .eq("email", email)
+        .single();
 
-    // Redirect to homepage
-    window.location.href = "./user/home.html";
+    if (error || !user) {
+        alert("Invalid email or password.");
+        return;
+    }
+
+    // Verify password
+    if (user.password !== password) {
+        alert("Invalid email or password.");
+        return;
+    }
+
+    // Save login session
+    localStorage.setItem("currentUser", JSON.stringify(user));
+
+    alert("Welcome, " + user.firstname + "!");
+
+    // Redirect based on role
+    if (user.role === "admin") {
+        window.location.href = "../admin/dashboard.html";
+    } else {
+        window.location.href = "../home.html";
+    }
 
 });
+
+
+// Store Current User
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+console.log(currentUser.firstname);
+console.log(currentUser.lastname);
+console.log(currentUser.role);
