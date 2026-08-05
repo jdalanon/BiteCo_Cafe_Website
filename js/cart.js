@@ -121,7 +121,9 @@ function checkout() {
 }
 
 
-updateCart();
+document.addEventListener("DOMContentLoaded", () => {
+    updateCart();
+});
 
 window.addToCart = addToCart;
 window.removeItem = removeItem;
