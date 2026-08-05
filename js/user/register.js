@@ -1,4 +1,4 @@
-import { supabase } from "../shared/supabase.js";
+import { supabase } from "../js/shared/supabase.js";
 
 const form = document.getElementById("registerForm");
 
