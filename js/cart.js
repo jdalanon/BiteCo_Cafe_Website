@@ -11,6 +11,7 @@ function addToCart(name, price, button) {
         cart.push({
             name,
             price,
+            image,
             quantity: 1
         });
     }
@@ -54,22 +55,30 @@ function updateCart() {
     totalPrice += subtotal;
 
     cartItems.innerHTML += `
-        <div class="cart-item">
-            <div>
-                <strong>${item.name}</strong><br>
-                Qty: ${item.quantity}
+    <div class="cart-item">
+
+        <div class="cart-info">
+
+            <img src="${item.image}" alt="${item.name}">
+
+            <div class="cart-details">
+                <h3>${item.name}</h3>
+                <p class="price">₱${item.price.toFixed(2)}</p>
+                <p>Quantity: ${item.quantity}</p>
+                <p class="subtotal">
+                Subtotal: ₱${(item.price * item.quantity).toFixed(2)}
+                </p>
             </div>
 
-            <div>
-                ₱${subtotal.toFixed(2)}
-            </div>
-
-            <button onclick="removeItem(${index})">Remove</button>
         </div>
-        `;
-    }); 
 
-    total.innerText = totalPrice.toFixed(2);
+        <button class="remove-btn" onclick="removeItem(${index})">
+            🗑 Remove
+        </button>
+
+    </div>
+    `;
+    })
 }
 
 
