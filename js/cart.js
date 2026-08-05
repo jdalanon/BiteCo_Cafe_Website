@@ -36,11 +36,13 @@ function addToCart(name, price, image, button) {
 // Update Cart 
 function updateCart() {
 
+    // Always get the latest cart from localStorage
+    cart = JSON.parse(localStorage.getItem("cart")) || [];
+
     const cartItems = document.getElementById("cart-items");
     const total = document.getElementById("total");
     const count = document.getElementById("cart-count");
 
-    // Update cart icon count on every page
     if (count) {
         count.innerText = cart.reduce((sum, item) => sum + item.quantity, 0);
     }
@@ -121,9 +123,7 @@ function checkout() {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    updateCart();
-});
+updateCart();
 
 window.addToCart = addToCart;
 window.removeItem = removeItem;
