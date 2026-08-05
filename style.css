@@ -263,6 +263,20 @@ section{
 .card button:hover {
     background: #0056b3;
 }
+
+/* Menu is Out of Stock */
+.card button:disabled,
+.disabled-btn {
+    background: #bdbdbd;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.card button:disabled:hover {
+    background: #bdbdbd;
+    transform: none;
+}
     
 .about{
     background:#f7f7f7;

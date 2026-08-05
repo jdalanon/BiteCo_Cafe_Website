@@ -3,6 +3,10 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price, image, button) {
 
+    // Menu is Out of Stock
+    if (button.disabled) return;
+
+    // Menu has stock
     const existing = cart.find(item => item.name === name);
 
     if (existing) {
