@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Bite Co.</title>
+
+    <link rel="stylesheet" href="./css/register.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="register-card">
+
+        <img src="images/logo.png" class="logo" alt="Bite Co.">
+
+        <h2>Create Account</h2>
+
+        <p>Join Bite Co. and start ordering your favorite drinks and snacks.</p>
+
+        <form id="registerForm">
+
+            <div class="row">
+
+                <div class="input-group">
+                    <label>First Name</label>
+                    <input
+                        type="text"
+                        id="firstname"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label>Last Name</label>
+                    <input
+                        type="text"
+                        id="lastname"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    required
+                >
+
+                <small>
+                    Must contain at least 8 characters, one uppercase letter,
+                    one number and one special character.
+                </small>
+            </div>
+
+            <input
+                type="hidden"
+                id="role"
+                value="user"
+            >
+
+            <button type="submit">
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="login-text">
+            Already have an account?
+
+            <a href="login.html">
+                Login
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="./js/register.js"></script>
+
+</body>
+</html>
