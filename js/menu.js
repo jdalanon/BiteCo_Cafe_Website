@@ -6,23 +6,35 @@ async function loadMenu() {
     const params = new URLSearchParams(window.location.search);
     const category = params.get("category");
 
-    // Map category name to category_id
+    // Return to homepage if no category is selected
+    if (!category) {
+        window.location.href = "index.html";
+        return;
+    }
+
+    // Change page title
+    const menuTitle = document.getElementById("menu-title");
+    if (menuTitle) {
+        menuTitle.textContent = category;
+    }
+
+    // Map category names to IDs
     const categoryMap = {
         Drinks: 1,
         Snacks: 2
     };
 
-    // Build query
-    let query = supabase
-        .from("Menu")
-        .select("*");
-
-    // Filter by category_id
-    if (category && categoryMap[category]) {
-        query = query.eq("category_id", categoryMap[category]);
+    // Validate category
+    if (!categoryMap[category]) {
+        window.location.href = "index.html";
+        return;
     }
 
-    const { data, error } = await query;
+    // Query menu items
+    const { data, error } = await supabase
+        .from("Menu")
+        .select("*")
+        .eq("category_id", categoryMap[category]);
 
     if (error) {
         console.error("Supabase Error:", error);
@@ -30,13 +42,10 @@ async function loadMenu() {
     }
 
     const productList = document.getElementById("product-list");
-
     productList.innerHTML = "";
 
     if (!data || data.length === 0) {
-        productList.innerHTML = `
-            <h3>No menu items found.</h3>
-        `;
+        productList.innerHTML = "<h3>No menu items found.</h3>";
         return;
     }
 
@@ -64,13 +73,6 @@ async function loadMenu() {
             </div>
         `;
     });
-
-
-    function newFunction() {
-        if (document.getElementById("menu-title")) {
-            (document.getElementById("menu-title")).textContent = category ? category : "Featured Menu";
-        }
-    }
 }
 
 loadMenu();
