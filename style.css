@@ -70,6 +70,14 @@ header{
 }
 
 
+/* Active Page */
+.nav-links a.active,
+.dropdown-btn.active {
+    color: #C97A40;
+    font-weight: bold;
+}
+
+
 /* Menu and dropdown list */
 .menu-btn{
     display:none;
@@ -304,7 +312,7 @@ section{
 }
 
 .cart-section h2{
-        padding-bottom: 5px;
+    gap: 20px;
 }
 
 
