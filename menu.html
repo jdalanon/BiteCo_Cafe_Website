@@ -24,7 +24,18 @@
         
         <ul class="nav-links">
             <li><a href=index.html>Home</a></li>
-            <li><a href=menu.html>Menu</a></li>
+
+            <li class="dropdown">
+                <span class="dropdown-btn">
+                    Menu ▾
+                </span>
+
+                <ul class="dropdown-menu">
+                    <li><a href="menu.html?category=Drinks">Drinks</a></li>
+                    <li><a href="menu.html?category=Snacks">Snacks</a></li>
+                </ul>
+            </li>
+
             <li><a href=about.html>About</a></li>
             <li><a href=contact.html>Contact</a></li>
         </ul>
@@ -38,7 +49,7 @@
 <!-- Menu Section -->
 <section class="menu" id="menu">
 
-    <h2>Ice Coffee Drinks</h2>
+    <h2 id="menu-title">Featured Menu</h2>
 
     <div class="product" id="product-list"></div>
         

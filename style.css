@@ -77,6 +77,62 @@ header{
     cursor:pointer;
 }
 
+/* Menu dropdown list */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    padding: 10px 0;
+    display: block;
+}
+
+.dropdown-btn:hover {
+    color: #4f46e5;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: white;
+    border-radius: 8px;
+    list-style: none;
+    padding: 8px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: .3s;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-menu a:hover {
+    background: #f3f4f6;
+    color: #4f46e5;
+}
+
 /* Hero */
 
 .hero{
@@ -254,7 +310,7 @@ footer{
     min-height: calc(100vh - 70px - 60px);
     background:#111827;
     color:white;
-    text-align:center;
+    padding: 30px;
 }
 
 /* Animation */
