@@ -29,7 +29,7 @@ async function loadMenu() {
     }
 
     // Query menu items
-    const { data, error } = await supabase
+    const { data, error } = await window.db
         .from("Menu")
         .select("*")
         .eq("category_id", categoryMap[category]);

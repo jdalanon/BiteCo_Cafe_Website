@@ -22,7 +22,7 @@ form.addEventListener("submit", async (e) => {
     }
 
     // Find user
-    const { data: user, error } = await supabase
+    const { data: user, error } = await window.db
         .from("User")
         .select("*")
         .eq("email", email)
