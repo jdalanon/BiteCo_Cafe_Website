@@ -29,6 +29,14 @@ form.addEventListener("submit", async (e) => {
         return;
     }
 
+    // Check duplicate emails
+    const { data: existingUser } = await supabase
+    .from("User")
+    .select("email")
+    .eq("email", email)
+    .single();
+
+
     const { error } = await supabase
         .from("User")
         .insert([
@@ -36,12 +44,15 @@ form.addEventListener("submit", async (e) => {
                 firstname,
                 lastname,
                 email,
-                password,   // For learning only
+                password,   
                 role
             }
         ]);
 
+    console.log(error);
+
     if (error) {
+        console.error(error);
         alert(error.message);
         return;
     }
@@ -52,16 +63,3 @@ form.addEventListener("submit", async (e) => {
     window.location.href = "login.html";
 
 });
-
-
-// Check duplicate emails
-const { data: existingUser } = await supabase
-    .from("User")
-    .select("email")
-    .eq("email", email)
-    .single();
-
-if (existingUser) {
-    alert("Email already exists.");
-    return;
-}
