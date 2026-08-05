@@ -1,4 +1,4 @@
-import { supabase } from "../js/shared/supabase.js";
+import { supabase } from "./shared/supabase.js";
 
 async function loadMenu() {
 
