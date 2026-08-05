@@ -1,5 +1,3 @@
-import { supabase } from "../shared/supabase.js";
-
 async function loadMenu() {
 
     // Get category from URL
