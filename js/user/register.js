@@ -1,4 +1,3 @@
-import { supabase } from "../js/shared/supabase.js";
 
 const form = document.getElementById("registerForm");
 
@@ -30,35 +29,6 @@ form.addEventListener("submit", async (e) => {
         alert("Password does not meet the requirements.");
         return;
     }
-
-    // Check duplicate emails
-    const { data: existingUser, error: checkError } = await supabase
-        .from("User")
-        .select("email")
-        .eq("email", email)
-        .maybeSingle();
-
-    if (checkError) {
-        console.error(checkError);
-    }
-
-    if (existingUser) {
-        alert("Email already exists.");
-        return;
-    }
-
-
-    const { error } = await supabase
-        .from("User")
-        .insert([
-            {
-                firstname,
-                lastname,
-                email,
-                password,   
-                role
-            }
-        ]);
 
     console.log(error);
 
