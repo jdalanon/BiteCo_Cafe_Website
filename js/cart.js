@@ -1,5 +1,4 @@
 // Default Cart Display
-// Cart 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price, button) {
@@ -107,3 +106,7 @@ function checkout() {
 
 
 updateCart();
+
+window.addToCart = addToCart;
+window.removeItem = removeItem;
+window.checkout = checkout;
