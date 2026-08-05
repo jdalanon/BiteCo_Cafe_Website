@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bite Co. Official</title>
 
-    <!-- Logo icon -->
+    <!-- Logo icon
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
+    -->
 
     <!-- CSS file -->
     <link rel="stylesheet" href="style.css">
@@ -17,13 +18,13 @@
     <nav class="navbar">
 
         <div class="logo">
-            <img src="images/logo.jpg" alt="Bite Co. Logo">
+            <img src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc" alt="Bite Co. Logo">
             <h2>Bite Co.</h2>
         </div>
         
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href=menu.html>Menu</a></li>
+            <li><a href="#menu">Menu</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -34,7 +35,7 @@
     </nav>
 </header>
 
-<!-- Hero Section -->
+<!-- Hero Section
 <section class="hero" id="home">
 
     <div class="hero-text">
@@ -48,14 +49,16 @@
     </div>
 
 </section>
+-->
 
-<!-- Menu Section 
+<!-- Menu Section -->
 <section class="menu" id="menu">
 
     <h2>Featured Menu</h2>
 
     <div class="product">
         <div class="card">
+            <!--
             <img src="images/spanish.jpg" alt="spanish">
 
             <h3>Spanish Latte</h3>
@@ -66,90 +69,17 @@
             </p>
 
             <p class="price">₱85.00</p>
+            -->
 
             <button onclick="addToCart('Spanish Latte', 85, this)"> Buy Now </button>
 
          </div>
 
-        <div class="card">
-            <img src="images/hazelnut.webp" alt="hazelnut">
-
-            <h3>Hazelnut Latte</h3>
-
-            <p class="description">
-                An espresso-based drink flavored with hazelnut syrup and steamed milk.
-            </p>
-
-            <p class="price">₱85.00</p>
-
-            <button onclick="addToCart('Hazelnut Latte', 85, this)"> Buy Now </button>
-        </div>
-
-        <div class="card">
-            <img src="images/matcha.webp" alt="matcha">
-
-            <h3>Matcha Latte</h3>
-
-            <p class="description">
-                Made with premium matcha powder, milk, and a sweetener (optional).
-                It has a smooth, earthy flavor with a creamy texture
-            </p>
-
-            <p class="price">₱85.00</p>
-
-            <button onclick="addToCart('Matcha', 85, this)"> Buy Now </button>
-        </div>
-
-        <div class="card">
-            <img src="images/vanilla.jpg" alt="vanilla">
-
-            <h3>Vanilla Latte</h3>
-
-            <p class="description">
-                A classic espresso drink made with espresso, steamed milk, and vanilla syrup.
-            </p>
-
-            <p class="price">₱89.00</p>
-
-            <button onclick="addToCart('Vanilla Latte', 89, this)"> Buy Now </button>
-        </div>
-
-        <div class="card">
-            <img src="images/caramel.jpg" alt="caramel">
-
-            <h3>Caramel Latte</h3>
-
-            <p class="description">
-                An espresso-based drink flavored with caramel syrup and milk.
-                It's smooth, creamy, and slightly sweet.
-            </p>
-
-            <p class="price">₱89.00</p>
-
-            <button onclick="addToCart('Caramel Latte', 89, this)"> Buy Now </button>
-        </div>
-
-        <div class="card">
-            <img src="images/seasalt.jpeg" alt="seasalt">
-
-            <h3>Sea Salt Latte</h3>
-
-            <p class="description">
-                A creamy espresso drink topped with lightly salted milk foam.
-                The combination of sweet coffee and savory foam creates a rich, balanced flavor.
-            </p>
-
-            <p class="price">₱89.00</p>
-
-            <button onclick="addToCart('Sea Salt Latte', 89, this)"> Buy Now </button>
-        </div>
-
     </div>
         
 </section>
--->
 
-<!-- Cart Section 
+<!-- Cart Section -->
 <section class="cart-section">
 
     <h2>Shopping Cart</h2>
@@ -162,7 +92,7 @@
 
 </section>
 
-<!-- About Section 
+<!-- About Section -->
 <section class="about" id="about">
 
     <div class="about-content">
@@ -177,9 +107,8 @@
     </div>
 
 </section>
--->
 
-<!-- Contact Section 
+<!-- Contact Section -->
 <section class="contact" id="contact">
     <h2>Contact Us</h2>
 
@@ -195,7 +124,6 @@
         <button type="submit">Send Message</button>
     </form>
 </section>
--->
 
 <footer>
 
@@ -204,6 +132,7 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="js/menu.js"></script>
 
 </body>
 </html>
