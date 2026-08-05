@@ -1,3 +1,7 @@
+import { supabase } from "../config/supabase.js";
+
+console.log(supabase);
+
 const form = document.getElementById("registerForm");
 
 form.addEventListener("submit", async (e) => {
@@ -30,11 +34,20 @@ form.addEventListener("submit", async (e) => {
     }
 
     // Check duplicate emails
-    const { data: existingUser } = await supabase
-    .from("User")
-    .select("email")
-    .eq("email", email)
-    .single();
+    const { data: existingUser, error: checkError } = await supabase
+        .from("User")
+        .select("email")
+        .eq("email", email)
+        .maybeSingle();
+
+    if (checkError) {
+        console.error(checkError);
+    }
+
+    if (existingUser) {
+        alert("Email already exists.");
+        return;
+    }
 
 
     const { error } = await supabase
