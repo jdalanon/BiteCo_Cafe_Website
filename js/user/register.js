@@ -1,4 +1,3 @@
-
 const form = document.getElementById("registerForm");
 
 form.addEventListener("submit", async (e) => {
@@ -7,40 +6,33 @@ form.addEventListener("submit", async (e) => {
 
     const firstname = document.getElementById("firstname").value.trim();
     const lastname = document.getElementById("lastname").value.trim();
-    const email = document.getElementById("email").value.trim();
+    const email = document.getElementById("email").value.trim().toLowerCase();
     const password = document.getElementById("password").value;
 
-    const role = "user";
-
-    // Email validation
-    const emailRegex =
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(email)) {
-        alert("Invalid email format.");
-        return;
-    }
-
-    // Password validation
-    const passwordRegex =
-        /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-    if (!passwordRegex.test(password)) {
-        alert("Password does not meet the requirements.");
-        return;
-    }
-
-    console.log(error);
+    // Create Auth account
+    const { data, error } = await window.db.auth.signUp({
+        email,
+        password
+    });
 
     if (error) {
-        console.error(error);
         alert(error.message);
         return;
     }
 
+    // Save additional information
+    await window.db
+        .from("User")
+        .insert({
+            auth_id: data.user.id,
+            firstname,
+            lastname,
+            email,
+            role: "user"
+        });
+
     alert("Registration successful!");
 
-    // Redirects to Login Page
     window.location.href = "login.html";
 
 });
