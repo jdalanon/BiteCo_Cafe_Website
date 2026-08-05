@@ -12,13 +12,6 @@ async function loadMenu() {
         Snacks: 2
     };
 
-    // Update page title
-    const menuTitle = document.getElementById("menu-title");
-
-    if (menuTitle) {
-        menuTitle.textContent = category ? category : "Featured Menu";
-    }
-
     // Build query
     let query = supabase
         .from("Menu")
@@ -72,6 +65,12 @@ async function loadMenu() {
         `;
     });
 
+
+    function newFunction() {
+        if (document.getElementById("menu-title")) {
+            (document.getElementById("menu-title")).textContent = category ? category : "Featured Menu";
+        }
+    }
 }
 
 loadMenu();
