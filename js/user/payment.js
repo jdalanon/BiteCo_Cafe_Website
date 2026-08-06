@@ -13,14 +13,15 @@ const accountNumber =
 const amount =
     document.getElementById("paymentAmount");
 
-let selectedPayment = null;
 
+// Load the total amount of order
+const amount = document.getElementById("paymentAmount");
 
-// Get order total
-const total =
-    localStorage.getItem("checkoutTotal") || "0.00";
+const checkoutTotal =
+    localStorage.getItem("checkoutTotal") || 0;
 
-amount.value = `₱${parseFloat(total).toFixed(2)}`;
+amount.value =
+    `₱${Number(checkoutTotal).toFixed(2)}`;
 
 
 // Payment selection

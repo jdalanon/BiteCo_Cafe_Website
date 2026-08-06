@@ -133,46 +133,56 @@ async function checkout() {
         return;
     }
 
-    const user = JSON.parse(localStorage.getItem("currentUser"));
+    const user =
+        JSON.parse(localStorage.getItem("currentUser"));
 
     if (!user) {
+
         alert("Please login first.");
-        window.location.href = "login.html";
         return;
+
     }
 
-    // Validate profile
-    if (!user.address || user.address.trim() === "") {
+    if (!user.address) {
 
-        alert("Please complete your address in your profile.");
+        alert("Please complete your profile.");
 
         window.location.href = "profile.html";
 
         return;
+
     }
 
     if (!user.payment_method) {
 
-        alert("Please select your preferred payment method.");
+        alert("Please select payment method.");
 
         window.location.href = "profile.html";
 
         return;
+
     }
 
-    // COD
     if (user.payment_method === "Cash on Delivery") {
 
         await placeOrder();
 
-    }
+    } else {
 
-    // Fund Transfer
-    else {
+        const total = cart.reduce((sum, item) => {
+
+            return sum + (item.price * item.quantity);
+
+        }, 0);
 
         localStorage.setItem(
             "checkoutCart",
             JSON.stringify(cart)
+        );
+
+        localStorage.setItem(
+            "checkoutTotal",
+            total
         );
 
         window.location.href = "payment.html";
@@ -233,6 +243,20 @@ async function placeOrder() {
     window.location.href = "home.html";
 
 }
+
+
+// Save the total amount in cart
+const total = cart.reduce((sum, item) => {
+
+    return sum + (item.price * item.quantity);
+
+}, 0);
+
+localStorage.setItem("checkoutTotal", total);
+localStorage.setItem("currentOrderId", order.order_id);
+
+window.location.href = "payment.html";
+
 
 
 window.addToCart = addToCart;
