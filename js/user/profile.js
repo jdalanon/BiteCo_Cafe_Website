@@ -157,15 +157,22 @@ if (!currentUser) {
 // Edit / Save Profile
 
 const editBtn = document.getElementById("editProfileBtn");
-
 let editMode = false;
 
-editBtn.addEventListener("click", async () => {
+if (editBtn) {
 
-    const firstname = document.getElementById("firstname");
+    editBtn.addEventListener("click", async () => {
+
+        // edit profile code
+        let editMode = false;
+
+        const firstname = document.getElementById("firstname");
     const lastname = document.getElementById("lastname");
     const address = document.getElementById("address");
     const payment = document.getElementById("payment");
+
+    const editBtn =
+    document.getElementById("editProfileBtn");
 
     
     // Edit Profile details
@@ -266,7 +273,9 @@ editBtn.addEventListener("click", async () => {
 
     alert("Profile updated successfully!");
 
-});
+    });
+
+}
 
 
 // Logout

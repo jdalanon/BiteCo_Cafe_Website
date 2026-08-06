@@ -244,21 +244,6 @@ async function placeOrder() {
 
 }
 
-
-// Save the total amount in cart
-const total = cart.reduce((sum, item) => {
-
-    return sum + (item.price * item.quantity);
-
-}, 0);
-
-localStorage.setItem("checkoutTotal", total);
-localStorage.setItem("currentOrderId", order.order_id);
-
-window.location.href = "payment.html";
-
-
-
 window.addToCart = addToCart;
 window.increaseQuantity = increaseQuantity;
 window.decreaseQuantity = decreaseQuantity;

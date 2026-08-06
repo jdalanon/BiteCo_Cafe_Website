@@ -13,9 +13,10 @@ const accountNumber =
 const amount =
     document.getElementById("paymentAmount");
 
+let selectedPayment = null;
+
 
 // Load the total amount of order
-const amount = document.getElementById("paymentAmount");
 
 const checkoutTotal =
     localStorage.getItem("checkoutTotal") || 0;
@@ -67,11 +68,15 @@ document
 
 
 // Submit Payment
-document
-.getElementById("submitPayment")
-.addEventListener("click",async()=>{
 
-    const reference =
+const submitBtn =
+    document.getElementById("submitPayment");
+
+if (submitBtn) {
+
+    submitBtn.addEventListener("click", async () => {
+
+        const reference =
         document.getElementById("referenceNumber").value;
 
     const file =
@@ -106,4 +111,6 @@ document
 
     alert("Payment submitted successfully.");
 
-});
+    });
+
+}
