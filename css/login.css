@@ -7,9 +7,7 @@
 
 body{
     min-height:100vh;
-
     background:#8d8d8d;   /* Gray background */
-
     display:flex;
     justify-content:center;
     align-items:center;
@@ -56,31 +54,23 @@ body{
 .input-group{
 
     display:flex;
-
     flex-direction:column;
-
     margin-bottom:18px;
 }
 
 .input-group label{
 
     margin-bottom:6px;
-
     color:#4B2E2B;
-
     font-weight:500;
 }
 
 .input-group input{
 
     padding:13px;
-
     border:1px solid #ddd;
-
     border-radius:10px;
-
     outline:none;
-
     font-size:15px;
 }
 
@@ -92,25 +82,15 @@ body{
 button{
 
     width:100%;
-
     padding:14px;
-
     border:none;
-
     border-radius:10px;
-
     background:#8B5E3C;
-
     color:white;
-
     font-size:16px;
-
     font-weight:600;
-
     cursor:pointer;
-
     transition:.3s;
-
     margin-top:10px;
 }
 
@@ -122,16 +102,13 @@ button:hover{
 .register-text{
 
     margin-top:25px;
-
     text-align:center;
 }
 
 .register-text a{
 
     color:#8B5E3C;
-
     text-decoration:none;
-
     font-weight:600;
 }
 
@@ -143,7 +120,6 @@ button:hover{
 @media(max-width:600px){
 
     .login-card{
-
         width:100%;
     }
 }

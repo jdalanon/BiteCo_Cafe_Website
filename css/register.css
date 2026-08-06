@@ -7,12 +7,8 @@
 
 body{
 
-    background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-    url("https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc") center/cover no-repeat;
-
     min-height:100vh;
-
+    background:#8d8d8d;   /* Gray background */
     display:flex;
     justify-content:center;
     align-items:center;
@@ -28,81 +24,60 @@ body{
 
 .register-card{
 
-    width:480px;
-
-    background:#ffffff;
-
+    width:430px;
+    background:#fff;
     border-radius:20px;
-
     padding:40px;
-
-    box-shadow:0 12px 30px rgba(0,0,0,.2);
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
 }
 
 .logo{
 
     width:90px;
-
     display:block;
-
     margin:auto;
 }
 
 h2{
 
     text-align:center;
-
     margin-top:15px;
-
     color:#4B2E2B;
 }
 
 .register-card p{
 
     text-align:center;
-
     color:#777;
-
     margin:10px 0 25px;
 }
 
 .row{
 
     display:flex;
-
     gap:15px;
 }
 
 .input-group{
 
     display:flex;
-
     flex-direction:column;
-
-    width:100%;
-
     margin-bottom:18px;
 }
 
 label{
 
     margin-bottom:6px;
-
     color:#4B2E2B;
-
     font-weight:500;
 }
 
 input{
 
     padding:12px;
-
     border:1px solid #ddd;
-
     border-radius:10px;
-
     outline:none;
-
     font-size:15px;
 }
 
@@ -114,35 +89,23 @@ input:focus{
 small{
 
     margin-top:8px;
-
     color:#888;
-
     font-size:12px;
 }
 
 button{
 
     width:100%;
-
-    margin-top:20px;
-
     padding:14px;
-
     border:none;
-
     border-radius:10px;
-
     background:#8B5E3C;
-
     color:white;
-
     font-size:16px;
-
     font-weight:600;
-
     cursor:pointer;
-
     transition:.3s;
+    margin-top:10px;
 }
 
 button:hover{
@@ -153,16 +116,13 @@ button:hover{
 .login-text{
 
     margin-top:25px;
-
     text-align:center;
 }
 
 .login-text a{
 
     color:#8B5E3C;
-
     text-decoration:none;
-
     font-weight:600;
 }
 
@@ -174,12 +134,10 @@ button:hover{
 @media(max-width:600px){
 
     .row{
-
         flex-direction:column;
     }
 
     .register-card{
-
         width:100%;
     }
 }
