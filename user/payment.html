@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bite Co. Official</title>
+
+    <!-- Logo icon -->
+    <link rel="icon" href="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc">
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc" alt="Bite Co. Logo">
+            <h2>Bite Co.</h2>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href=home.html>Home</a></li>
+
+            <li class="dropdown">
+                <span class="dropdown-btn">
+                    Menu ▾
+                </span>
+
+                <ul class="dropdown-menu">
+                    <li><a href="menu.html?category=Drinks">Drinks</a></li>
+                    <li><a href="menu.html?category=Snacks">Snacks</a></li>
+                </ul>
+            </li>
+
+            <li><a href=about.html>About</a></li>
+            <li><a href=contact.html>Contact</a></li>
+        </ul>
+
+        <div class="menu-btn">&#9776;</div>
+        <!-- <div class="cart-icon"> <a href=cart.html> 🛒 </a> <span id="cart-count">0</span> -->
+
+        <!-- Profile & Cart --> 
+        <div class="nav-actions">
+            <div class="profile-dropdown">
+
+            <button class="profile-btn" id="profileBtn">
+                👤
+            </button>
+
+                <div class="profile-menu" id="profileMenu">
+
+                    <div class="profile-header">
+                        <h4 id="profile-name">Guest</h4>
+                        <p id="profile-email"></p>
+                    </div>
+
+                    <hr>
+
+                    <a href="profile.html">My Profile</a>
+
+                    <button class="logout-btn">
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="cart-icon">
+                <a href="cart.html">🛒</a>
+                <span id="cart-count">0</span>
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+<!-- Payment Section -->
+<section class="payment-page">
+
+    <div class="payment-container">
+
+        <!-- LEFT -->
+        <div class="payment-left">
+
+            <h2>Fund Transfer</h2>
+
+            <p class="payment-text">
+                Scan the QR Code below using your preferred banking app or e-wallet.
+            </p>
+
+            <div id="paymentMethods" class="payment-grid">
+                <img
+                    id="Gcash_QR"
+                    src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/payment-qr/Gcash_QR.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwYXltZW50LXFyL0djYXNoX1FSLnBuZyIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODYwNDIxNTYsImV4cCI6MjczMjEyMjE1Nn0.T9pls5jiRP-M9NHggdOsuUDczxApyjG60lcvvCyOJ9Y"
+                    alt="GCash QR">
+
+                <img
+                    id="Maya_QR"
+                    src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/payment-qr/Maya.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwYXltZW50LXFyL01heWEucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NjA0MjI0NSwiZXhwIjoyNzMyMTIyMjQ1fQ.XnrbLVANV0OuJnFa88j-3rurvb3FE_KRaLQDjKy9Umg"
+                    alt="Maya QR">
+
+                <img
+                    id="CIMB_QR"
+                    src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/payment-qr/CIMB_QR.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwYXltZW50LXFyL0NJTUJfUVIucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NjA0MjI5MiwiZXhwIjoyNzMyMTIyMjkyfQ.Oi3dyOHAQ3OM7nDZW37-LBbb90qjhaBh9xVLgHGjc5I"
+                    alt="CIMB QR">
+
+            </div>
+
+            <div class="payment-details">
+
+                <h3>Payment Information</h3>
+
+                <p><strong>Merchant:</strong> Bite Co.</p>
+
+                <p><strong>Payment Type:</strong> Fund Transfer</p>
+
+                <p><strong>Accepted:</strong> GCash / Maya / Online Banking</p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="payment-right">
+
+            <h2>Confirm Payment</h2>
+
+            <form id="paymentForm">
+
+                <div class="input-group">
+
+                    <label>Reference Number</label>
+
+                    <input
+                        type="text"
+                        id="referenceNumber"
+                        placeholder="Enter payment reference"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Upload Proof of Payment</label>
+
+                    <input
+                        type="file"
+                        id="proofImage"
+                        accept="image/*"
+                        required>
+
+                </div>
+
+                <div class="notice">
+
+                    <strong>Reminder</strong>
+
+                    <p>
+
+                        • Upload a clear screenshot of your payment.
+
+                        <br>
+
+                        • Orders are verified within 5-10 minutes.
+
+                    </p>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="submit-payment">
+
+                    Submit Payment
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>© 2025 Bite Co. All Rights Reserved.</p>
+
+</footer>
+
+<script src="../js/user/navbar.js"></script>
+<script src="../js/user/cart.js"></script>
+<script src="../js/user/profile.js"></script>
+
+</body>
+</html>
