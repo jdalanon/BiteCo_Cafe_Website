@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Bite Co.</title>
+
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+
+<section class="profile-page">
+
+    <div class="register-card">
+
+        <h2>My Profile</h2>
+
+        <div class="input-group">
+            <label>First Name</label>
+            <input id="firstname" readonly>
+        </div>
+
+        <div class="input-group">
+            <label>Last Name</label>
+            <input id="lastname" readonly>
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input id="email" readonly>
+        </div>
+
+        <div class="input-group">
+            <label>Role</label>
+            <input id="role" readonly>
+        </div>
+
+    </div>
+
+</section>
+<script src="../js/shared/supabase.js"></script>
+
+<script>
+const user = JSON.parse(localStorage.getItem("currentUser"));
+
+if (!user) {
+    window.location.href = "login.html";
+}
+
+document.getElementById("firstname").value = user.firstname;
+document.getElementById("lastname").value = user.lastname;
+document.getElementById("email").value = user.email;
+document.getElementById("role").value = user.role;
+</script>
+
+<script src="../js/user/profile.js"></script>
+
+</body>
+</html>
