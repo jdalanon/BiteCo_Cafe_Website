@@ -26,40 +26,30 @@ body{
 .login-card{
 
     width:430px;
-
     background:#fff;
-
     border-radius:20px;
-
     padding:40px;
-
     box-shadow:0 15px 35px rgba(0,0,0,.25);
 }
 
 .logo{
 
     width:90px;
-
     display:block;
-
     margin:auto;
 }
 
 .login-card h2{
 
     text-align:center;
-
     color:#4B2E2B;
-
     margin-top:15px;
 }
 
 .login-card p{
 
     text-align:center;
-
     color:#777;
-
     margin:10px 0 25px;
 }
 
