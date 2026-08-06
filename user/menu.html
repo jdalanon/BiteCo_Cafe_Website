@@ -41,8 +41,39 @@
         </ul>
 
         <div class="menu-btn">&#9776;</div>
-        <div class="cart-icon"> <a href=cart.html> 🛒 </a> <span id="cart-count">0</span>
-    </div>
+                <!-- Profile & Cart --> 
+        <div class="nav-actions">
+            <div class="profile-dropdown">
+
+            <button class="profile-btn" id="profileBtn">
+                👤
+            </button>
+
+                <div class="profile-menu" id="profileMenu">
+
+                    <div class="profile-header">
+                        <h4 id="profile-name">Guest</h4>
+                        <p id="profile-email"></p>
+                    </div>
+
+                    <hr>
+
+                    <a href="profile.html">My Profile</a>
+
+                    <button id="logoutBtn">
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="cart-icon">
+                <a href="cart.html">🛒</a>
+                <span id="cart-count">0</span>
+            </div>
+
+        </div>
     </nav>
 </header>
 
