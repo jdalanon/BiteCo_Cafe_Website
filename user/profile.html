@@ -143,19 +143,6 @@
 
 </section>
 
-<script>
-const user = JSON.parse(localStorage.getItem("currentUser"));
-
-if (!user) {
-    window.location.href = "login.html";
-}
-
-document.getElementById("firstname").value = user.firstname;
-document.getElementById("lastname").value = user.lastname;
-document.getElementById("email").value = user.email;
-document.getElementById("role").value = user.role;
-</script>
-
 <footer>
 
     <p>© 2025 Bite Co. All Rights Reserved.</p>
