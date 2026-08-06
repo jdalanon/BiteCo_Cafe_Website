@@ -46,7 +46,7 @@ form.addEventListener("submit", async (e) => {
     if (profile.role === "admin") {
         window.location.href = "../admin/dashboard.html";
     } else {
-        window.location.href = "../home.html";
+        window.location.href = "../user/home.html";
     }
 
 });
