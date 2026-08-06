@@ -4,35 +4,45 @@ form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("email").value.trim().toLowerCase();
     const password = document.getElementById("password").value;
 
-    const { data, error } =
-        await window.db.auth.signInWithPassword({
-
-            email,
-            password
-
-        });
+    // Sign in with Supabase Auth
+    const { data, error } = await window.db.auth.signInWithPassword({
+        email,
+        password
+    });
 
     if (error) {
-        alert("Invalid email or password.");
+        alert(error.message);
         return;
     }
 
-    // Get profile
-    const { data: profile } =
-        await window.db
+    // Get user's profile
+    const { data: profile, error: profileError } = await window.db
         .from("User")
         .select("*")
-        .eq("auth_id", data.user.id)
+        .eq("user_id", data.user.id)   // ✅ Changed from auth_id
         .single();
 
+    if (profileError) {
+        console.error(profileError);
+        alert("Unable to load user profile.");
+        return;
+    }
+
+    if (!profile) {
+        alert("User profile not found.");
+        return;
+    }
+
+    // Save current user
     localStorage.setItem(
         "currentUser",
         JSON.stringify(profile)
     );
 
+    // Redirect based on role
     if (profile.role === "admin") {
         window.location.href = "../admin/dashboard.html";
     } else {
