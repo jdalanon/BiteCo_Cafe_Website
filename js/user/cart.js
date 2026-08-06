@@ -201,19 +201,14 @@ async function placeOrder() {
 
     const { error } =
         await window.db
-        .from("Orders")
+        .from("Order")
         .insert({
 
             user_id: user.user_id,
-
             items: cart,
-
             total_amount: total,
-
             payment_method: user.payment_method,
-
             payment_status: "Pending",
-
             order_status: "Pending"
 
         });
@@ -221,7 +216,6 @@ async function placeOrder() {
     if (error) {
 
         console.error(error);
-
         alert("Failed to place order.");
 
         return;
@@ -242,6 +236,7 @@ async function placeOrder() {
 
 
 window.addToCart = addToCart;
-window.checkout = checkout;
 window.increaseQuantity = increaseQuantity;
 window.decreaseQuantity = decreaseQuantity;
+window.checkout = checkout;
+window.placeOrder = placeOrder
