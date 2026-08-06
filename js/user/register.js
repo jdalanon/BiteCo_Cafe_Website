@@ -20,19 +20,24 @@ form.addEventListener("submit", async (e) => {
         return;
     }
 
-    // Save additional information
-    await window.db
+    // Save profile
+    const { error: insertError } = await window.db
         .from("User")
         .insert({
-            auth_id: data.user.id,
+            user_id: data.user.id,
             firstname,
             lastname,
             email,
             role: "user"
         });
 
-    alert("Registration successful!");
+    if (insertError) {
+        console.error(insertError);
+        alert(insertError.message);
+        return;
+    }
 
+    alert("Registration successful!");
     window.location.href = "login.html";
 
 });
