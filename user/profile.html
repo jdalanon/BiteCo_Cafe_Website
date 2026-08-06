@@ -78,30 +78,65 @@
     </nav>
 </header>
 
-<section class="profile-page">
+<section class="profile-dashboard">
 
-    <div class="register-card">
+    <div class="profile-card">
 
-        <h2>My Profile</h2>
+        <div class="profile-cover"></div>
 
-        <div class="input-group">
-            <label>First Name</label>
-            <input id="firstname" readonly>
+        <div class="profile-avatar">
+            👤
         </div>
 
-        <div class="input-group">
-            <label>Last Name</label>
-            <input id="lastname" readonly>
+        <h2 id="profileFullName"></h2>
+
+        <p id="profileRole"></p>
+
+    </div>
+
+    <div class="profile-info">
+
+        <h2>Account Information</h2>
+
+        <div class="info-grid">
+
+            <div class="info-box">
+                <label>First Name</label>
+                <input id="firstname" readonly>
+            </div>
+
+            <div class="info-box">
+                <label>Last Name</label>
+                <input id="lastname" readonly>
+            </div>
+
+            <div class="info-box full-width">
+                <label>Email Address</label>
+                <input id="email" readonly>
+            </div>
+
+            <div class="info-box">
+                <label>Role</label>
+                <input id="role" readonly>
+            </div>
+
+            <div class="info-box">
+                <label>Member Since</label>
+                <input id="created_at" readonly>
+            </div>
+
         </div>
 
-        <div class="input-group">
-            <label>Email</label>
-            <input id="email" readonly>
-        </div>
+        <div class="profile-actions">
 
-        <div class="input-group">
-            <label>Role</label>
-            <input id="role" readonly>
+            <button class="edit-btn">
+                Edit Profile
+            </button>
+
+            <button class="logout-btn" id="logoutBtn">
+                Logout
+            </button>
+
         </div>
 
     </div>
