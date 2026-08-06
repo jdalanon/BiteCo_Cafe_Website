@@ -125,7 +125,7 @@ if (submitBtn) {
 
         const { error: uploadError } =
             await window.db.storage
-                .from("Payment_Proof")
+                .from("payments")
                 .upload(fileName, file);
 
         if (uploadError) {
@@ -140,7 +140,7 @@ if (submitBtn) {
 
         const { data: imageData } =
             window.db.storage
-                .from("Payment_Proof")
+                .from("payments")
                 .getPublicUrl(fileName);
 
         const publicUrl =
