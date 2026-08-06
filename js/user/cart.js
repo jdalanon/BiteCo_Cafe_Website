@@ -1,18 +1,19 @@
 // Default Cart Display
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addToCart(name, price, image, button) {
+function addToCart(menu_id, name, price, image, button) {
 
     // Menu is Out of Stock
     if (button.disabled) return;
 
-    // Menu has stock
-    const existing = cart.find(item => item.name === name);
+    // Check if the menu item already exists in the cart
+    const existing = cart.find(item => item.menu_id === menu_id);
 
     if (existing) {
         existing.quantity++;
     } else {
         cart.push({
+            menu_id,
             name,
             price: Number(price),
             image,

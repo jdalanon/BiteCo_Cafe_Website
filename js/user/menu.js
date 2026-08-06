@@ -64,7 +64,7 @@ async function loadMenu() {
                     ₱${Number(item.price).toFixed(2)}
                 </p>
 
-                <button onclick="addToCart('${item.menu_name}', ${item.price}, '${item.image_url}', this)"
+                <button onclick="addToCart(${item.menu_id}, '${item.menu_name}', ${item.price}, '${item.image_url}', this)"
                     ${!item.availability ? "disabled" : ""}
                         class="${!item.availability ? "disabled-btn" : ""}">
                             ${item.availability ? "Buy Now" : "Out of Stock"}
