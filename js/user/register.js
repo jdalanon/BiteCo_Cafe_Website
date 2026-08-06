@@ -1,43 +1,51 @@
-const form = document.getElementById("registerForm");
+// Toggle profile dropdown
+const profileBtn = document.getElementById("profileBtn");
+const profileMenu = document.getElementById("profileMenu");
+const logoutBtn = document.getElementById("logoutBtn");
 
-form.addEventListener("submit", async (e) => {
+profileBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    profileMenu.classList.toggle("show");
+});
 
-    e.preventDefault();
+// Close dropdown when clicking outside
+window.addEventListener("click", (e) => {
+    if (!e.target.closest(".profile-dropdown")) {
+        profileMenu.classList.remove("show");
+    }
+});
 
-    const firstname = document.getElementById("firstname").value.trim();
-    const lastname = document.getElementById("lastname").value.trim();
-    const email = document.getElementById("email").value.trim().toLowerCase();
-    const password = document.getElementById("password").value;
+// Load current user
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
-    // Create Auth account
-    const { data, error } = await window.db.auth.signUp({
-        email,
-        password
-    });
+if (currentUser) {
+    document.getElementById("profile-name").textContent =
+        `${currentUser.firstname} ${currentUser.lastname}`;
 
-    if (error) {
-        alert(error.message);
-        return;
+    document.getElementById("profile-email").textContent =
+        currentUser.email;
+}
+
+// Logout
+logoutBtn.addEventListener("click", async () => {
+
+    try {
+
+        // Sign out from Supabase Auth
+        const { error } = await window.db.auth.signOut();
+
+        if (error) {
+            console.error(error);
+        }
+
+    } catch (err) {
+        console.error("Logout Error:", err);
     }
 
-    // Save profile
-    const { error: insertError } = await window.db
-        .from("User")
-        .insert({
-            user_id: data.user.id,
-            firstname,
-            lastname,
-            email,
-            role: "user"
-        });
+    // Clear local storage
+    localStorage.removeItem("currentUser");
 
-    if (insertError) {
-        console.error(insertError);
-        alert(insertError.message);
-        return;
-    }
-
-    alert("Registration successful!");
+    // Redirect to login page
     window.location.href = "login.html";
 
 });
