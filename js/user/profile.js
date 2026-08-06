@@ -1,10 +1,7 @@
 const profileBtn = document.getElementById("profileBtn");
 const profileMenu = document.getElementById("profileMenu");
 
-// ==========================================
 // Profile Dropdown
-// ==========================================
-
 if (profileBtn && profileMenu) {
 
     profileBtn.addEventListener("click", (e) => {
@@ -33,10 +30,7 @@ window.addEventListener("click", (e) => {
 });
 
 
-// ==========================================
 // Load Current User
-// ==========================================
-
 const currentUser = JSON.parse(
     localStorage.getItem("currentUser")
 );
@@ -49,10 +43,7 @@ if (!currentUser) {
 
 } else {
 
-    // ==========================================
     // Navbar Profile
-    // ==========================================
-
     const profileName =
         document.getElementById("profile-name");
 
@@ -61,7 +52,6 @@ if (!currentUser) {
 
 
     if (profileName) {
-
         profileName.textContent =
             `${currentUser.firstname} ${currentUser.lastname}`;
 
@@ -69,17 +59,13 @@ if (!currentUser) {
 
 
     if (profileEmail) {
-
         profileEmail.textContent =
             currentUser.email;
 
     }
 
 
-    // ==========================================
     // Profile Dashboard
-    // ==========================================
-
     const profileFullName =
         document.getElementById("profileFullName");
 
@@ -103,43 +89,33 @@ if (!currentUser) {
 
 
     if (profileFullName) {
-
         profileFullName.textContent =
             `${currentUser.firstname} ${currentUser.lastname}`;
-
     }
 
 
     if (profileRole && currentUser.role) {
-
         profileRole.textContent =
             currentUser.role.charAt(0).toUpperCase()
             + currentUser.role.slice(1);
-
     }
 
 
     if (firstname) {
-
         firstname.value =
             currentUser.firstname;
-
     }
 
 
     if (lastname) {
-
         lastname.value =
-            currentUser.lastname;
+           currentUser.lastname;
 
     }
 
-
     if (email) {
-
         email.value =
             currentUser.email;
-
     }
 
 
@@ -157,69 +133,36 @@ if (!currentUser) {
             new Date(
                 currentUser.created_at
             ).toLocaleDateString();
-
     }
 
 }
 
 
-// ==========================================
-// Logout
-// ==========================================
+// Logou
+const logoutButtons = document.querySelectorAll(".logout-btn");
 
-const logoutButtons =
-    document.querySelectorAll(".logoutBtn");
+logoutButtons.forEach(button => {
 
+    button.addEventListener("click", async () => {
 
-logoutButtons.forEach((button) => {
+        try {
 
-    button.addEventListener(
-        "click",
-        async () => {
+            const { error } = await window.db.auth.signOut();
 
-            try {
-
-                // Logout Supabase session
-                if (
-                    window.db &&
-                    window.db.auth
-                ) {
-
-                    const { error } =
-                        await window.db.auth.signOut();
-
-                    if (error) {
-
-                        console.error(
-                            "Logout error:",
-                            error
-                        );
-
-                    }
-
-                }
-
-            } catch (error) {
-
-                console.error(
-                    "Logout failed:",
-                    error
-                );
-
+            if (error) {
+                console.error(error);
             }
 
+        } catch (err) {
 
-            // Remove local user data
-            localStorage.removeItem(
-                "currentUser"
-            );
-
-
-            // Redirect to login
-            window.location.href =
-                "login.html";
+            console.error(err);
 
         }
-    );
+
+        localStorage.removeItem("currentUser");
+
+        window.location.href = "login.html";
+
+    });
 
 });
