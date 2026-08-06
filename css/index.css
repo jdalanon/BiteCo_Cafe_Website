@@ -17,15 +17,10 @@ body{
 
 .overlay{
 
-    position:fixed;
-    inset:0;
-
+    width:100%;
     display:flex;
     justify-content:center;
-    align-items:center;
-
-    background:transparent; /* No color */
-
+    padding:30px;
 }
 
 .hero{
@@ -77,6 +72,8 @@ body{
 
     background:#8B5E3C;
     color:white;
+    text-align:center;
+
 }
 
 .login-btn:hover{
@@ -86,11 +83,13 @@ body{
 
 .register-btn{
 
-    background:#777;
+    background:rgba(255, 255, 255, 0.911);
     color:#8B5E3C;
+    text-align:center;
+
 }
 
 .register-btn:hover{
 
-    background:#656464;
+    background:rgba(255, 255, 255, 0.817);
 }
