@@ -83,7 +83,7 @@ body{
 
 .register-btn{
 
-    background:rgba(255, 255, 255, 0.658);
+    background:#8d8d8d;
     color:#8B5E3C;
     text-align:center;
 
@@ -91,5 +91,5 @@ body{
 
 .register-btn:hover{
 
-    background:rgba(255, 255, 255, 0.522);
+    background:#777;
 }
