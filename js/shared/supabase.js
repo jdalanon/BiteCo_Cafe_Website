@@ -24,25 +24,3 @@ if (!window.supabase) {
 
     console.log("Supabase initialized:", window.db);
 }
-
-
-// Load Bite Co QR
-paymentSelect.addEventListener("change", async () => {
-
-    const payment = paymentSelect.value;
-
-    const { data } = await window.db
-        .from("Payment_Settings")
-        .select("*")
-        .eq("payment_name", payment)
-        .single();
-
-    document.getElementById("qrImage").src = data.qr_image;
-
-    document.getElementById("accountName").textContent =
-        data.account_name;
-
-    document.getElementById("accountNumber").textContent =
-        data.account_number;
-
-});

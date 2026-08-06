@@ -81,105 +81,120 @@
 <!-- Payment Section -->
 <section class="payment-page">
 
-    <div class="payment-container">
+    <div class="payment-card">
 
-        <!-- LEFT -->
-        <div class="payment-left">
+        <h2>Fund Transfer</h2>
 
-            <h2>Fund Transfer</h2>
+        <p class="subtitle">
+            Select your preferred payment provider.
+        </p>
 
-            <p class="payment-text">
-                Scan the QR Code below using your preferred banking app or e-wallet.
-            </p>
+        <!-- Payment Selection -->
+        <div class="payment-selection">
 
-            <div id="paymentMethods" class="payment-grid">
-                <img
-                    id="Gcash_QR"
-                    src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/payment-qr/Gcash_QR.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwYXltZW50LXFyL0djYXNoX1FSLnBuZyIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3ODYwNDIxNTYsImV4cCI6MjczMjEyMjE1Nn0.T9pls5jiRP-M9NHggdOsuUDczxApyjG60lcvvCyOJ9Y"
-                    alt="GCash QR">
+            <label>
+                <input
+                    type="radio"
+                    name="payment"
+                    value="GCash">
 
-                <img
-                    id="Maya_QR"
-                    src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/payment-qr/Maya.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwYXltZW50LXFyL01heWEucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NjA0MjI0NSwiZXhwIjoyNzMyMTIyMjQ1fQ.XnrbLVANV0OuJnFa88j-3rurvb3FE_KRaLQDjKy9Umg"
-                    alt="Maya QR">
+                GCash
+            </label>
 
-                <img
-                    id="CIMB_QR"
-                    src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/payment-qr/CIMB_QR.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwYXltZW50LXFyL0NJTUJfUVIucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4NjA0MjI5MiwiZXhwIjoyNzMyMTIyMjkyfQ.Oi3dyOHAQ3OM7nDZW37-LBbb90qjhaBh9xVLgHGjc5I"
-                    alt="CIMB QR">
+            <label>
+                <input
+                    type="radio"
+                    name="payment"
+                    value="Maya">
 
-            </div>
+                Maya
+            </label>
 
-            <div class="payment-details">
+            <label>
+                <input
+                    type="radio"
+                    name="payment"
+                    value="CIMB">
 
-                <h3>Payment Information</h3>
-
-                <p><strong>Merchant:</strong> Bite Co.</p>
-
-                <p><strong>Payment Type:</strong> Fund Transfer</p>
-
-                <p><strong>Accepted:</strong> GCash / Maya / Online Banking</p>
-
-            </div>
+                CIMB
+            </label>
 
         </div>
 
-        <!-- RIGHT -->
-        <div class="payment-right">
+        <hr>
 
-            <h2>Confirm Payment</h2>
+        <!-- Payment Details -->
 
-            <form id="paymentForm">
+        <div
+            id="paymentDetails"
+            class="payment-details hidden">
 
-                <div class="input-group">
+            <img
+                id="qrImage"
+                class="qr-image">
 
-                    <label>Reference Number</label>
+            <div class="detail">
 
-                    <input
-                        type="text"
-                        id="referenceNumber"
-                        placeholder="Enter payment reference"
-                        required>
+                <label>Account Name</label>
 
-                </div>
+                <input
+                    id="accountName"
+                    readonly>
 
-                <div class="input-group">
+            </div>
 
-                    <label>Upload Proof of Payment</label>
+            <div class="detail">
 
-                    <input
-                        type="file"
-                        id="proofImage"
-                        accept="image/*"
-                        required>
+                <label>Account Number</label>
 
-                </div>
+                <input
+                    id="accountNumber"
+                    readonly>
 
-                <div class="notice">
+            </div>
 
-                    <strong>Reminder</strong>
+            <div class="detail">
 
-                    <p>
+                <label>Total Amount</label>
 
-                        • Upload a clear screenshot of your payment.
+                <input
+                    id="paymentAmount"
+                    readonly>
 
-                        <br>
+            </div>
 
-                        • Orders are verified within 5-10 minutes.
+            <div class="detail">
 
-                    </p>
+                <label>
+                    Reference Number
+                </label>
 
-                </div>
+                <input
+                    id="referenceNumber"
+                    placeholder="Enter reference number">
 
-                <button
-                    type="submit"
-                    class="submit-payment">
+            </div>
 
-                    Submit Payment
+            <div class="detail">
 
-                </button>
+                <label>
+                    Upload Receipt
+                </label>
 
-            </form>
+                <input
+                    type="file"
+                    id="proofImage"
+                    accept="image/*">
+
+            </div>
+
+            <button
+                id="submitPayment"
+                class="submit-btn">
+
+                Submit Payment
+
+            </button>
 
         </div>
 
@@ -193,9 +208,13 @@
 
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/shared/supabase.js"></script>
+
 <script src="../js/user/navbar.js"></script>
 <script src="../js/user/cart.js"></script>
 <script src="../js/user/profile.js"></script>
+
 <script src="../js/user/payment.js"></script>
 
 </body>

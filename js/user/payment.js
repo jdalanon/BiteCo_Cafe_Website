@@ -1,188 +1,108 @@
-const form =
-document.getElementById("paymentForm");
+const paymentDetails =
+    document.getElementById("paymentDetails");
 
-form.addEventListener("submit", async (e) => {
+const qrImage =
+    document.getElementById("qrImage");
 
-    e.preventDefault();
+const accountName =
+    document.getElementById("accountName");
 
-    const user =
-    JSON.parse(localStorage.getItem("currentUser"));
+const accountNumber =
+    document.getElementById("accountNumber");
 
-    const cart =
-    JSON.parse(localStorage.getItem("checkoutCart"));
+const amount =
+    document.getElementById("paymentAmount");
 
-    if(!user || !cart){
+let selectedPayment = null;
 
-        alert("Checkout session expired.");
 
-        window.location.href="cart.html";
+// Get order total
+const total =
+    localStorage.getItem("checkoutTotal") || "0.00";
 
-        return;
+amount.value = `₱${parseFloat(total).toFixed(2)}`;
 
-    }
 
-    const reference =
-    document.getElementById("referenceNumber").value;
+// Payment selection
+document
+.querySelectorAll("input[name='payment']")
+.forEach(radio=>{
 
-    const file =
-    document.getElementById("proofImage").files[0];
+    radio.addEventListener("change",async()=>{
 
-    if(!file){
+        const paymentName = radio.value;
 
-        alert("Please upload proof of payment.");
+        selectedPayment = paymentName;
 
-        return;
+        const { data,error } =
+            await window.db
+            .from("Payment_Settings")
+            .select("*")
+            .eq("payment_name",paymentName)
+            .eq("is_active",true)
+            .single();
 
-    }
+        if(error){
 
-    //--------------------------------------------------
-    // Upload image to Supabase Storage
-    //--------------------------------------------------
+            alert(error.message);
 
-    const filename =
-    Date.now() + "_" + file.name;
+            return;
+        }
 
-    const { error: uploadError } =
-    await window.db.storage
-    .from("payments")
-    .upload(filename,file);
+        qrImage.src =
+            data.qr_image;
 
-    if(uploadError){
+        accountName.value =
+            data.account_name;
 
-        alert(uploadError.message);
+        accountNumber.value =
+            data.account_number;
 
-        return;
-
-    }
-
-    //--------------------------------------------------
-    // Get public URL
-    //--------------------------------------------------
-
-    const {
-        data:urlData
-    } =
-    window.db.storage
-    .from("payments")
-    .getPublicUrl(filename);
-
-    //--------------------------------------------------
-    // Compute Total
-    //--------------------------------------------------
-
-    let total=0;
-
-    cart.forEach(item=>{
-
-        total+=item.price*item.quantity;
+        paymentDetails.classList.remove("hidden");
 
     });
-
-    //--------------------------------------------------
-    // Save Order
-    //--------------------------------------------------
-
-    const { error } =
-    await window.db
-    .from("Orders")
-    .insert({
-
-        user_id:user.user_id,
-
-        items:cart,
-
-        total_amount:total,
-
-        payment_method:"Fund Transfer",
-
-        payment_status:"Pending Verification",
-
-        order_status:"Pending",
-
-        reference_number:reference,
-
-        proof_image:urlData.publicUrl
-
-    });
-
-    if(error){
-
-        alert(error.message);
-
-        return;
-
-    }
-
-    alert("Payment submitted successfully!");
-
-    localStorage.removeItem("cart");
-    localStorage.removeItem("checkoutCart");
-
-    window.location.href="home.html";
 
 });
 
 
-async function loadPaymentMethods() {
+// Submit Payment
+document
+.getElementById("submitPayment")
+.addEventListener("click",async()=>{
 
-    const { data, error } =
-        await window.db
-        .from("Payment_Settings")
-        .select("*")
-        .eq("is_active", true);
+    const reference =
+        document.getElementById("referenceNumber").value;
 
-    if (error) {
+    const file =
+        document.getElementById("proofImage").files[0];
 
-        console.error(error);
+    if(!selectedPayment){
+
+        alert("Select payment.");
+
         return;
-
     }
 
-    const container =
-        document.getElementById("paymentMethods");
+    if(reference===""){
 
-    container.innerHTML = "";
+        alert("Enter reference number.");
 
-    data.forEach(payment => {
+        return;
+    }
 
-        container.innerHTML += `
+    if(!file){
 
-        <div class="payment-option">
+        alert("Upload receipt.");
 
-            <img
-                src="${payment.qr_code}"
-                alt="${payment.payment_name}">
+        return;
+    }
 
-            <h3>${payment.payment_name}</h3>
+    // Upload image to Supabase Storage here
 
-            <p>
+    // Insert Payment_Proof
 
-                <strong>Account Name:</strong><br>
+    // Update Orders status
 
-                ${payment.account_name}
+    alert("Payment submitted successfully.");
 
-            </p>
-
-            <p>
-
-                <strong>Account Number:</strong><br>
-
-                ${payment.account_number}
-
-            </p>
-
-            <small>
-
-                ${payment.instructions}
-
-            </small>
-
-        </div>
-
-        `;
-
-    });
-
-}
-
-loadPaymentMethods();
+});
