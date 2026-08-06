@@ -6,7 +6,6 @@
 }
 
 body{
-
     min-height:100vh;
     background:#8d8d8d;   /* Gray background */
     display:flex;
@@ -15,7 +14,6 @@ body{
 }
 
 .container{
-
     width:100%;
     display:flex;
     justify-content:center;
@@ -32,48 +30,41 @@ body{
 }
 
 .logo{
-
     width:90px;
     display:block;
     margin:auto;
 }
 
 h2{
-
     text-align:center;
     margin-top:15px;
     color:#4B2E2B;
 }
 
 .register-card p{
-
     text-align:center;
     color:#777;
     margin:10px 0 25px;
 }
 
 .row{
-
     display:flex;
     gap:15px;
 }
 
 .input-group{
-
     display:flex;
     flex-direction:column;
     margin-bottom:18px;
 }
 
 label{
-
     margin-bottom:6px;
     color:#4B2E2B;
     font-weight:500;
 }
 
 input{
-
     padding:12px;
     border:1px solid #ddd;
     border-radius:10px;
@@ -82,7 +73,6 @@ input{
 }
 
 input:focus{
-
     border-color:#8B5E3C;
 }
 
@@ -94,7 +84,6 @@ small{
 }
 
 button{
-
     width:100%;
     padding:14px;
     border:none;
@@ -109,25 +98,21 @@ button{
 }
 
 button:hover{
-
     background:#6F4E37;
 }
 
 .login-text{
-
     margin-top:25px;
     text-align:center;
 }
 
 .login-text a{
-
     color:#8B5E3C;
     text-decoration:none;
     font-weight:600;
 }
 
 .login-text a:hover{
-
     text-decoration:underline;
 }
 

@@ -14,7 +14,6 @@ body{
 }
 
 .container{
-
     width:100%;
     display:flex;
     justify-content:center;
@@ -22,7 +21,6 @@ body{
 }
 
 .login-card{
-
     width:430px;
     background:#fff;
     border-radius:20px;
@@ -31,14 +29,12 @@ body{
 }
 
 .logo{
-
     width:90px;
     display:block;
     margin:auto;
 }
 
 .login-card h2{
-
     text-align:center;
     color:#4B2E2B;
     margin-top:15px;
@@ -52,21 +48,18 @@ body{
 }
 
 .input-group{
-
     display:flex;
     flex-direction:column;
     margin-bottom:18px;
 }
 
 .input-group label{
-
     margin-bottom:6px;
     color:#4B2E2B;
     font-weight:500;
 }
 
 .input-group input{
-
     padding:13px;
     border:1px solid #ddd;
     border-radius:10px;
@@ -75,13 +68,12 @@ body{
 }
 
 .input-group input:focus{
-
     border-color:#8B5E3C;
 }
 
 button{
 
-    width:100%;
+   width:100%;
     padding:14px;
     border:none;
     border-radius:10px;
@@ -95,25 +87,21 @@ button{
 }
 
 button:hover{
-
     background:#6F4E37;
 }
 
 .register-text{
-
     margin-top:25px;
     text-align:center;
 }
 
 .register-text a{
-
     color:#8B5E3C;
     text-decoration:none;
     font-weight:600;
 }
 
 .register-text a:hover{
-
     text-decoration:underline;
 }
 

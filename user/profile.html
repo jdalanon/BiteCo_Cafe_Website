@@ -115,6 +115,37 @@
                 <input id="email" readonly>
             </div>
 
+            <div class="info-box full-width">
+                <label>Address <span style="color:red">*</span></label>
+                    <textarea
+                        id="address"
+                        rows="3"
+                        readonly
+                    ></textarea>
+            </div>
+
+            <div class="info-box">
+                <label>Payment Method <span style="color:red">*</span></label>
+
+                    <select
+                        id="payment"
+                        disabled
+                    >
+                        <option value="">Select payment</option>
+                        <option value="Cash on Delivery">
+                            Cash on Delivery
+                        </option>
+            
+                        <option value="GCash">
+                            GCash
+                        </option>
+                        <option value="Debit Card">
+                            Bank (Debit Only)
+                        </option>
+                    </select>
+
+            </div>
+
             <div class="info-box">
                 <label>Role</label>
                 <input id="role" readonly>
@@ -129,7 +160,7 @@
 
         <div class="profile-actions">
 
-            <button class="edit-btn">
+            <button class="edit-btn" id="editProfileBtn">
                 Edit Profile
             </button>
 

@@ -81,6 +81,12 @@ if (!currentUser) {
     const email =
         document.getElementById("email");
 
+    const address =
+        document.getElementById("address");
+
+    const payment =
+        document.getElementById("payment");
+
     const role =
         document.getElementById("role");
 
@@ -118,12 +124,22 @@ if (!currentUser) {
             currentUser.email;
     }
 
+    if(address){
+
+        address.value =
+            currentUser.address ?? "";
+    }
+
+    if(payment){
+
+        payment.value =
+        currentUser.payment_method ?? "";
+    }
 
     if (role) {
 
         role.value =
             currentUser.role;
-
     }
 
 
@@ -138,7 +154,129 @@ if (!currentUser) {
 }
 
 
-// Logou
+// Edit / Save Profile
+const editBtn = document.getElementById("editProfileBtn");
+
+let editMode = false;
+
+editBtn.addEventListener("click", async () => {
+
+    const firstname = document.getElementById("firstname");
+    const lastname = document.getElementById("lastname");
+    const address = document.getElementById("address");
+    const payment = document.getElementById("payment");
+
+    // Edit Profile details
+    if (!editMode) {
+
+        firstname.readOnly = false;
+        lastname.readOnly = false;
+        address.readOnly = false;
+        payment.disabled = false;
+        editBtn.textContent = "Save Changes";
+        editMode = true;
+
+        firstname.focus();
+        return;
+
+    }
+
+    // Switch Edit and Save button text and color
+    const editBtn = document.querySelector(".edit-btn");
+
+    editBtn.addEventListener("click", () => {
+
+    if (editBtn.textContent === "Edit Profile") {
+
+        editBtn.textContent = "Save Profile";
+        editBtn.classList.add("save-mode");
+
+    } else {
+
+        editBtn.textContent = "Edit Profile";
+        editBtn.classList.remove("save-mode");
+
+    }
+
+    });
+
+    // Save the Edited Profile details
+    const newFirstname = firstname.value.trim();
+    const newLastname = lastname.value.trim();
+    const newAddress = address.value.trim();
+    const newPayment = payment.value;
+
+    if (newAddress === "") {
+
+        alert("Address is required.");
+        return;
+
+    }
+
+    if (newPayment === "") {
+
+        alert("Please select a payment method.");
+        return;
+
+    }
+
+    const { error } = await window.db
+        .from("User")
+        .update({
+
+            firstname: newFirstname,
+            lastname: newLastname,
+            address: newAddress,
+            payment_method: newPayment
+
+        })
+        .eq("auth_id", currentUser.auth_id);
+
+    if (error) {
+
+        alert(error.message);
+        return;
+
+    }
+
+    // Update local storage
+
+    currentUser.firstname = newFirstname;
+    currentUser.lastname = newLastname;
+    currentUser.address = newAddress;
+    currentUser.payment_method = newPayment;
+
+    localStorage.setItem(
+        "currentUser",
+        JSON.stringify(currentUser)
+    );
+
+    // Update Profile Header
+
+    document.getElementById("profile-name").textContent =
+        `${newFirstname} ${newLastname}`;
+
+    document.getElementById("profileFullName").textContent =
+        `${newFirstname} ${newLastname}`;
+
+    // Disable fields
+
+    firstname.readOnly = true;
+    lastname.readOnly = true;
+    address.readOnly = true;
+
+    payment.disabled = true;
+
+    editBtn.textContent = "Edit Profile";
+
+    editMode = false;
+
+    alert("Profile updated successfully!");
+
+});
+
+
+// Logout
 const logoutButtons = document.querySelectorAll(".logout-btn");
 
 logoutButtons.forEach(button => {
