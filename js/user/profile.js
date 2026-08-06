@@ -15,7 +15,7 @@ window.addEventListener("click", (e) => {
 });
 
 // Load current user
-cconst user = JSON.parse(localStorage.getItem("currentUser"));
+const user = JSON.parse(localStorage.getItem("currentUser"));
 
 if (!user) {
     window.location.href = "login.html";
