@@ -155,7 +155,7 @@ if (!currentUser) {
 
 
 // Edit / Save Profile
-// Edit / Save Profile
+
 const editBtn = document.getElementById("editProfileBtn");
 
 let editMode = false;
@@ -167,14 +167,16 @@ editBtn.addEventListener("click", async () => {
     const address = document.getElementById("address");
     const payment = document.getElementById("payment");
 
-    // -------------------------
-    // EDIT MODE
-    // -------------------------
+    
+    // Edit Profile details
+
     if (!editMode) {
 
         firstname.readOnly = false;
         lastname.readOnly = false;
+
         address.readOnly = false;
+
         payment.disabled = false;
 
         editBtn.textContent = "Save Profile";
@@ -187,67 +189,70 @@ editBtn.addEventListener("click", async () => {
         return;
     }
 
-    // -------------------------
-    // VALIDATION
-    // -------------------------
+    // Validation
 
-    const newFirstname = firstname.value.trim();
-    const newLastname = lastname.value.trim();
-    const newAddress = address.value.trim();
-    const newPayment = payment.value;
+    if (address.value.trim() === "") {
 
-    if (!newAddress) {
         alert("Address is required.");
+        address.focus();
+
         return;
+
     }
 
-    if (!newPayment) {
+    if (payment.value === "") {
+
         alert("Please select a payment method.");
+        payment.focus();
+
         return;
+
     }
 
-    // -------------------------
-    // SAVE TO SUPABASE
-    // -------------------------
+    // Update Database
 
     const { error } = await window.db
         .from("User")
         .update({
-            firstname: newFirstname,
-            lastname: newLastname,
-            address: newAddress,
-            payment_method: newPayment
+
+            firstname: firstname.value.trim(),
+            lastname: lastname.value.trim(),
+            address: address.value.trim(),
+            payment_method: payment.value
+
         })
         .eq("user_id", currentUser.user_id);
 
     if (error) {
+
         alert(error.message);
+
         return;
+
     }
 
-    // -------------------------
-    // UPDATE LOCAL STORAGE
-    // -------------------------
+    // Update Local Storage
 
-    currentUser.firstname = newFirstname;
-    currentUser.lastname = newLastname;
-    currentUser.address = newAddress;
-    currentUser.payment_method = newPayment;
+    currentUser.firstname = firstname.value.trim();
+    currentUser.lastname = lastname.value.trim();
+    currentUser.address = address.value.trim();
+    currentUser.payment_method = payment.value;
 
     localStorage.setItem(
         "currentUser",
         JSON.stringify(currentUser)
     );
 
-    // -------------------------
-    // UPDATE UI
-    // -------------------------
+    // Update Profile header
 
     document.getElementById("profile-name").textContent =
-        `${newFirstname} ${newLastname}`;
+        `${currentUser.firstname} ${currentUser.lastname}`;
 
     document.getElementById("profileFullName").textContent =
-        `${newFirstname} ${newLastname}`;
+        `${currentUser.firstname} ${currentUser.lastname}`;
+
+    
+    // Lock fields again after saving
 
     firstname.readOnly = true;
     lastname.readOnly = true;

@@ -126,13 +126,106 @@ function decreaseQuantity(index) {
 
 
 // Checkout 
-function checkout() {
+async function checkout() {
 
     if (cart.length === 0) {
-
         alert("Your cart is empty.");
+        return;
+    }
+
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+
+    if (!user) {
+        alert("Please login first.");
+        window.location.href = "login.html";
+        return;
+    }
+
+    // Validate profile
+    if (!user.address || user.address.trim() === "") {
+
+        alert("Please complete your address in your profile.");
+
+        window.location.href = "profile.html";
 
         return;
+    }
+
+    if (!user.payment_method) {
+
+        alert("Please select your preferred payment method.");
+
+        window.location.href = "profile.html";
+
+        return;
+    }
+
+    // COD
+    if (user.payment_method === "Cash on Delivery") {
+
+        await placeOrder();
+
+    }
+
+    // Fund Transfer
+    else {
+
+        localStorage.setItem(
+            "checkoutCart",
+            JSON.stringify(cart)
+        );
+
+        window.location.href = "payment.html";
+
+    }
+
+}
+
+updateCart();
+
+
+// Place Order
+
+async function placeOrder() {
+
+    const user =
+        JSON.parse(localStorage.getItem("currentUser"));
+
+    let total = 0;
+
+    cart.forEach(item => {
+
+        total += item.price * item.quantity;
+
+    });
+
+    const { error } =
+        await window.db
+        .from("Orders")
+        .insert({
+
+            user_id: user.user_id,
+
+            items: cart,
+
+            total_amount: total,
+
+            payment_method: user.payment_method,
+
+            payment_status: "Pending",
+
+            order_status: "Pending"
+
+        });
+
+    if (error) {
+
+        console.error(error);
+
+        alert("Failed to place order.");
+
+        return;
+
     }
 
     alert("Thank you for ordering from Bite Co!");
@@ -142,10 +235,11 @@ function checkout() {
     localStorage.removeItem("cart");
 
     updateCart();
+
+    window.location.href = "home.html";
+
 }
 
-
-updateCart();
 
 window.addToCart = addToCart;
 window.checkout = checkout;
