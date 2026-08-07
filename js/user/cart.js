@@ -2,62 +2,58 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(menu_id, name, price, image, button) {
+  // Menu is Out of Stock
+  if (button.disabled) return;
 
-    // Menu is Out of Stock
-    if (button.disabled) return;
+  // Check if the menu item already exists in the cart
+  const existing = cart.find((item) => item.menu_id === menu_id);
 
-    // Check if the menu item already exists in the cart
-    const existing = cart.find(item => item.menu_id === menu_id);
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({
+      menu_id,
+      name,
+      price: Number(price),
+      image,
+      quantity: 1,
+    });
+  }
 
-    if (existing) {
-        existing.quantity++;
-    } else {
-        cart.push({
-            menu_id,
-            name,
-            price: Number(price),
-            image,
-            quantity: 1
-        });
-    }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCart();
 
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCart();
+  button.textContent = "✓ Added!";
+  button.disabled = true;
 
-    button.textContent = "✓ Added!";
-    button.disabled = true;
-
-    setTimeout(() => {
-        button.textContent = "Buy Now";
-        button.disabled = false;
-    }, 1000);
+  setTimeout(() => {
+    button.textContent = "Buy Now";
+    button.disabled = false;
+  }, 1000);
 }
 
-
-// Update Cart 
+// Update Cart
 function updateCart() {
+  const cartItems = document.getElementById("cart-items");
+  const total = document.getElementById("total");
+  const count = document.getElementById("cart-count");
 
-    const cartItems = document.getElementById("cart-items");
-    const total = document.getElementById("total");
-    const count = document.getElementById("cart-count");
+  if (count) {
+    count.innerText = cart.reduce((sum, item) => sum + item.quantity, 0);
+  }
 
-    if (count) {
-        count.innerText = cart.reduce((sum, item) => sum + item.quantity, 0);
-    }
+  if (!cartItems || !total) return;
 
-    if (!cartItems || !total) return;
+  cartItems.innerHTML = "";
 
-    cartItems.innerHTML = "";
+  let totalPrice = 0;
 
-    let totalPrice = 0;
+  cart.forEach((item, index) => {
+    const subtotal = item.price * item.quantity;
 
-    cart.forEach((item, index) => {
+    totalPrice += subtotal;
 
-        const subtotal = item.price * item.quantity;
-
-        totalPrice += subtotal;
-
-        cartItems.innerHTML += `
+    cartItems.innerHTML += `
             <div class="cart-item">
 
                 <img class="cart-image"
@@ -95,158 +91,118 @@ function updateCart() {
 
             </div>
         `;
-    });
+  });
 
-    total.innerText = totalPrice.toFixed(2);
+  total.innerText = totalPrice.toFixed(2);
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
-
 
 // Increase Quantity
 function increaseQuantity(index) {
+  cart[index].quantity++;
 
-    cart[index].quantity++;
-
-    updateCart();
+  updateCart();
 }
 
 // Decrease Quantity
 function decreaseQuantity(index) {
+  cart[index].quantity--;
 
-    cart[index].quantity--;
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1);
+  }
 
-    if (cart[index].quantity <= 0) {
-
-        cart.splice(index, 1);
-
-    }
-
-    updateCart();
+  updateCart();
 }
 
-
-// Checkout 
+// Checkout
 async function checkout() {
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
 
-    if (cart.length === 0) {
-        alert("Your cart is empty.");
-        return;
-    }
+  const user = JSON.parse(localStorage.getItem("currentUser"));
 
-    const user =
-        JSON.parse(localStorage.getItem("currentUser"));
+  if (!user) {
+    alert("Please login first.");
+    return;
+  }
 
-    if (!user) {
+  if (!user.address) {
+    alert("Please complete your profile.");
 
-        alert("Please login first.");
-        return;
+    window.location.href = "profile.html";
 
-    }
+    return;
+  }
 
-    if (!user.address) {
+  if (!user.payment_method) {
+    alert("Please select payment method.");
 
-        alert("Please complete your profile.");
+    window.location.href = "profile.html";
 
-        window.location.href = "profile.html";
+    return;
+  }
 
-        return;
+  if (user.payment_method === "Cash on Delivery") {
+    await placeOrder();
+  } else {
+    const total = cart.reduce((sum, item) => {
+      return sum + item.price * item.quantity;
+    }, 0);
 
-    }
+    localStorage.setItem("checkoutCart", JSON.stringify(cart));
 
-    if (!user.payment_method) {
+    localStorage.setItem("checkoutTotal", total);
 
-        alert("Please select payment method.");
-
-        window.location.href = "profile.html";
-
-        return;
-
-    }
-
-    if (user.payment_method === "Cash on Delivery") {
-
-        await placeOrder();
-
-    } else {
-
-        const total = cart.reduce((sum, item) => {
-
-            return sum + (item.price * item.quantity);
-
-        }, 0);
-
-        localStorage.setItem(
-            "checkoutCart",
-            JSON.stringify(cart)
-        );
-
-        localStorage.setItem(
-            "checkoutTotal",
-            total
-        );
-
-        window.location.href = "payment.html";
-
-    }
-
+    window.location.href = "payment.html";
+  }
 }
 
 updateCart();
 
-
 // Place Order
 
 async function placeOrder() {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
 
-    const user =
-        JSON.parse(localStorage.getItem("currentUser"));
+  let total = 0;
 
-    let total = 0;
+  cart.forEach((item) => {
+    total += item.price * item.quantity;
+  });
 
-    cart.forEach(item => {
+  const { error } = await window.db.from("Order").insert({
+    user_id: user.user_id,
+    items: cart,
+    total_amount: total,
+    payment_method: user.payment_method,
+    payment_status: "Pending",
+    order_status: "Pending",
+  });
 
-        total += item.price * item.quantity;
+  if (error) {
+    console.error(error);
+    alert("Failed to place order.");
 
-    });
+    return;
+  }
 
-    const { error } =
-        await window.db
-        .from("Order")
-        .insert({
+  alert("Thank you for ordering from Bite Co!");
 
-            user_id: user.user_id,
-            items: cart,
-            total_amount: total,
-            payment_method: user.payment_method,
-            payment_status: "Pending",
-            order_status: "Pending"
+  cart = [];
 
-        });
+  localStorage.removeItem("cart");
 
-    if (error) {
+  updateCart();
 
-        console.error(error);
-        alert("Failed to place order.");
-
-        return;
-
-    }
-
-    alert("Thank you for ordering from Bite Co!");
-
-    cart = [];
-
-    localStorage.removeItem("cart");
-
-    updateCart();
-
-    window.location.href = "home.html";
-
+  window.location.href = "home.html";
 }
 
 window.addToCart = addToCart;
 window.increaseQuantity = increaseQuantity;
 window.decreaseQuantity = decreaseQuantity;
 window.checkout = checkout;
-window.placeOrder = placeOrder
+window.placeOrder = placeOrder;

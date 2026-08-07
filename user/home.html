@@ -1,107 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bite Co. Official</title>
 
     <!-- Logo icon -->
-    <link rel="icon" href="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc">
+    <link
+      rel="icon"
+      href="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+    />
 
     <!-- CSS file -->
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-
-<header>
-    <nav class="navbar">
-
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
         <div class="logo">
-            <img src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc" alt="Bite Co. Logo">
-            <h2>Bite Co.</h2>
+          <img
+            src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+            alt="Bite Co. Logo"
+          />
+          <h2>Bite Co.</h2>
         </div>
-        
+
         <ul class="nav-links">
-            <li><a href=home.html>Home</a></li>
+          <li><a href="home.html">Home</a></li>
 
-            <li class="dropdown">
-                <span class="dropdown-btn">
-                    Menu ▾
-                </span>
+          <li class="dropdown">
+            <span class="dropdown-btn"> Menu ▾ </span>
 
-                <ul class="dropdown-menu">
-                    <li><a href="menu.html?category=Drinks">Drinks</a></li>
-                    <li><a href="menu.html?category=Snacks">Snacks</a></li>
-                </ul>
-            </li>
+            <ul class="dropdown-menu">
+              <li><a href="menu.html?category=Drinks">Drinks</a></li>
+              <li><a href="menu.html?category=Snacks">Snacks</a></li>
+            </ul>
+          </li>
 
-            <li><a href=about.html>About</a></li>
-            <li><a href=contact.html>Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
 
         <div class="menu-btn">&#9776;</div>
         <!-- <div class="cart-icon"> <a href=cart.html> 🛒 </a> <span id="cart-count">0</span> -->
 
-        <!-- Profile & Cart --> 
+        <!-- Profile & Cart -->
         <div class="nav-actions">
-            <div class="profile-dropdown">
+          <div class="profile-dropdown">
+            <button class="profile-btn" id="profileBtn">👤</button>
 
-            <button class="profile-btn" id="profileBtn">
-                👤
-            </button>
+            <div class="profile-menu" id="profileMenu">
+              <div class="profile-header">
+                <h4 id="profile-name">Guest</h4>
+                <p id="profile-email"></p>
+              </div>
 
-                <div class="profile-menu" id="profileMenu">
+              <hr />
 
-                    <div class="profile-header">
-                        <h4 id="profile-name">Guest</h4>
-                        <p id="profile-email"></p>
-                    </div>
+              <a href="profile.html">My Profile</a>
 
-                    <hr>
-
-                    <a href="profile.html">My Profile</a>
-
-                    <button class="logout-btn">
-                        Logout
-                    </button>
-
-                </div>
-
+              <button class="logout-btn">Logout</button>
             </div>
+          </div>
 
-            <div class="cart-icon">
-                <a href="cart.html">🛒</a>
-                <span id="cart-count">0</span>
-            </div>
-
+          <div class="cart-icon">
+            <a href="cart.html">🛒</a>
+            <span id="cart-count">0</span>
+          </div>
         </div>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<!-- Hero Section -->
-<section class="hero" id="home">
-
-    <div class="hero-text">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-text">
         <h1>The weather's looking good, and so are the cravings!</h1>
 
         <p>
-            Swing by Bite Co. today and treat yourself to your favorite bites and refreshing drinks.
+          Swing by Bite Co. today and treat yourself to your favorite bites and
+          refreshing drinks.
         </p>
 
         <!-- <a href="menu.html" class="btn">See Menu</a> -->
-    </div>
+      </div>
+    </section>
 
-</section>
+    <footer>
+      <p>© 2025 Bite Co. All Rights Reserved.</p>
+    </footer>
 
-<footer>
-
-    <p>© 2025 Bite Co. All Rights Reserved.</p>
-
-</footer>
-
-<script src="../js/user/navbar.js"></script>
-<script src="../js/user/cart.js"></script>
-<script src="../js/user/profile.js"></script>
-
-</body>
+    <script src="../js/user/navbar.js"></script>
+    <script src="../js/user/cart.js"></script>
+    <script src="../js/user/profile.js"></script>
+  </body>
 </html>

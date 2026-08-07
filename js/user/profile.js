@@ -3,264 +3,170 @@ const profileMenu = document.getElementById("profileMenu");
 
 // Profile Dropdown
 if (profileBtn && profileMenu) {
+  profileBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-    profileBtn.addEventListener("click", (e) => {
-
-        e.stopPropagation();
-
-        profileMenu.classList.toggle("show");
-
-    });
-
+    profileMenu.classList.toggle("show");
+  });
 }
-
 
 // Close dropdown when clicking outside
 window.addEventListener("click", (e) => {
-
-    if (
-        profileMenu &&
-        !e.target.closest(".profile-dropdown")
-    ) {
-
-        profileMenu.classList.remove("show");
-
-    }
-
+  if (profileMenu && !e.target.closest(".profile-dropdown")) {
+    profileMenu.classList.remove("show");
+  }
 });
 
-
 // Load Current User
-const currentUser = JSON.parse(
-    localStorage.getItem("currentUser")
-);
-
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
 // User is not logged in
 if (!currentUser) {
-
-    window.location.href = "login.html";
-
+  window.location.href = "login.html";
 } else {
+  // Navbar Profile
+  const profileName = document.getElementById("profile-name");
+  const profileEmail = document.getElementById("profile-email");
 
-    // Navbar Profile
-    const profileName =
-        document.getElementById("profile-name");
+  if (profileName) {
+    profileName.textContent = `${currentUser.firstname} ${currentUser.lastname}`;
+  }
 
-    const profileEmail =
-        document.getElementById("profile-email");
+  if (profileEmail) {
+    profileEmail.textContent = currentUser.email;
+  }
 
+  // Profile Dashboard
+  const profileFullName = document.getElementById("profileFullName");
+  const profileRole = document.getElementById("profileRole");
+  const firstname = document.getElementById("firstname");
+  const lastname = document.getElementById("lastname");
+  const email = document.getElementById("email");
+  const address = document.getElementById("address");
+  const payment = document.getElementById("payment");
+  const role = document.getElementById("role");
+  const createdAt = document.getElementById("created_at");
 
-    if (profileName) {
-        profileName.textContent =
-            `${currentUser.firstname} ${currentUser.lastname}`;
+  if (profileFullName) {
+    profileFullName.textContent = `${currentUser.firstname} ${currentUser.lastname}`;
+  }
 
-    }
+  if (profileRole && currentUser.role) {
+    profileRole.textContent =
+      currentUser.role.charAt(0).toUpperCase() + currentUser.role.slice(1);
+  }
 
+  if (firstname) {
+    firstname.value = currentUser.firstname;
+  }
 
-    if (profileEmail) {
-        profileEmail.textContent =
-            currentUser.email;
+  if (lastname) {
+    lastname.value = currentUser.lastname;
+  }
 
-    }
+  if (email) {
+    email.value = currentUser.email;
+  }
 
+  if (address) {
+    address.value = currentUser.address ?? "";
+  }
 
-    // Profile Dashboard
-    const profileFullName =
-        document.getElementById("profileFullName");
+  if (payment) {
+    payment.value = currentUser.payment_method ?? "";
+  }
 
-    const profileRole =
-        document.getElementById("profileRole");
+  if (role) {
+    role.value = currentUser.role;
+  }
 
-    const firstname =
-        document.getElementById("firstname");
-
-    const lastname =
-        document.getElementById("lastname");
-
-    const email =
-        document.getElementById("email");
-
-    const address =
-        document.getElementById("address");
-
-    const payment =
-        document.getElementById("payment");
-
-    const role =
-        document.getElementById("role");
-
-    const createdAt =
-        document.getElementById("created_at");
-
-
-    if (profileFullName) {
-        profileFullName.textContent =
-            `${currentUser.firstname} ${currentUser.lastname}`;
-    }
-
-
-    if (profileRole && currentUser.role) {
-        profileRole.textContent =
-            currentUser.role.charAt(0).toUpperCase()
-            + currentUser.role.slice(1);
-    }
-
-
-    if (firstname) {
-        firstname.value =
-            currentUser.firstname;
-    }
-
-
-    if (lastname) {
-        lastname.value =
-           currentUser.lastname;
-
-    }
-
-    if (email) {
-        email.value =
-            currentUser.email;
-    }
-
-    if(address){
-
-        address.value =
-            currentUser.address ?? "";
-    }
-
-    if(payment){
-
-        payment.value =
-        currentUser.payment_method ?? "";
-    }
-
-    if (role) {
-
-        role.value =
-            currentUser.role;
-    }
-
-
-    if (createdAt && currentUser.created_at) {
-
-        createdAt.value =
-            new Date(
-                currentUser.created_at
-            ).toLocaleDateString();
-    }
-
+  if (createdAt && currentUser.created_at) {
+    createdAt.value = new Date(currentUser.created_at).toLocaleDateString();
+  }
 }
 
-
-// Edit / Save Profile
-
+// Edit and Save Profile
 const editBtn = document.getElementById("editProfileBtn");
 let editMode = false;
 
 if (editBtn) {
+  editBtn.addEventListener("click", async () => {
+    // edit profile code
+    let editMode = false;
 
-    editBtn.addEventListener("click", async () => {
-
-        // edit profile code
-        let editMode = false;
-
-        const firstname = document.getElementById("firstname");
+    const firstname = document.getElementById("firstname");
     const lastname = document.getElementById("lastname");
     const address = document.getElementById("address");
     const payment = document.getElementById("payment");
+    const editBtn = document.getElementById("editProfileBtn");
 
-    const editBtn =
-    document.getElementById("editProfileBtn");
-
-    
     // Edit Profile details
-
     if (!editMode) {
+      firstname.readOnly = false;
+      lastname.readOnly = false;
 
-        firstname.readOnly = false;
-        lastname.readOnly = false;
+      address.readOnly = false;
 
-        address.readOnly = false;
+      payment.disabled = false;
 
-        payment.disabled = false;
+      editBtn.textContent = "Save Profile";
+      editBtn.classList.add("save-mode");
 
-        editBtn.textContent = "Save Profile";
-        editBtn.classList.add("save-mode");
+      editMode = true;
 
-        editMode = true;
+      firstname.focus();
 
-        firstname.focus();
-
-        return;
+      return;
     }
 
-    // Validation
-
+    // Save Profile details
     if (address.value.trim() === "") {
+      alert("Address is required.");
+      address.focus();
 
-        alert("Address is required.");
-        address.focus();
-
-        return;
-
+      return;
     }
 
     if (payment.value === "") {
+      alert("Please select a payment method.");
+      payment.focus();
 
-        alert("Please select a payment method.");
-        payment.focus();
-
-        return;
-
+      return;
     }
 
-    // Update Database
-
+    // Update user profile in the database
     const { error } = await window.db
-        .from("User")
-        .update({
-
-            firstname: firstname.value.trim(),
-            lastname: lastname.value.trim(),
-            address: address.value.trim(),
-            payment_method: payment.value
-
-        })
-        .eq("user_id", currentUser.user_id);
+      .from("User")
+      .update({
+        firstname: firstname.value.trim(),
+        lastname: lastname.value.trim(),
+        address: address.value.trim(),
+        payment_method: payment.value,
+      })
+      .eq("user_id", currentUser.user_id);
 
     if (error) {
+      alert(error.message);
 
-        alert(error.message);
-
-        return;
-
+      return;
     }
 
-    // Update Local Storage
-
+    // Update localStorage with the updated user profile
     currentUser.firstname = firstname.value.trim();
     currentUser.lastname = lastname.value.trim();
     currentUser.address = address.value.trim();
     currentUser.payment_method = payment.value;
 
-    localStorage.setItem(
-        "currentUser",
-        JSON.stringify(currentUser)
-    );
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
-    // Update Profile header
-
+    // Update profile display on the page
     document.getElementById("profile-name").textContent =
-        `${currentUser.firstname} ${currentUser.lastname}`;
+      `${currentUser.firstname} ${currentUser.lastname}`;
 
     document.getElementById("profileFullName").textContent =
-        `${currentUser.firstname} ${currentUser.lastname}`;
+      `${currentUser.firstname} ${currentUser.lastname}`;
 
-    
-    // Lock fields again after saving
-
+    // Disable fields after saving
     firstname.readOnly = true;
     lastname.readOnly = true;
     address.readOnly = true;
@@ -272,37 +178,26 @@ if (editBtn) {
     editMode = false;
 
     alert("Profile updated successfully!");
-
-    });
-
+  });
 }
 
-
-// Logout
+// Logout 
 const logoutButtons = document.querySelectorAll(".logout-btn");
 
-logoutButtons.forEach(button => {
+logoutButtons.forEach((button) => {
+  button.addEventListener("click", async () => {
+    try {
+      const { error } = await window.db.auth.signOut();
 
-    button.addEventListener("click", async () => {
+      if (error) {
+        console.error(error);
+      }
+    } catch (err) {
+      console.error(err);
+    }
 
-        try {
+    localStorage.removeItem("currentUser");
 
-            const { error } = await window.db.auth.signOut();
-
-            if (error) {
-                console.error(error);
-            }
-
-        } catch (err) {
-
-            console.error(err);
-
-        }
-
-        localStorage.removeItem("currentUser");
-
-        window.location.href = "login.html";
-
-    });
-
+    window.location.href = "login.html";
+  });
 });

@@ -1,219 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bite Co. Official</title>
 
     <!-- Logo icon -->
-    <link rel="icon" href="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc">
+    <link
+      rel="icon"
+      href="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+    />
 
     <!-- CSS file -->
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-
-<header>
-    <nav class="navbar">
-
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
         <div class="logo">
-            <img src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc" alt="Bite Co. Logo">
-            <h2>Bite Co.</h2>
+          <img
+            src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+            alt="Bite Co. Logo"
+          />
+          <h2>Bite Co.</h2>
         </div>
-        
+
         <ul class="nav-links">
-            <li><a href=home.html>Home</a></li>
+          <li><a href="home.html">Home</a></li>
 
-            <li class="dropdown">
-                <span class="dropdown-btn">
-                    Menu ▾
-                </span>
+          <li class="dropdown">
+            <span class="dropdown-btn"> Menu ▾ </span>
 
-                <ul class="dropdown-menu">
-                    <li><a href="menu.html?category=Drinks">Drinks</a></li>
-                    <li><a href="menu.html?category=Snacks">Snacks</a></li>
-                </ul>
-            </li>
+            <ul class="dropdown-menu">
+              <li><a href="menu.html?category=Drinks">Drinks</a></li>
+              <li><a href="menu.html?category=Snacks">Snacks</a></li>
+            </ul>
+          </li>
 
-            <li><a href=about.html>About</a></li>
-            <li><a href=contact.html>Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
 
         <div class="menu-btn">&#9776;</div>
         <!-- <div class="cart-icon"> <a href=cart.html> 🛒 </a> <span id="cart-count">0</span> -->
 
-        <!-- Profile & Cart --> 
+        <!-- Profile & Cart -->
         <div class="nav-actions">
-            <div class="profile-dropdown">
+          <div class="profile-dropdown">
+            <button class="profile-btn" id="profileBtn">👤</button>
 
-            <button class="profile-btn" id="profileBtn">
-                👤
-            </button>
+            <div class="profile-menu" id="profileMenu">
+              <div class="profile-header">
+                <h4 id="profile-name">Guest</h4>
+                <p id="profile-email"></p>
+              </div>
 
-                <div class="profile-menu" id="profileMenu">
+              <hr />
 
-                    <div class="profile-header">
-                        <h4 id="profile-name">Guest</h4>
-                        <p id="profile-email"></p>
-                    </div>
+              <a href="profile.html">My Profile</a>
 
-                    <hr>
-
-                    <a href="profile.html">My Profile</a>
-
-                    <button class="logout-btn">
-                        Logout
-                    </button>
-
-                </div>
-
+              <button class="logout-btn">Logout</button>
             </div>
+          </div>
 
-            <div class="cart-icon">
-                <a href="cart.html">🛒</a>
-                <span id="cart-count">0</span>
-            </div>
-
+          <div class="cart-icon">
+            <a href="cart.html">🛒</a>
+            <span id="cart-count">0</span>
+          </div>
         </div>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<!-- Payment Section -->
-<section class="payment-page">
-
-    <div class="payment-card">
-
+    <!-- Payment Section -->
+    <section class="payment-page">
+      <div class="payment-card">
         <h2>Fund Transfer</h2>
 
-        <p class="subtitle">
-            Select your preferred payment provider.
-        </p>
+        <p class="subtitle">Select your preferred payment provider.</p>
 
         <!-- Payment Selection -->
         <div class="payment-selection">
+          <label>
+            <input type="radio" name="payment" value="GCash" />
 
-            <label>
-                <input
-                    type="radio"
-                    name="payment"
-                    value="GCash">
+            GCash
+          </label>
 
-                GCash
-            </label>
+          <label>
+            <input type="radio" name="payment" value="Maya" />
 
-            <label>
-                <input
-                    type="radio"
-                    name="payment"
-                    value="Maya">
+            Maya
+          </label>
 
-                Maya
-            </label>
+          <label>
+            <input type="radio" name="payment" value="CIMB" />
 
-            <label>
-                <input
-                    type="radio"
-                    name="payment"
-                    value="CIMB">
-
-                CIMB
-            </label>
-
+            CIMB
+          </label>
         </div>
 
-        <hr>
+        <hr />
 
         <!-- Payment Details -->
 
-        <div
-            id="paymentDetails"
-            class="payment-details hidden">
+        <div id="paymentDetails" class="payment-details hidden">
+          <img id="qrImage" class="qr-image" />
 
-            <img
-                id="qrImage"
-                class="qr-image">
+          <div class="detail">
+            <label>Account Name</label>
 
-            <div class="detail">
+            <input id="accountName" readonly />
+          </div>
 
-                <label>Account Name</label>
+          <div class="detail">
+            <label>Account Number</label>
 
-                <input
-                    id="accountName"
-                    readonly>
+            <input id="accountNumber" readonly />
+          </div>
 
-            </div>
+          <div class="detail">
+            <label>Total Amount</label>
 
-            <div class="detail">
+            <input id="paymentAmount" readonly />
+          </div>
 
-                <label>Account Number</label>
+          <div class="detail">
+            <label> Reference Number </label>
 
-                <input
-                    id="accountNumber"
-                    readonly>
+            <input id="referenceNumber" placeholder="Enter reference number" />
+          </div>
 
-            </div>
+          <div class="detail">
+            <label> Upload Receipt </label>
 
-            <div class="detail">
+            <input type="file" id="proofImage" accept="image/*" />
+          </div>
 
-                <label>Total Amount</label>
-
-                <input
-                    id="paymentAmount"
-                    readonly>
-
-            </div>
-
-            <div class="detail">
-
-                <label>
-                    Reference Number
-                </label>
-
-                <input
-                    id="referenceNumber"
-                    placeholder="Enter reference number">
-
-            </div>
-
-            <div class="detail">
-
-                <label>
-                    Upload Receipt
-                </label>
-
-                <input
-                    type="file"
-                    id="proofImage"
-                    accept="image/*">
-
-            </div>
-
-            <button
-                id="submitPayment"
-                class="submit-btn">
-
-                Submit Payment
-
-            </button>
-
+          <button id="submitPayment" class="submit-btn">Submit Payment</button>
         </div>
+      </div>
+    </section>
 
-    </div>
+    <footer>
+      <p>© 2025 Bite Co. All Rights Reserved.</p>
+    </footer>
 
-</section>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/supabase.js"></script>
 
-<footer>
-
-    <p>© 2025 Bite Co. All Rights Reserved.</p>
-
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="../js/shared/supabase.js"></script>
-
-<script src="../js/user/navbar.js"></script>
-<script src="../js/user/cart.js"></script>
-<script src="../js/user/payment.js"></script>
-
-</body>
+    <script src="../js/user/navbar.js"></script>
+    <script src="../js/user/cart.js"></script>
+    <script src="../js/user/payment.js"></script>
+  </body>
 </html>

@@ -1,95 +1,85 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-body{
-    min-height:100vh;
+body {
+  min-height: 100vh;
 
-    background:#8d8d8d;   /* Gray background */
+  background: #8d8d8d; /* Gray background */
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.overlay{
-
-    width:100%;
-    display:flex;
-    justify-content:center;
-    padding:30px;
+.overlay {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
 }
 
-.hero{
-
-    width:430px;
-    background:#fff;
-    border-radius:20px;
-    padding:40px;
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
+.hero {
+  width: 430px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
-.logo{
-    width:90px;
-    display:block;
-    margin:auto;
+.logo {
+  width: 90px;
+  display: block;
+  margin: auto;
 }
 
-.hero h1{
-    font-size:40px;
-    text-align:center;
-    color:#4B2E2B;
-    margin-top:15px;
+.hero h1 {
+  font-size: 40px;
+  text-align: center;
+  color: #4b2e2b;
+  margin-top: 15px;
 }
 
-.hero p{
-    line-height:1.7;
-    text-align:center;
-    color:#777;
-    margin:35px;
+.hero p {
+  line-height: 1.7;
+  text-align: center;
+  color: #777;
+  margin: 35px;
 }
 
-.buttons{
-
-    display:flex;
-    gap:15px;
+.buttons {
+  display: flex;
+  gap: 15px;
 }
 
-.btn{
-
-    flex:1;
-    text-decoration:none;
-    padding:14px;
-    border-radius:50px;
-    font-weight:600;
-    transition:.3s;
+.btn {
+  flex: 1;
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.login-btn{
-
-    background:#8B5E3C;
-    color:white;
-    text-align:center;
-
+.login-btn {
+  background: #8b5e3c;
+  color: white;
+  text-align: center;
 }
 
-.login-btn:hover{
-
-    background:#6F4E37;
+.login-btn:hover {
+  background: #6f4e37;
 }
 
-.register-btn{
-
-    background:#a0a0a0;
-    color:#8B5E3C;
-    text-align:center;
-
+.register-btn {
+  background: #a0a0a0;
+  color: #8b5e3c;
+  text-align: center;
 }
 
-.register-btn:hover{
-
-    background:#8d8d8d;
+.register-btn:hover {
+  background: #8d8d8d;
 }

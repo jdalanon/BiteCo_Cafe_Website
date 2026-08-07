@@ -1,107 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register | Bite Co.</title>
 
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/register.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-
-<div class="container">
-
-    <div class="register-card">
-
-        <img src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc" class="logo" alt="Bite Co.">
+  <body>
+    <div class="container">
+      <div class="register-card">
+        <img
+          src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+          class="logo"
+          alt="Bite Co."
+        />
 
         <h2>Create Account</h2>
 
         <p>Join Bite Co. and start ordering your favorite drinks and snacks.</p>
 
         <form id="registerForm">
-
-            <div class="row">
-
-                <div class="input-group">
-                    <label>First Name</label>
-                    <input
-                        type="text"
-                        id="firstname"
-                        required
-                    >
-                </div>
-
-                <div class="input-group">
-                    <label>Last Name</label>
-                    <input
-                        type="text"
-                        id="lastname"
-                        required
-                    >
-                </div>
-
+          <div class="row">
+            <div class="input-group">
+              <label>First Name</label>
+              <input type="text" id="firstname" required />
             </div>
 
             <div class="input-group">
-                <label>Email Address</label>
-                <input
-                    type="email"
-                    id="email"
-                    required
-                >
+              <label>Last Name</label>
+              <input type="text" id="lastname" required />
             </div>
+          </div>
 
-            <div class="input-group">
-                <label>Password</label>
-                <input
-                    type="password"
-                    id="password"
-                    required
-                >
+          <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" id="email" required />
+          </div>
 
-                <small>
-                    Must contain at least 8 characters, one uppercase letter,
-                    one number and one special character.
-                </small>
-            </div>
+          <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" required />
 
-            <input
-                type="hidden"
-                id="role"
-                value="user"
-            >
+            <small>
+              Must contain at least 8 characters, one uppercase letter, one
+              number and one special character.
+            </small>
+          </div>
 
-            <button type="submit">
-                Create Account
-            </button>
+          <input type="hidden" id="role" value="user" />
 
+          <button type="submit">Create Account</button>
         </form>
 
         <p class="login-text">
-            Already have an account?
+          Already have an account?
 
-            <a href="login.html">
-                Login
-            </a>
+          <a href="login.html"> Login </a>
         </p>
-
+      </div>
     </div>
 
-</div>
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- Supabase CDN -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Initialize Supabase -->
+    <script src="../js/shared/supabase.js"></script>
 
-<!-- Initialize Supabase -->
-<script src="../js/shared/supabase.js"></script>
-
-<!-- Register Logic -->
-<script src="../js/user/register.js"></script>
-
-</body>
+    <!-- Register Logic -->
+    <script src="../js/user/register.js"></script>
+  </body>
 </html>
