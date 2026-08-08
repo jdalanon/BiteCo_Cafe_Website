@@ -86,7 +86,7 @@
     </section> -->
 
     <!-- Main Content -->
-     <main>
+    <main>
     <section class="hero">
       <div class="hero-copy">
         <div class="decor dots"></div>
@@ -131,28 +131,70 @@
     </section>
 
     <!-- Favorites -->
-    <section class="favorites" id="favorites">
-      <div class="section-heading">
-        <h2>Our <span>Favorites</span></h2>
-        <a href="#menu" class="view-all">View All Menu <b>›</b></a>
-      </div>
+<section class="favorites" id="favorites">
 
-      <div class="favorites-layout">
-        <aside class="categories">
-          <button class="category active" data-category="drinks">
-            <span class="category-icon">☕</span> Drinks
-          </button>
-          <button class="category" data-category="snacks">
-            <span class="category-icon">♨</span> Snacks
-          </button>
-          <button class="category" data-category="desserts">
-            <span class="category-icon">🍰</span> Desserts
-          </button>
-        </aside>
+    <div class="section-heading">
+        <h2>
+            Our <span>Favorites</span>
+        </h2>
 
-        <div class="product-grid" id="productGrid"></div>
-      </div>
-    </section>
+        <a href="menu.html" class="view-all">
+            View All <b>→</b>
+        </a>
+    </div>
+
+    <div class="favorites-layout">
+
+        <!-- Categories -->
+        <div class="categories">
+
+            <button
+                class="category active"
+                data-category="all"
+            >
+                <span class="category-icon">☕</span>
+                <span>All</span>
+            </button>
+
+            <button
+                class="category"
+                data-category="1"
+            >
+                <span class="category-icon">☕</span>
+                <span>Drinks</span>
+            </button>
+
+            <button
+                class="category"
+                data-category="2"
+            >
+                <span class="category-icon">♨</span>
+                <span>Snacks</span>
+            </button>
+
+            <button
+                class="category"
+                data-category="3"
+            >
+                <span class="category-icon">🍰</span>
+                <span>Desserts</span>
+            </button>
+
+        </div>
+
+        <!-- Supabase menu items -->
+        <div
+            class="product-grid"
+            id="homepageMenuGrid"
+        >
+            <p class="menu-loading">
+                Loading menu...
+            </p>
+        </div>
+
+    </div>
+
+</section>
 
     <!-- Story -->
     <section class="story">
@@ -160,7 +202,7 @@
         <div class="cup-outline">☕</div>
         <h2>Handcrafted with love,<br><span>made for you.</span></h2>
         <p>We believe in using fresh ingredients, creating delicious flavors, and making every visit memorable.</p>
-        <a href="#about" class="btn btn-yellow">LEARN MORE <span>›</span></a>
+        <a href="about.html" class="btn btn-yellow">LEARN MORE <span>›</span></a>
       </div>
 
       <div class="cafe-photo">

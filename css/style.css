@@ -389,25 +389,24 @@ section {
   background: #4338ca;
 }
 
-
 /* Gallery Section */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .gallery-item img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .gallery-item img:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Contact Section*/
@@ -856,8 +855,6 @@ footer {
   background: #5b3e2d;
 }
 
-
-
 /* Home Page Specific Styles */
 :root {
   --blue: #2f78c9;
@@ -912,17 +909,17 @@ select {
 ========================= */
 
 .hero {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 
-    display: grid;
-    grid-template-columns: 50% 50%;
+  display: grid;
+  grid-template-columns: 50% 50%;
 
-    min-height: 400px;
+  min-height: 400px;
 
-    overflow: hidden;
+  overflow: hidden;
 }
 
 /* LEFT SIDE */
@@ -943,11 +940,7 @@ select {
       rgba(47, 120, 201, 0.15),
       transparent 22%
     ),
-    linear-gradient(
-      135deg,
-      #1b1b1b,
-      #0f0f0f
-    );
+    linear-gradient(135deg, #1b1b1b, #0f0f0f);
 
   overflow: hidden;
 
@@ -983,11 +976,7 @@ select {
 
   margin: 0;
 
-  font-size: clamp(
-    42px,
-    4.2vw,
-    68px
-  );
+  font-size: clamp(42px, 4.2vw, 68px);
 
   line-height: 0.98;
 
@@ -1102,8 +1091,7 @@ select {
 
   color: #111;
 
-  box-shadow:
-    0 8px 18px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline {
@@ -1125,11 +1113,7 @@ select {
   width: 45px;
   height: 45px;
 
-  background-image:
-    radial-gradient(
-      var(--yellow) 2px,
-      transparent 2px
-    );
+  background-image: radial-gradient(var(--yellow) 2px, transparent 2px);
 
   background-size: 12px 12px;
 }
@@ -1174,12 +1158,7 @@ select {
 
   overflow: hidden;
 
-  background:
-    linear-gradient(
-      145deg,
-      #d9d3c9,
-      #eeeae1
-    );
+  background: linear-gradient(145deg, #d9d3c9, #eeeae1);
 }
 
 .drink-scene {
@@ -1194,17 +1173,9 @@ select {
   align-items: flex-end;
   justify-content: center;
 
-  gap: clamp(
-    12px,
-    2vw,
-    28px
-  );
+  gap: clamp(12px, 2vw, 28px);
 
-  padding:
-    70px
-    6vw
-    45px
-    3vw;
+  padding: 70px 6vw 45px 3vw;
 
   background:
     radial-gradient(
@@ -1212,11 +1183,7 @@ select {
       rgba(80, 100, 80, 0.22),
       transparent 20%
     ),
-    linear-gradient(
-      145deg,
-      #ddd8ce,
-      #f4f0e8
-    );
+    linear-gradient(145deg, #ddd8ce, #f4f0e8);
 }
 
 /* DRINKS */
@@ -1224,37 +1191,17 @@ select {
 .drink {
   position: relative;
 
-  width: clamp(
-    110px,
-    11vw,
-    185px
-  );
+  width: clamp(110px, 11vw, 185px);
 
-  height: clamp(
-    260px,
-    30vw,
-    390px
-  );
+  height: clamp(260px, 30vw, 390px);
 
   flex-shrink: 0;
 
-  border-radius:
-    28px
-    28px
-    38px
-    38px;
+  border-radius: 28px 28px 38px 38px;
 
-  border:
-    3px solid rgba(
-      255,
-      255,
-      255,
-      0.7
-    );
+  border: 3px solid rgba(255, 255, 255, 0.7);
 
-  box-shadow:
-    0 25px 35px
-    rgba(0, 0, 0, 0.2);
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.2);
 
   overflow: hidden;
 
@@ -1274,13 +1221,7 @@ select {
 
   border-radius: 50%;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.7
-    );
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .drink::after {
@@ -1296,43 +1237,25 @@ select {
 
   border-radius: 50%;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.18
-    );
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .drink-latte {
   --r: -2deg;
 
-  background:
-    linear-gradient(
-      #e4bd88 0 20%,
-      #a96735 20% 100%
-    );
+  background: linear-gradient(#e4bd88 0 20%, #a96735 20% 100%);
 }
 
 .drink-matcha {
   --r: 1deg;
 
-  background:
-    linear-gradient(
-      #dce8c7 0 20%,
-      #7e9c57 20% 100%
-    );
+  background: linear-gradient(#dce8c7 0 20%, #7e9c57 20% 100%);
 }
 
 .drink-choco {
   --r: 2deg;
 
-  background:
-    linear-gradient(
-      #b57a42 0 20%,
-      #65351f 20% 100%
-    );
+  background: linear-gradient(#b57a42 0 20%, #65351f 20% 100%);
 }
 
 /* ICE */
@@ -1350,20 +1273,10 @@ select {
     linear-gradient(
       135deg,
       transparent 30%,
-      rgba(
-        255,
-        255,
-        255,
-        0.7
-      ) 31% 45%,
+      rgba(255, 255, 255, 0.7) 31% 45%,
       transparent 46%
     ),
-    rgba(
-      255,
-      255,
-      255,
-      0.28
-    );
+    rgba(255, 255, 255, 0.28);
 
   border-radius: 50%;
 }
@@ -1383,19 +1296,13 @@ select {
 
   color: white;
 
-  font-size: clamp(
-    20px,
-    1.8vw,
-    27px
-  );
+  font-size: clamp(20px, 1.8vw, 27px);
 
   line-height: 0.9;
 
   font-weight: 800;
 
-  text-shadow:
-    0 2px 5px
-    rgba(0, 0, 0, 0.18);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
 }
 
 .cup-label small {
@@ -1424,21 +1331,9 @@ select {
   border-radius: 50%;
 
   background:
-    radial-gradient(
-      ellipse at 20% 30%,
-      #4d2917 0 12%,
-      transparent 13%
-    ),
-    radial-gradient(
-      ellipse at 45% 60%,
-      #4d2917 0 13%,
-      transparent 14%
-    ),
-    radial-gradient(
-      ellipse at 75% 35%,
-      #4d2917 0 12%,
-      transparent 13%
-    );
+    radial-gradient(ellipse at 20% 30%, #4d2917 0 12%, transparent 13%),
+    radial-gradient(ellipse at 45% 60%, #4d2917 0 13%, transparent 14%),
+    radial-gradient(ellipse at 75% 35%, #4d2917 0 12%, transparent 13%);
 }
 
 /* MATCHA POWDER */
@@ -1456,9 +1351,7 @@ select {
 
   background: #8da35d;
 
-  box-shadow:
-    0 3px 10px
-    rgba(0, 0, 0, 0.12);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 }
 
 /* BLUE CORNER */
@@ -1486,10 +1379,7 @@ select {
 .favorites {
   width: 100%;
 
-  padding:
-    40px
-    6vw
-    45px;
+  padding: 40px 6vw 45px;
 
   background: var(--light);
 }
@@ -1511,11 +1401,7 @@ select {
 .section-heading h2 {
   margin: 0;
 
-  font-size: clamp(
-    26px,
-    2.3vw,
-    34px
-  );
+  font-size: clamp(26px, 2.3vw, 34px);
 
   letter-spacing: -0.8px;
 }
@@ -1634,189 +1520,127 @@ select {
 
   display: grid;
 
-  grid-template-columns:
-    repeat(
-      5,
-      minmax(0, 1fr)
-    );
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 
   gap: 16px;
 }
 
 /* PRODUCT CARD */
 
-.product-card {
-  min-width: 0;
+.product-grid {
+    width: 100%;
 
-  background: var(--card);
+    display: grid;
 
-  border:
-    1px solid
-    var(--border);
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
 
-  border-radius: 12px;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 3px 12px
-    rgba(0, 0, 0, 0.04);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    gap: 16px;
 }
+
+
+.product-card {
+    min-width: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 14px
+        rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
 
 .product-card:hover {
-  transform: translateY(-4px);
+    transform: translateY(-4px);
 
-  box-shadow: var(--shadow);
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.10);
 }
 
-/* PRODUCT IMAGE */
 
 .product-image {
-  position: relative;
+    width: 100%;
+    height: 180px;
 
-  width: 100%;
+    overflow: hidden;
 
-  height: 150px;
+    background: #f5f5f5;
 
-  display: grid;
+    display: flex;
 
-  place-items: end center;
+    align-items: center;
 
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      #f9f9f9,
-      #eee
-    );
+    justify-content: center;
 }
 
-/* PRODUCT CUP */
 
-.product-cup {
-  position: relative;
+.product-image img {
+    width: 100%;
+    height: 100%;
 
-  width: 76px;
-  height: 110px;
+    object-fit: cover;
 
-  margin-bottom: -3px;
+    display: block;
 
-  border-radius:
-    14px
-    14px
-    18px
-    18px;
-
-  box-shadow:
-    0 12px 18px
-    rgba(0, 0, 0, 0.18);
+    transition:
+        transform 0.3s ease;
 }
 
-.product-cup::before {
-  content: "";
 
-  position: absolute;
-
-  width: 100%;
-  height: 20px;
-
-  top: -4px;
-  left: 0;
-
-  border-radius: 50%;
-
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.65
-    );
+.product-card:hover
+.product-image img {
+    transform: scale(1.05);
 }
 
-.product-cup::after {
-  content: "Bite Co.";
-
-  position: absolute;
-
-  top: 46px;
-
-  width: 100%;
-
-  text-align: center;
-
-  color: white;
-
-  font-size: 12px;
-
-  font-weight: 800;
-}
-
-/* PRODUCT FOOD */
-
-.product-food {
-  position: relative;
-
-  width: 120px;
-  height: 100px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      #222 0 35%,
-      #8c5b32 36% 50%,
-      #eee 51%
-    );
-
-  transform: rotate(-8deg);
-}
-
-.product-food::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 22px 12px;
-
-  background:
-    repeating-linear-gradient(
-      45deg,
-      #111 0 12px,
-      #bd7335 13px 20px
-    );
-
-  border-radius: 40%;
-}
-
-/* PRODUCT INFO */
 
 .product-info {
-  padding:
-    10px
-    12px
-    12px;
+    padding: 14px;
 }
+
 
 .product-info h3 {
-  margin: 0 0 3px;
+    margin: 0 0 5px;
 
-  font-size: 13px;
+    font-size: 15px;
 
-  line-height: 1.3;
+    font-weight: 800;
+
+    color: #151515;
 }
 
+
 .price {
-  color: var(--blue);
+    margin: 0;
 
-  font-weight: 800;
+    color: #2f78c9;
 
-  font-size: 14px;
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+
+.menu-loading,
+.menu-error,
+.menu-empty {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #666;
 }
 
 /* =========================
@@ -1824,32 +1648,32 @@ select {
 ========================= */
 
 .story {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 
-    display: grid;
-    grid-template-columns: 50% 50%;
+  display: grid;
+  grid-template-columns: 50% 50%;
 
-    min-height: 400px;
+  min-height: 400px;
 
-    overflow: hidden;
+  overflow: hidden;
 }
 
 /* STORY LEFT */
 
 .story-copy {
-    width: 100%;
-    min-width: 0;
-    padding: 60px 8vw;
+  width: 100%;
+  min-width: 0;
+  padding: 60px 8vw;
 
-    background: #2f78c9;
-    color: white;
+  background: #2f78c9;
+  color: white;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .story-copy h2 {
@@ -1859,11 +1683,7 @@ select {
 
   margin: 0 0 12px;
 
-  font-size: clamp(
-    28px,
-    2.8vw,
-    38px
-  );
+  font-size: clamp(28px, 2.8vw, 38px);
 
   line-height: 1.08;
 }
@@ -1901,26 +1721,16 @@ select {
 /* STORY RIGHT */
 
 .cafe-photo {
-    width: 100%;
-    min-width: 0;
-    min-height: 400px;
+  width: 100%;
+  min-width: 0;
+  min-height: 400px;
 
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
   background:
-    radial-gradient(
-      circle at 80% 20%,
-      #b99465 0 2%,
-      transparent 3%
-    ),
-    linear-gradient(
-      145deg,
-      #4a3323,
-      #b99160 55%,
-      #e1c18f
-    );
-
+    radial-gradient(circle at 80% 20%, #b99465 0 2%, transparent 3%),
+    linear-gradient(145deg, #4a3323, #b99160 55%, #e1c18f);
 }
 
 /* CAFE SIGN */
@@ -1931,8 +1741,7 @@ select {
   top: 35px;
   left: 50%;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
   font-size: 32px;
 
@@ -1961,15 +1770,9 @@ select {
 
   height: 100px;
 
-  background:
-    linear-gradient(
-      #9a683b,
-      #5e3b22
-    );
+  background: linear-gradient(#9a683b, #5e3b22);
 
-  box-shadow:
-    0 -10px 30px
-    rgba(0, 0, 0, 0.15);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* TABLES */
@@ -2007,26 +1810,10 @@ select {
   height: 130px;
 
   background:
-    radial-gradient(
-      ellipse at 30% 20%,
-      #355f32 0 13%,
-      transparent 14%
-    ),
-    radial-gradient(
-      ellipse at 70% 40%,
-      #487943 0 14%,
-      transparent 15%
-    ),
-    radial-gradient(
-      ellipse at 35% 60%,
-      #2e5c31 0 15%,
-      transparent 16%
-    ),
-    radial-gradient(
-      ellipse at 65% 75%,
-      #47723c 0 15%,
-      transparent 16%
-    );
+    radial-gradient(ellipse at 30% 20%, #355f32 0 13%, transparent 14%),
+    radial-gradient(ellipse at 70% 40%, #487943 0 14%, transparent 15%),
+    radial-gradient(ellipse at 35% 60%, #2e5c31 0 15%, transparent 16%),
+    radial-gradient(ellipse at 65% 75%, #47723c 0 15%, transparent 16%);
 }
 
 /* =========================
@@ -2052,7 +1839,6 @@ footer {
 ===================================================== */
 
 @media (min-width: 1400px) {
-
   .hero-copy {
     padding-left: 9vw;
     padding-right: 6vw;
@@ -2086,7 +1872,6 @@ footer {
 ===================================================== */
 
 @media (max-width: 1100px) {
-
   .hero {
     grid-template-columns:
       48%
@@ -2094,37 +1879,21 @@ footer {
   }
 
   .hero-copy {
-    padding:
-      60px
-      5vw;
+    padding: 60px 5vw;
   }
 
   .drink-scene {
-    padding:
-      60px
-      3vw
-      40px;
+    padding: 60px 3vw 40px;
   }
 
   .drink {
-    width: clamp(
-      100px,
-      12vw,
-      150px
-    );
+    width: clamp(100px, 12vw, 150px);
 
-    height: clamp(
-      250px,
-      31vw,
-      330px
-    );
+    height: clamp(250px, 31vw, 330px);
   }
 
   .favorites {
-    padding:
-      35px
-      5vw
-      40px;
+    padding: 35px 5vw 40px;
   }
 
   .favorites-layout {
@@ -2136,14 +1905,11 @@ footer {
   }
 
   .product-grid {
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .story-copy {
-    padding:
-      45px
-      6vw;
+    padding: 45px 6vw;
   }
 }
 
@@ -2152,7 +1918,6 @@ footer {
 ===================================================== */
 
 @media (max-width: 800px) {
-
   /* HERO */
 
   .hero {
@@ -2170,10 +1935,7 @@ footer {
   .hero-copy {
     min-height: 470px;
 
-    padding:
-      75px
-      8vw
-      50px;
+    padding: 75px 8vw 50px;
   }
 
   .hero-photo {
@@ -2187,10 +1949,7 @@ footer {
 
     min-height: 390px;
 
-    padding:
-      50px
-      5vw
-      35px;
+    padding: 50px 5vw 35px;
   }
 
   .drink {
@@ -2201,10 +1960,7 @@ footer {
   /* FAVORITES */
 
   .favorites {
-    padding:
-      35px
-      6vw
-      40px;
+    padding: 35px 6vw 40px;
   }
 
   .favorites-layout {
@@ -2224,13 +1980,11 @@ footer {
   }
 
   .category {
-    flex:
-      0 0 auto;
+    flex: 0 0 auto;
   }
 
   .product-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   /* STORY */
@@ -2240,9 +1994,7 @@ footer {
   }
 
   .story-copy {
-    padding:
-      50px
-      8vw;
+    padding: 50px 8vw;
   }
 
   .cafe-photo {
@@ -2257,7 +2009,6 @@ footer {
 ===================================================== */
 
 @media (max-width: 520px) {
-
   body {
     overflow-x: hidden;
   }
@@ -2267,10 +2018,7 @@ footer {
   .hero-copy {
     min-height: 450px;
 
-    padding:
-      65px
-      7vw
-      45px;
+    padding: 65px 7vw 45px;
   }
 
   .hero-copy h1 {
@@ -2282,9 +2030,7 @@ footer {
   .hero-copy p {
     font-size: 15px;
 
-    margin:
-      22px
-      0;
+    margin: 22px 0;
   }
 
   .desktop-only {
@@ -2300,9 +2046,7 @@ footer {
   .btn {
     min-height: 45px;
 
-    padding:
-      0
-      20px;
+    padding: 0 20px;
   }
 
   .rays {
@@ -2341,10 +2085,7 @@ footer {
 
     gap: 8px;
 
-    padding:
-      40px
-      10px
-      25px;
+    padding: 40px 10px 25px;
   }
 
   .drink {
@@ -2368,10 +2109,7 @@ footer {
   /* FAVORITES */
 
   .favorites {
-    padding:
-      30px
-      5vw
-      35px;
+    padding: 30px 5vw 35px;
   }
 
   .section-heading {
@@ -2424,10 +2162,7 @@ footer {
   }
 
   .product-info {
-    padding:
-      8px
-      10px
-      10px;
+    padding: 8px 10px 10px;
   }
 
   .product-info h3 {
@@ -2441,9 +2176,7 @@ footer {
   /* STORY */
 
   .story-copy {
-    padding:
-      45px
-      7vw;
+    padding: 45px 7vw;
   }
 
   .story-copy h2 {
@@ -2481,16 +2214,13 @@ footer {
   .plant {
     transform: scale(0.8);
 
-    transform-origin:
-      bottom right;
+    transform-origin: bottom right;
   }
 
   /* FOOTER */
 
   footer {
-    padding:
-      16px
-      10px;
+    padding: 16px 10px;
 
     font-size: 11px;
   }
@@ -2501,7 +2231,6 @@ footer {
 ===================================================== */
 
 @media (max-width: 380px) {
-
   .hero-copy h1 {
     font-size: 39px;
   }
@@ -2519,8 +2248,7 @@ footer {
   }
 
   .product-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .product-image {
