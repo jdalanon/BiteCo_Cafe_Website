@@ -887,7 +887,6 @@ html {
 
 body {
   width: 100%;
-  min-width: 320px;
   margin: 0;
   padding: 0;
   font-family: "DM Sans", Arial, sans-serif;
@@ -913,15 +912,17 @@ select {
 ========================= */
 
 .hero {
-  width: 100%;
-  min-height: 650px;
-  height: 100vh;
-  max-height: 900px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
 
-  display: grid;
-  grid-template-columns: 46% 54%;
+    display: grid;
+    grid-template-columns: 50% 50%;
 
-  overflow: hidden;
+    min-height: 400px;
+
+    overflow: hidden;
 }
 
 /* LEFT SIDE */
