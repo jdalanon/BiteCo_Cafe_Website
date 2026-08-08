@@ -1823,35 +1823,32 @@ select {
 ========================= */
 
 .story {
-  width: 100%;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
 
-  min-height: 330px;
+    display: grid;
+    grid-template-columns: 50% 50%;
 
-  display: grid;
+    min-height: 400px;
 
-  grid-template-columns:
-    43%
-    57%;
-
-  overflow: hidden;
+    overflow: hidden;
 }
 
 /* STORY LEFT */
 
 .story-copy {
-  position: relative;
+    width: 100%;
+    min-width: 0;
+    padding: 60px 8vw;
 
-  width: 100%;
+    background: #2f78c9;
+    color: white;
 
-  padding:
-    55px
-    7vw;
-
-  background: var(--blue);
-
-  color: white;
-
-  overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .story-copy h2 {
@@ -1903,11 +1900,12 @@ select {
 /* STORY RIGHT */
 
 .cafe-photo {
-  position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 400px;
 
-  width: 100%;
-
-  min-height: 330px;
+    position: relative;
+    overflow: hidden;
 
   background:
     radial-gradient(
@@ -1922,7 +1920,6 @@ select {
       #e1c18f
     );
 
-  overflow: hidden;
 }
 
 /* CAFE SIGN */
