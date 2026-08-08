@@ -72,7 +72,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <!-- <section class="hero" id="home">
       <div class="hero-text">
         <h1>The weather's looking good, and so are the cravings!</h1>
 
@@ -81,15 +81,104 @@
           refreshing drinks.
         </p>
 
-        <!-- <a href="menu.html" class="btn">See Menu</a> -->
+        <a href="menu.html" class="btn">See Menu</a> 
+      </div>
+    </section> -->
+
+    <!-- Main Content -->
+     <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="decor dots"></div>
+        <div class="decor rays">✦</div>
+
+        <h1>
+          Good coffee.<br>
+          Great bites.<br>
+          <span>Better moments.</span>
+        </h1>
+
+        <p>Savor every sip and bite made with<br class="desktop-only">
+          quality ingredients and passion.</p>
+
+        <div class="hero-actions">
+          <a href="#favorites" class="btn btn-yellow">ORDER NOW <span>›</span></a>
+          <a href="#favorites" class="btn btn-outline">VIEW MENU</a>
+        </div>
+
+        <div class="leaf">⌁</div>
+      </div>
+
+      <div class="hero-photo">
+        <div class="blue-corner"></div>
+        <div class="drink-scene">
+          <div class="drink drink-latte">
+            <div class="ice"></div>
+            <div class="cup-label">Bite<br>Co.<small>CAFE</small></div>
+          </div>
+          <div class="drink drink-matcha">
+            <div class="ice"></div>
+            <div class="cup-label">Bite<br>Co.<small>CAFE</small></div>
+          </div>
+          <div class="drink drink-choco">
+            <div class="ice"></div>
+            <div class="cup-label">Bite<br>Co.<small>CAFE</small></div>
+          </div>
+          <div class="coffee-beans"></div>
+          <div class="matcha-powder"></div>
+        </div>
       </div>
     </section>
 
+    <!-- Favorites -->
+    <section class="favorites" id="favorites">
+      <div class="section-heading">
+        <h2>Our <span>Favorites</span></h2>
+        <a href="#menu" class="view-all">View All Menu <b>›</b></a>
+      </div>
+
+      <div class="favorites-layout">
+        <aside class="categories">
+          <button class="category active" data-category="drinks">
+            <span class="category-icon">☕</span> Drinks
+          </button>
+          <button class="category" data-category="snacks">
+            <span class="category-icon">♨</span> Snacks
+          </button>
+          <button class="category" data-category="desserts">
+            <span class="category-icon">🍰</span> Desserts
+          </button>
+        </aside>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="story">
+      <div class="story-copy">
+        <div class="cup-outline">☕</div>
+        <h2>Handcrafted with love,<br><span>made for you.</span></h2>
+        <p>We believe in using fresh ingredients, creating delicious flavors, and making every visit memorable.</p>
+        <a href="#about" class="btn btn-yellow">LEARN MORE <span>›</span></a>
+      </div>
+
+      <div class="cafe-photo">
+        <div class="cafe-sign">Bite Co.<small>CAFE</small></div>
+        <div class="counter"></div>
+        <div class="table t1"></div>
+        <div class="table t2"></div>
+        <div class="plant"></div>
+      </div>
+    </section>
+  </main>
+  
     <footer>
       <p>© 2025 Bite Co. All Rights Reserved.</p>
     </footer>
 
     <script src="../js/user/navbar.js"></script>
+    <script src="../js/user/home.js"></script>
     <script src="../js/user/cart.js"></script>
     <script src="../js/user/profile.js"></script>
 

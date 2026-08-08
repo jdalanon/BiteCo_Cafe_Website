@@ -157,17 +157,16 @@ section {
   margin-bottom: 30px;
 }
 
-/* Hero Section */
+/* Hero Section 
 .hero {
   min-height: calc(100vh - 70px);
   display: flex;
   align-items: center;
   justify-content: center;
 
-  /*
   text-align: center;
   color: white;
-  padding: 20px; */
+  padding: 20px; 
 
   background-size: cover;
   background-position: center;
@@ -201,6 +200,8 @@ section {
 .btn:hover {
   transform: translateY(-3px);
 }
+
+*/
 
 /* Menu Section */
 .product {
