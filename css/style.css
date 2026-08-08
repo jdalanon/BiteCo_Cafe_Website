@@ -2902,3 +2902,378 @@ footer {
   }
 
 }
+
+
+
+/* =====================================================
+   CONTACT PAGE
+   BITE CO. HOMEPAGE STYLE
+===================================================== */
+
+.contact {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+
+  margin: 0;
+  padding: 120px 7vw 70px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7f6f2,
+      #eee5d8
+    );
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   CONTACT DECORATIONS
+===================================================== */
+
+/* BLUE SHAPE */
+
+.contact::before {
+  content: "";
+
+  position: absolute;
+
+  top: -100px;
+  left: -120px;
+
+  width: 360px;
+  height: 150px;
+
+  background: var(--blue);
+
+  transform: rotate(-20deg);
+
+  opacity: 0.95;
+}
+
+
+/* YELLOW CIRCLE */
+
+.contact::after {
+  content: "";
+
+  position: absolute;
+
+  right: -100px;
+  bottom: -100px;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+
+  opacity: 0.9;
+}
+
+
+/* =====================================================
+   CONTACT TITLE
+===================================================== */
+
+.contact h2 {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 0 0 35px;
+
+  color: var(--black);
+
+  font-size: clamp(35px, 4vw, 52px);
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+
+  text-align: center;
+}
+
+
+/* BLUE UNDERLINE */
+
+.contact h2::after {
+  content: "";
+
+  display: block;
+
+  width: 75px;
+  height: 5px;
+
+  margin: 12px auto 0;
+
+  background: var(--blue);
+
+  border-radius: 10px;
+
+  transform: rotate(-2deg);
+}
+
+
+/* =====================================================
+   CONTACT FORM
+===================================================== */
+
+.contact-form {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 700px;
+
+  padding: 45px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #151515,
+      #242424
+    );
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.18);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   FORM BLUE DECORATION
+===================================================== */
+
+.contact-form::before {
+  content: "";
+
+  position: absolute;
+
+  top: -65px;
+  right: -80px;
+
+  width: 200px;
+  height: 100px;
+
+  background: var(--blue);
+
+  transform: rotate(25deg);
+
+  opacity: 0.9;
+}
+
+
+/* =====================================================
+   FORM INPUTS
+===================================================== */
+
+.contact-form input,
+.contact-form textarea {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  padding: 15px 17px;
+
+  border: 1px solid #555;
+
+  border-radius: 8px;
+
+  background: #202020;
+
+  color: white;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* PLACEHOLDER */
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+
+/* TEXTAREA */
+
+.contact-form textarea {
+  min-height: 150px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+
+/* FOCUS */
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--blue);
+
+  background: #252525;
+
+  box-shadow:
+    0 0 0 3px rgba(47, 120, 201, 0.2);
+}
+
+
+/* =====================================================
+   SEND MESSAGE BUTTON
+===================================================== */
+
+.contact-form button {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  min-height: 50px;
+
+  margin-top: 5px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: var(--yellow);
+
+  color: #151515;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+
+  background: #ffd94f;
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+.contact-form button:active {
+  transform: translateY(0);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .contact {
+    padding: 110px 5vw 60px;
+  }
+
+  .contact-form {
+    max-width: 650px;
+
+    padding: 40px;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .contact {
+    min-height: auto;
+
+    padding: 105px 5vw 60px;
+  }
+
+  .contact h2 {
+    font-size: 38px;
+
+    margin-bottom: 30px;
+  }
+
+  .contact-form {
+    padding: 35px 30px;
+
+    border-radius: 14px;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .contact {
+    padding: 95px 5vw 45px;
+  }
+
+  .contact h2 {
+    font-size: 32px;
+  }
+
+  .contact-form {
+    padding: 30px 22px;
+
+    gap: 15px;
+
+    border-radius: 12px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 14px;
+
+    font-size: 14px;
+  }
+
+  .contact-form textarea {
+    min-height: 130px;
+  }
+
+  .contact-form button {
+    min-height: 48px;
+
+    font-size: 14px;
+  }
+
+}
