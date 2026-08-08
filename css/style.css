@@ -2498,3 +2498,551 @@ footer {
     height: 110px;
   }
 }
+
+
+/* =====================================================
+   ABOUT US PAGE
+   HOMEPAGE-INSPIRED DESIGN
+===================================================== */
+
+.about {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+
+  margin: 0;
+  padding: 120px 7vw 70px;
+
+  background: var(--light);
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   ABOUT TITLE
+===================================================== */
+
+.about h2 {
+  position: relative;
+
+  margin: 0 0 45px;
+
+  text-align: center;
+
+  font-size: clamp(32px, 4vw, 48px);
+
+  font-weight: 800;
+
+  color: var(--black);
+
+  letter-spacing: -1px;
+}
+
+
+/* Yellow underline */
+
+.about h2::after {
+  content: "";
+
+  display: block;
+
+  width: 80px;
+  height: 5px;
+
+  margin: 12px auto 0;
+
+  background: var(--yellow);
+
+  border-radius: 10px;
+
+  transform: rotate(-2deg);
+}
+
+
+/* =====================================================
+   ABOUT CONTENT
+===================================================== */
+
+.about-content {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 0;
+
+  background: white;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =====================================================
+   ABOUT TEXT
+===================================================== */
+
+.about-content .about-text {
+  padding: 55px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #151515,
+      #242424
+    );
+
+  color: white;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+.about-text h3 {
+  margin: 0 0 18px;
+
+  font-size: clamp(26px, 3vw, 38px);
+
+  line-height: 1.1;
+
+  color: white;
+}
+
+
+/* Blue highlighted text */
+
+.about-text h3 span {
+  color: var(--blue);
+
+  font-family: "Pacifico", cursive;
+
+  font-weight: 400;
+}
+
+
+.about-text p {
+  max-width: 520px;
+
+  margin: 0 0 18px;
+
+  color: #eeeeee;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   BLUE ACCENT
+===================================================== */
+
+.about-text::before {
+  content: "";
+
+  width: 75px;
+  height: 6px;
+
+  margin-bottom: 25px;
+
+  background: var(--blue);
+
+  border-radius: 10px;
+}
+
+
+/* =====================================================
+   ABOUT IMAGE / COFFEE SIDE
+===================================================== */
+
+.about-content .about-image {
+  min-height: 420px;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      #d7c5ad,
+      #f1e7d8
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* Coffee-colored decorative circle */
+
+.about-image::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  right: -100px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background: var(--blue);
+
+  opacity: 0.9;
+}
+
+
+/* Yellow decorative circle */
+
+.about-image::after {
+  content: "";
+
+  position: absolute;
+
+  width: 90px;
+  height: 90px;
+
+  left: 30px;
+  bottom: 30px;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+
+  opacity: 0.9;
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.about-image img {
+  position: relative;
+
+  z-index: 2;
+
+  width: 80%;
+
+  max-width: 500px;
+
+  height: 350px;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 20px 35px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =====================================================
+   ABOUT BUTTON
+===================================================== */
+
+.about .btn {
+  width: fit-content;
+
+  margin-top: 15px;
+
+  background: var(--yellow);
+
+  color: #151515;
+
+  border: none;
+
+  border-radius: 7px;
+
+  padding: 13px 25px;
+
+  font-weight: 800;
+}
+
+
+.about .btn:hover {
+  background: var(--blue);
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   ABOUT FEATURE CARDS
+===================================================== */
+
+.about-features {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 45px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+.about-feature {
+  padding: 30px 25px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  text-align: center;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.about-feature:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.10);
+}
+
+
+.about-feature-icon {
+  width: 55px;
+  height: 55px;
+
+  margin: 0 auto 15px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--blue);
+
+  color: white;
+
+  font-size: 24px;
+}
+
+
+.about-feature:nth-child(2)
+.about-feature-icon {
+  background: var(--yellow);
+
+  color: #151515;
+}
+
+
+.about-feature h3 {
+  margin: 0 0 10px;
+
+  color: var(--black);
+
+  font-size: 18px;
+}
+
+
+.about-feature p {
+  margin: 0;
+
+  color: var(--gray);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   COFFEE ACCENT SECTION
+===================================================== */
+
+.about-highlight {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 45px auto 0;
+
+  padding: 45px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4b2e2b,
+      #6f4e37
+    );
+
+  border-radius: 16px;
+
+  color: white;
+
+  text-align: center;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+.about-highlight::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  left: -70px;
+  bottom: -80px;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+
+  opacity: 0.25;
+}
+
+
+.about-highlight h3 {
+  position: relative;
+
+  margin: 0 0 12px;
+
+  font-size: 28px;
+}
+
+
+.about-highlight p {
+  position: relative;
+
+  max-width: 700px;
+
+  margin: auto;
+
+  color: #f4eee8;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   ABOUT RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .about {
+    padding: 110px 5vw 50px;
+  }
+
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+
+  .about-content .about-text {
+    padding: 45px;
+  }
+
+
+  .about-content .about-image {
+    min-height: 350px;
+  }
+
+
+  .about-features {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .about {
+    padding: 100px 5vw 40px;
+  }
+
+
+  .about h2 {
+    font-size: 32px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .about-content .about-text {
+    padding: 35px 25px;
+  }
+
+
+  .about-text h3 {
+    font-size: 28px;
+  }
+
+
+  .about-content .about-image {
+    min-height: 280px;
+  }
+
+
+  .about-image img {
+    width: 85%;
+
+    height: 230px;
+  }
+
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+
+  .about-feature {
+    padding: 25px 20px;
+  }
+
+
+  .about-highlight {
+    padding: 35px 25px;
+  }
+
+
+  .about-highlight h3 {
+    font-size: 24px;
+  }
+}
