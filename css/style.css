@@ -14,75 +14,97 @@ body {
 }
 
 /* =========================================================
-   GLOBAL NAVIGATION BAR
-   Bite Co. - Dark / Blue / Yellow / Coffee Theme
+   BITE CO. NAVBAR
+   Cream + Coffee + Blue + Yellow
    ========================================================= */
 
 header {
   width: 100%;
-  background: #111111;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+
+  background: #f7f3ec;
+
+  box-shadow: 0 3px 15px rgba(75, 46, 43, 0.12);
 }
 
-/* Main Navigation */
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
 nav {
   width: 100%;
   min-height: 75px;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
 
   padding: 0 6%;
 
-  background: #111111;
+  background: #f7f3ec;
+
+  position: relative;
 }
 
+
+/* Small blue decorative bottom accent */
+nav::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 170px;
+  height: 4px;
+
+  background: #2f80d0;
+
+  border-radius: 0 10px 0 0;
+}
+
+
 /* =========================================================
-   LOGO / BRAND
+   LOGO
    ========================================================= */
 
 .logo {
   display: flex;
   align-items: center;
+
   gap: 10px;
 
   text-decoration: none;
-  color: white;
 
-  font-size: 24px;
+  color: #4b2e2b;
+
+  font-size: 26px;
   font-weight: 800;
-  letter-spacing: 0.5px;
+
+  margin-right: auto;
 }
 
 .logo img {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
 
   object-fit: cover;
+
   border-radius: 50%;
 
-  border: 3px solid #f5c542;
+  border: 3px solid #f6c445;
 
-  box-shadow: 0 0 0 3px rgba(52, 92, 255, 0.5);
+  box-shadow:
+    0 3px 8px rgba(75, 46, 43, 0.18);
 }
 
 .logo span {
-  background: linear-gradient(
-    90deg,
-    #4f46e5,
-    #2196f3,
-    #12b8d8
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  background-clip: text;
+  color: #4b2e2b;
 }
+
 
 /* =========================================================
    NAVIGATION LINKS
@@ -91,10 +113,12 @@ nav {
 .nav-links {
   display: flex;
   align-items: center;
+
   gap: 8px;
 
   list-style: none;
-  margin: 0;
+
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -106,47 +130,50 @@ nav {
 .dropdown-btn {
   display: block;
 
-  padding: 12px 16px;
+  padding: 11px 17px;
 
-  color: #ffffff;
+  color: #4b2e2b;
+
   text-decoration: none;
 
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
 
   border-radius: 10px;
 
   cursor: pointer;
 
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.2s ease;
+  transition: all 0.25s ease;
 }
 
+
 /* Hover */
+
 .nav-links a:hover,
 .dropdown-btn:hover {
-  color: #111111;
+  background: #e5f1fb;
 
-  background: #f5c542;
+  color: #2f80d0;
 
   transform: translateY(-1px);
 }
 
+
 /* Active page */
+
 .nav-links a.active {
-  color: #111111;
-  background: #f5c542;
+  background: #f6c445;
+
+  color: #2b211f;
+
+  box-shadow:
+    0 3px 8px rgba(246, 196, 69, 0.3);
 }
+
 
 /* =========================================================
    MENU DROPDOWN
    ========================================================= */
-
-.dropdown {
-  position: relative;
-}
 
 .dropdown-menu {
   position: absolute;
@@ -154,7 +181,7 @@ nav {
   top: calc(100% + 8px);
   left: 0;
 
-  min-width: 170px;
+  min-width: 175px;
 
   padding: 8px;
 
@@ -162,8 +189,10 @@ nav {
 
   border-radius: 12px;
 
+  border: 1px solid #eee4d8;
+
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.18);
+    0 10px 30px rgba(75, 46, 43, 0.16);
 
   list-style: none;
 
@@ -178,20 +207,22 @@ nav {
     visibility 0.2s ease;
 }
 
+
 /* Show dropdown */
+
 .dropdown:hover .dropdown-menu {
   opacity: 1;
+
   visibility: visible;
 
   transform: translateY(0);
 }
 
-.dropdown-menu li {
-  width: 100%;
-}
+
+/* Dropdown links */
 
 .dropdown-menu a {
-  color: #333333;
+  color: #4b2e2b;
 
   padding: 11px 14px;
 
@@ -199,10 +230,11 @@ nav {
 }
 
 .dropdown-menu a:hover {
-  color: #111111;
+  background: #e5f1fb;
 
-  background: #f5c542;
+  color: #2f80d0;
 }
+
 
 /* =========================================================
    NAV ACTIONS
@@ -211,8 +243,12 @@ nav {
 .nav-actions {
   display: flex;
   align-items: center;
+
   gap: 12px;
+
+  margin-left: auto;
 }
+
 
 /* =========================================================
    PROFILE BUTTON
@@ -230,35 +266,34 @@ nav {
   align-items: center;
   justify-content: center;
 
-  border: none;
+  border: 2px solid #e4ded6;
+
   border-radius: 50%;
 
-  background: linear-gradient(
-    135deg,
-    #4f46e5,
-    #2196f3
-  );
+  background: #ffffff;
 
-  color: white;
+  color: #2f80d0;
 
   font-size: 19px;
 
   cursor: pointer;
 
   box-shadow:
-    0 4px 12px rgba(33, 150, 243, 0.35);
+    0 3px 8px rgba(75, 46, 43, 0.12);
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .profile-btn:hover {
-  transform: translateY(-2px);
+  background: #2f80d0;
 
-  box-shadow:
-    0 6px 18px rgba(33, 150, 243, 0.5);
+  color: #ffffff;
+
+  border-color: #2f80d0;
+
+  transform: translateY(-2px);
 }
+
 
 /* =========================================================
    PROFILE DROPDOWN
@@ -278,8 +313,10 @@ nav {
 
   border-radius: 14px;
 
+  border: 1px solid #eee4d8;
+
   box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.2);
+    0 12px 35px rgba(75, 46, 43, 0.18);
 
   display: none;
 
@@ -297,7 +334,7 @@ nav {
 .profile-header h4 {
   margin: 0;
 
-  color: #222222;
+  color: #4b2e2b;
 
   font-size: 17px;
 }
@@ -305,7 +342,7 @@ nav {
 .profile-header p {
   margin: 5px 0 0;
 
-  color: #777777;
+  color: #777;
 
   font-size: 13px;
 }
@@ -313,7 +350,7 @@ nav {
 .profile-menu hr {
   border: none;
 
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #eee4d8;
 
   margin: 14px 0;
 }
@@ -323,7 +360,7 @@ nav {
 
   padding: 10px 12px;
 
-  color: #333333;
+  color: #4b2e2b;
 
   text-decoration: none;
 
@@ -331,17 +368,18 @@ nav {
 
   font-weight: 600;
 
-  transition: 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .profile-menu > a:hover {
-  color: #111111;
+  background: #e5f1fb;
 
-  background: #f5c542;
+  color: #2f80d0;
 }
 
+
 /* =========================================================
-   LOGOUT BUTTON
+   LOGOUT
    ========================================================= */
 
 .logout-btn {
@@ -352,6 +390,7 @@ nav {
   padding: 11px 15px;
 
   border: none;
+
   border-radius: 8px;
 
   background: #ef4444;
@@ -359,13 +398,12 @@ nav {
   color: white;
 
   font-size: 14px;
+
   font-weight: 700;
 
   cursor: pointer;
 
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .logout-btn:hover {
@@ -373,6 +411,7 @@ nav {
 
   transform: translateY(-1px);
 }
+
 
 /* =========================================================
    CART
@@ -392,24 +431,31 @@ nav {
 
   background: #ffffff;
 
+  border: 2px solid #e4ded6;
+
   border-radius: 50%;
 
   text-decoration: none;
 
   font-size: 20px;
 
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
+  box-shadow:
+    0 3px 8px rgba(75, 46, 43, 0.12);
+
+  transition: all 0.25s ease;
 }
 
 .cart-icon a:hover {
-  background: #f5c542;
+  background: #f6c445;
+
+  border-color: #f6c445;
 
   transform: translateY(-2px);
 }
 
+
 /* Cart count */
+
 #cart-count {
   position: absolute;
 
@@ -425,20 +471,22 @@ nav {
   align-items: center;
   justify-content: center;
 
-  background: #f5c542;
+  background: #f6c445;
 
-  color: #111111;
+  color: #4b2e2b;
 
-  border: 2px solid #111111;
+  border: 2px solid #f7f3ec;
 
   border-radius: 50%;
 
   font-size: 11px;
+
   font-weight: 800;
 }
 
+
 /* =========================================================
-   MOBILE MENU BUTTON
+   MOBILE BUTTON
    ========================================================= */
 
 .menu-btn {
@@ -450,13 +498,9 @@ nav {
   align-items: center;
   justify-content: center;
 
-  color: white;
+  background: #2f80d0;
 
-  background: linear-gradient(
-    135deg,
-    #4f46e5,
-    #2196f3
-  );
+  color: #ffffff;
 
   border-radius: 10px;
 
@@ -465,15 +509,21 @@ nav {
   cursor: pointer;
 }
 
+
 /* =========================================================
-   MOBILE NAVIGATION
+   MOBILE
    ========================================================= */
 
 @media (max-width: 900px) {
 
   nav {
     min-height: 68px;
+
     padding: 0 4%;
+  }
+
+  nav::after {
+    width: 100px;
   }
 
   .nav-links {
@@ -485,16 +535,19 @@ nav {
     width: 100%;
 
     display: none;
+
     flex-direction: column;
 
     align-items: stretch;
 
     padding: 15px;
 
-    background: #111111;
+    background: #f7f3ec;
+
+    border-top: 1px solid #eee4d8;
 
     box-shadow:
-      0 10px 20px rgba(0, 0, 0, 0.2);
+      0 10px 20px rgba(75, 46, 43, 0.15);
   }
 
   .nav-links.active {
@@ -515,14 +568,19 @@ nav {
 
     margin-top: 5px;
 
-    display: none;
+    box-shadow: none;
+
+    border: none;
+
+    background: #ffffff;
 
     opacity: 1;
+
     visibility: visible;
 
     transform: none;
 
-    box-shadow: none;
+    display: none;
   }
 
   .dropdown:hover .dropdown-menu {
@@ -534,16 +592,14 @@ nav {
   }
 
   .nav-actions {
-    margin-left: auto;
-    margin-right: 10px;
-  }
-
-  .profile-btn,
-  .cart-icon a {
-    width: 38px;
-    height: 38px;
+    gap: 7px;
   }
 }
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
 @media (max-width: 500px) {
 
@@ -556,30 +612,15 @@ nav {
     height: 40px;
   }
 
-  .nav-actions {
-    gap: 7px;
-  }
-
   .profile-btn,
   .cart-icon a {
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
 
     font-size: 17px;
   }
 }
 
-/* Sections */
-section {
-  padding: 100px 10%;
-}
-
-.menu h2,
-.gallery h2,
-.contact h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
 
 /* Menu Section */
 /* =====================================================
