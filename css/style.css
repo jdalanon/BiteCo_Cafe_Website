@@ -886,7 +886,9 @@ body {
 a { color: inherit; text-decoration: none; }
 
 .hero {
-  min-height: 560px;
+  height: calc(100vh - 0px);
+  min-height: 550px;
+  max-height: 800px;
   display: grid;
   grid-template-columns: 46% 54%;
   overflow: hidden;
