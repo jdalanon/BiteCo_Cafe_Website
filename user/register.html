@@ -1,79 +1,153 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register | Bite Co.</title>
+<head>
+  <meta charset="UTF-8" />
 
-    <link rel="stylesheet" href="../css/register.css" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <title>Create Account | Bite Co.</title>
 
-  <body>
-    <div class="container">
-      <div class="register-card">
+  <!-- Logo icon -->
+  <link
+    rel="icon"
+    href="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+  />
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Register CSS -->
+  <link rel="stylesheet" href="../css/register.css" />
+</head>
+
+<body>
+
+  <div class="register-container">
+
+    <div class="register-card">
+
+      <!-- Blue decorative header -->
+      <div class="register-top"></div>
+
+      <!-- Logo -->
+      <div class="logo-wrapper">
         <img
-          src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
           class="logo"
-          alt="Bite Co."
+          src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+          alt="Bite Co. Logo"
         />
+      </div>
+
+      <div class="register-content">
 
         <h2>Create Account</h2>
 
-        <p>Join Bite Co. and start ordering your favorite drinks and snacks.</p>
+        <p class="welcome-text">
+          Join Bite Co. and start ordering your favorite drinks and snacks.
+        </p>
 
         <form id="registerForm">
+
+          <!-- First / Last Name -->
           <div class="row">
+
             <div class="input-group">
-              <label>First Name</label>
-              <input type="text" id="firstname" required />
+              <label for="firstname">First Name</label>
+
+              <input
+                type="text"
+                id="firstname"
+                placeholder="Enter first name"
+                required
+              />
             </div>
 
             <div class="input-group">
-              <label>Last Name</label>
-              <input type="text" id="lastname" required />
+              <label for="lastname">Last Name</label>
+
+              <input
+                type="text"
+                id="lastname"
+                placeholder="Enter last name"
+                required
+              />
             </div>
+
           </div>
 
+          <!-- Email -->
           <div class="input-group">
-            <label>Email Address</label>
-            <input type="email" id="email" required />
+            <label for="email">Email Address</label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
           </div>
 
-          <div class="input-group">
-            <label>Password</label>
-            <input type="password" id="password" required />
+          <!-- Password -->
+          <div class="input-group password-group">
+
+            <label for="password">Password</label>
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Create a password"
+              required
+            />
 
             <small>
-              Must contain at least 8 characters, one uppercase letter, one
-              number and one special character.
+              Must contain at least 8 characters, one uppercase letter,
+              one number and one special character.
             </small>
+
           </div>
 
-          <input type="hidden" id="role" value="user" />
+          <!-- Default role -->
+          <input
+            type="hidden"
+            id="role"
+            value="user"
+          />
 
-          <button type="submit">Create Account</button>
+          <!-- Submit -->
+          <button
+            type="submit"
+            class="register-btn"
+          >
+            Create Account
+          </button>
+
         </form>
 
         <p class="login-text">
           Already have an account?
-
-          <a href="login.html"> Login </a>
+          <a href="login.html">Login</a>
         </p>
+
       </div>
+
     </div>
 
-    <!-- Supabase CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </div>
 
-    <!-- Initialize Supabase -->
-    <script src="../js/shared/supabase.js"></script>
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <!-- Register Logic -->
-    <script src="../js/user/register.js"></script>
-  </body>
+  <!-- Initialize Supabase -->
+  <script src="../js/shared/supabase.js"></script>
+
+  <!-- Register Logic -->
+  <script src="../js/user/register.js"></script>
+
+</body>
 </html>

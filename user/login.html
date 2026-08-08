@@ -1,34 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login | Bite Co.</title>
+<head>
+  <meta charset="UTF-8" />
 
-    <link rel="stylesheet" href="../css/login.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <title>Login | Bite Co.</title>
 
-  <body>
-    <div class="container">
-      <div class="login-card">
+  <!-- Logo icon -->
+  <link
+    rel="icon"
+    href="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+  />
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Login CSS -->
+  <link rel="stylesheet" href="../css/login.css" />
+</head>
+
+<body>
+
+  <div class="login-container">
+
+    <div class="login-card">
+
+      <!-- Decorative top section -->
+      <div class="login-top"></div>
+
+      <!-- Logo -->
+      <div class="logo-wrapper">
         <img
-          src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
           class="logo"
-          alt="Bite Co."
+          src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+          alt="Bite Co. Logo"
         />
+      </div>
+
+      <div class="login-content">
 
         <h2>Welcome Back!</h2>
 
-        <p>Sign in to continue ordering your favorite coffee and snacks.</p>
+        <p class="welcome-text">
+          Sign in to continue ordering your favorite coffee and snacks.
+        </p>
 
         <form id="loginForm">
+
           <div class="input-group">
-            <label>Email Address</label>
+            <label for="email">Email Address</label>
+
             <input
               type="email"
               id="email"
@@ -38,7 +63,8 @@
           </div>
 
           <div class="input-group">
-            <label>Password</label>
+            <label for="password">Password</label>
+
             <input
               type="password"
               id="password"
@@ -47,18 +73,25 @@
             />
           </div>
 
-          <button type="submit">Login</button>
+          <button type="submit" class="login-btn">
+            Login
+          </button>
+
         </form>
 
         <p class="register-text">
           Don't have an account?
           <a href="register.html">Register</a>
         </p>
+
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="../js/shared/supabase.js"></script>
-    <script src="../js/user/login.js"></script>
-  </body>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/shared/supabase.js"></script>
+  <script src="../js/user/login.js"></script>
+
+</body>
 </html>
