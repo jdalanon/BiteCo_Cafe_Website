@@ -3277,3 +3277,584 @@ footer {
   }
 
 }
+
+
+
+/* =====================================================
+   PROFILE DASHBOARD
+   BITE CO. HOMEPAGE THEME
+   DARK / BLUE / YELLOW / COFFEE-CREAM
+===================================================== */
+
+.profile-dashboard {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  min-height: calc(100vh - 70px);
+
+  padding: 110px 20px 60px;
+
+  display: grid;
+
+  grid-template-columns: 320px 1fr;
+
+  gap: 30px;
+
+  align-items: stretch;
+
+  background: transparent;
+}
+
+
+/* =====================================================
+   LEFT PROFILE CARD
+===================================================== */
+
+.profile-card {
+  position: relative;
+
+  background: #fff;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.10);
+
+  text-align: center;
+
+  min-height: 540px;
+}
+
+
+/* BLUE / DARK PROFILE COVER */
+
+.profile-cover {
+  position: relative;
+
+  height: 150px;
+
+  background:
+    radial-gradient(
+      circle at 15% 40%,
+      rgba(47, 120, 201, 0.35),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #151515 0%,
+      #1f1f1f 45%,
+      #2f78c9 100%
+    );
+
+  overflow: hidden;
+}
+
+
+/* YELLOW DECORATION */
+
+.profile-cover::after {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 8px;
+
+  background: var(--yellow);
+
+  top: 30px;
+  right: -25px;
+
+  transform: rotate(-12deg);
+
+  border-radius: 10px;
+}
+
+
+/* BLUE ACCENT */
+
+.profile-cover::before {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  border-radius: 50%;
+
+  background: var(--blue);
+
+  right: -90px;
+  bottom: -110px;
+
+  opacity: 0.8;
+}
+
+
+/* =====================================================
+   PROFILE AVATAR
+===================================================== */
+
+.profile-avatar {
+  position: relative;
+
+  z-index: 3;
+
+  width: 110px;
+  height: 110px;
+
+  margin: -55px auto 15px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  border: 5px solid #fff;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 52px;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   PROFILE NAME
+===================================================== */
+
+.profile-card h2 {
+  margin: 5px 20px 5px;
+
+  color: #151515;
+
+  font-size: 25px;
+
+  font-weight: 800;
+}
+
+
+/* ROLE */
+
+.profile-card p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* YELLOW LINE UNDER PROFILE */
+
+.profile-card p::after {
+  content: "";
+
+  display: block;
+
+  width: 45px;
+  height: 4px;
+
+  margin: 18px auto 0;
+
+  background: var(--yellow);
+
+  border-radius: 10px;
+
+  transform: rotate(-2deg);
+}
+
+
+/* =====================================================
+   ACCOUNT INFORMATION
+===================================================== */
+
+.profile-info {
+  background: #fff;
+
+  padding: 35px;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.10);
+
+  border-top: 5px solid var(--blue);
+}
+
+
+/* TITLE */
+
+.profile-info h2 {
+  margin: 0 0 25px;
+
+  color: #151515;
+
+  font-size: 26px;
+
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   INFORMATION GRID
+===================================================== */
+
+.info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =====================================================
+   INFORMATION BOX
+===================================================== */
+
+.info-box {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* FULL WIDTH */
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+
+/* LABEL */
+
+.info-box label {
+  margin-bottom: 8px;
+
+  color: #555;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+
+/* =====================================================
+   INPUTS / SELECT / TEXTAREA
+===================================================== */
+
+.info-box input,
+.info-box select,
+.info-box textarea {
+  width: 100%;
+
+  padding: 12px 15px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  font-family: inherit;
+
+  background: #f7f6f2;
+
+  color: #444;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+/* TEXTAREA */
+
+.info-box textarea {
+  min-height: 90px;
+
+  resize: vertical;
+}
+
+
+/* READ ONLY */
+
+.info-box input:read-only,
+.info-box textarea:read-only,
+.info-box select:disabled {
+  background: #f4f3ef;
+
+  color: #555;
+
+  cursor: default;
+}
+
+
+/* =====================================================
+   EDIT MODE
+===================================================== */
+
+.info-box input:not([readonly]),
+.info-box textarea:not([readonly]),
+.info-box select:not([disabled]) {
+  background: #fff;
+
+  border: 2px solid var(--blue);
+
+  color: #222;
+}
+
+
+/* FOCUS */
+
+.info-box input:focus,
+.info-box textarea:focus,
+.info-box select:focus {
+  outline: none;
+
+  border-color: var(--blue);
+
+  box-shadow:
+    0 0 0 3px rgba(47, 120, 201, 0.15);
+}
+
+
+/* =====================================================
+   PROFILE BUTTONS
+===================================================== */
+
+.profile-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 30px;
+}
+
+
+/* EDIT BUTTON */
+
+.edit-btn {
+  padding: 12px 28px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: var(--blue);
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.edit-btn:hover {
+  background: var(--blue-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 15px rgba(47, 120, 201, 0.25);
+}
+
+
+/* SAVE BUTTON */
+
+.edit-btn.save-mode {
+  background: #2f78c9;
+
+  color: white;
+}
+
+
+.edit-btn.save-mode:hover {
+  background: #1f5fa5;
+}
+
+
+/* LOGOUT BUTTON */
+
+.profile-actions .logout-btn {
+  padding: 12px 28px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #151515;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.profile-actions .logout-btn:hover {
+  background: #4b2e2b;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   PROFILE PAGE BACKGROUND
+===================================================== */
+
+body {
+  background:
+    linear-gradient(
+      180deg,
+      #f7f6f2 0%,
+      #eee5d8 100%
+    );
+}
+
+
+/* =====================================================
+   SMALL YELLOW ACCENT
+===================================================== */
+
+.profile-info::after {
+  content: "";
+
+  display: block;
+
+  width: 60px;
+  height: 5px;
+
+  margin-top: 25px;
+
+  background: var(--yellow);
+
+  border-radius: 10px;
+
+  transform: rotate(-2deg);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .profile-dashboard {
+    grid-template-columns: 1fr;
+
+    max-width: 700px;
+
+    padding-top: 105px;
+  }
+
+  .profile-card {
+    min-height: auto;
+
+    padding-bottom: 35px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .profile-dashboard {
+    width: 100%;
+
+    padding: 95px 15px 40px;
+
+    gap: 20px;
+  }
+
+
+  .profile-info {
+    padding: 25px 20px;
+  }
+
+
+  .profile-info h2 {
+    font-size: 23px;
+  }
+
+
+  .info-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+
+  .full-width {
+    grid-column: auto;
+  }
+
+
+  .profile-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+
+  .profile-actions .edit-btn,
+  .profile-actions .logout-btn {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 380px) {
+
+  .profile-dashboard {
+    padding-left: 10px;
+
+    padding-right: 10px;
+  }
+
+
+  .profile-info {
+    padding: 22px 16px;
+  }
+
+
+  .profile-card h2 {
+    font-size: 22px;
+  }
+
+}
