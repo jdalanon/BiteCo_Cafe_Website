@@ -1,24 +1,3 @@
-const profileBtn = document.getElementById("profileBtn");
-const profileMenu = document.getElementById("profileMenu");
-
-// Profile Dropdown
-if (profileBtn && profileMenu) {
-  profileBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-
-    profileMenu.classList.toggle("show");
-  });
-}
-
-// Close dropdown when clicking outside
-window.addEventListener("click", (e) => {
-  if (profileMenu && !e.target.closest(".profile-dropdown")) {
-    profileMenu.classList.remove("show");
-  }
-});
-
-let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
 
 // ===============================
 // CHECK LOGIN
