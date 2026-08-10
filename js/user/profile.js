@@ -1,3 +1,5 @@
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
 
 // ===============================
 // CHECK LOGIN
