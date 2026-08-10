@@ -3380,3 +3380,87 @@ footer {
     font-size: 22px;
   }
 }
+
+
+/* =====================================================
+   PROFILE ACTION BUTTONS - FIX
+===================================================== */
+
+.profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* Override any global button width */
+.profile-actions button {
+  width: 160px !important;
+  min-width: 160px;
+  max-width: 160px;
+  height: 56px;
+  padding: 0 20px;
+  margin: 0 !important;
+
+  border: none;
+  border-radius: 12px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Edit Profile */
+.profile-actions .edit-btn {
+  background: #2f78c9;
+  color: #ffffff;
+}
+
+.profile-actions .edit-btn:hover {
+  background: #2568ad;
+}
+
+/* Logout */
+.profile-actions .logout-btn {
+  background: #151515;
+  color: #ffffff;
+}
+
+.profile-actions .logout-btn:hover {
+  background: #2f78c9;
+}
+
+
+/* Remove any unwanted decorative line
+   attached to the action area */
+.profile-actions::before,
+.profile-actions::after {
+  display: none !important;
+}
+
+
+/* Profile Actions - Mobile */
+
+@media (max-width: 600px) {
+
+  .profile-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .profile-actions button {
+    width: 100% !important;
+    max-width: none;
+  }
+
+}
