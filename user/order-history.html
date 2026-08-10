@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile | Bite Co.</title>
+
+    <!-- Logo icon -->
+    <link
+      rel="icon"
+      href="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+    />
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img
+            src="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+            alt="Bite Co. Logo"
+          />
+          <h2>Bite Co.</h2>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+
+          <li class="dropdown">
+            <span class="dropdown-btn"> Menu ▾ </span>
+
+            <ul class="dropdown-menu">
+              <li><a href="menu.html?category=Drinks">Drinks</a></li>
+              <li><a href="menu.html?category=Snacks">Snacks</a></li>
+            </ul>
+          </li>
+
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="menu-btn">&#9776;</div>
+        <!-- <div class="cart-icon"> <a href=cart.html> 🛒 </a> <span id="cart-count">0</span> -->
+
+        <!-- Profile & Cart -->
+        <div class="nav-actions">
+          <div class="profile-dropdown">
+            <button class="profile-btn" id="profileBtn">👤</button>
+            <div class="profile-menu" id="profileMenu">
+              <!-- Profile Header -->
+              <div class="profile-header">
+                <h4 id="profile-name">Guest</h4>
+                <p id="profile-email"></p>
+              </div>
+
+              <hr />
+
+              <!-- My Profile -->
+              <a href="profile.html" class="profile-menu-item">
+                👤 My Profile
+              </a>
+
+              <!-- Orders -->
+              <div class="order-dropdown">
+                <button class="order-menu-btn" id="orderMenuBtn">
+                  🛍️ Order
+                  <span>▾</span>
+                </button>
+
+                <div class="order-submenu" id="orderSubmenu">
+                  <a href="view-order.html"> 📦 View Order </a>
+
+                  <a href="order-history.html"> 🕘 Order History </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <!-- Logout -->
+              <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
+            </div>
+          </div>
+
+          <div class="cart-icon">
+            <a href="cart.html">🛒</a>
+            <span id="cart-count">0</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="profile-dashboard">
+      <div class="profile-card">
+        <div class="profile-cover"></div>
+
+        <div class="profile-avatar">👤</div>
+
+        <h2 id="profileFullName"></h2>
+
+        <p id="profileRole"></p>
+      </div>
+
+      <div class="profile-info">
+        <h2>Account Information</h2>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <label>First Name</label>
+            <input id="firstname" readonly />
+          </div>
+
+          <div class="info-box">
+            <label>Last Name</label>
+            <input id="lastname" readonly />
+          </div>
+
+          <div class="info-box full-width">
+            <label>Email Address</label>
+            <input id="email" readonly />
+          </div>
+
+          <div class="info-box full-width">
+            <label>Address <span style="color: red">*</span></label>
+            <textarea id="address" rows="3" readonly></textarea>
+          </div>
+
+          <div class="info-box">
+            <label>Payment Method <span style="color: red">*</span></label>
+
+            <select id="payment" disabled>
+              <option value="">Select payment</option>
+              <option value="Cash on Delivery">Cash on Delivery</option>
+
+              <option value="Fund Transfer">
+                Fund Transfer (GCash / Bank QR)
+              </option>
+            </select>
+          </div>
+
+          <div class="info-box">
+            <label>Role</label>
+            <input id="role" readonly />
+          </div>
+
+          <div class="info-box">
+            <label>Member Since</label>
+            <input id="created_at" readonly />
+          </div>
+        </div>
+
+        <div class="profile-actions">
+          <button class="edit-btn" id="editProfileBtn">Edit Profile</button>
+
+          <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo icon -->
+    <link
+      rel="icon"
+      href="https://ykldzfsbmlcjftfartax.supabase.co/storage/v1/object/sign/images/logo.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hMGZmNjhjOC02MjNmLTQwZmYtYWEzMy0zZGM5YTRjYjc4YWUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvbG9nby5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzg1ODk4ODM5LCJleHAiOjI3MzE5Nzg4Mzl9.EroJmvTjl6xkJvqkNl07TyhCjLwDUK42QPUPvLGiSMc"
+    />
+
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Navigation -->
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="home.html">Home</a>
+          </li>
+
+          <li class="dropdown">
+            <span class="dropdown-btn"> Menu ▾ </span>
+
+            <ul class="dropdown-menu">
+              <li>
+                <a href="menu.html?category=Drinks"> Drinks </a>
+              </li>
+
+              <li>
+                <a href="menu.html?category=Snacks"> Snacks </a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+
+        <div class="menu-btn">&#9776;</div>
+
+        <!-- Profile & Cart -->
+        <div class="nav-actions">
+          <div class="profile-dropdown">
+            <button class="profile-btn" id="profileBtn">👤</button>
+
+            <div class="profile-menu" id="profileMenu">
+              <div class="profile-header">
+                <h4 id="profile-name">Guest</h4>
+
+                <p id="profile-email"></p>
+              </div>
+
+              <hr />
+
+              <a href="profile.html"> My Profile </a>
+
+              <a href="view-order.html"> View Order </a>
+
+              <a href="order-history.html"> Order History </a>
+
+              <button class="logout-btn">Logout</button>
+            </div>
+          </div>
+
+          <div class="cart-icon">
+            <a href="cart.html"> 🛒 </a>
+
+            <span id="cart-count"> 0 </span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- =========================
+     ORDER HISTORY
+========================= -->
+
+    <section class="order-history-dashboard">
+      <!-- LEFT PROFILE CARD -->
+
+      <div class="order-profile-card">
+        <div class="order-profile-cover"></div>
+
+        <div class="order-profile-avatar">👤</div>
+
+        <h2 id="profileFullName">Guest</h2>
+
+        <p id="profileRole">Customer</p>
+
+        <div class="profile-shortcuts">
+          <a href="profile.html"> My Profile </a>
+
+          <a href="view-order.html"> View Order </a>
+
+          <a href="order-history.html" class="active"> Order History </a>
+        </div>
+      </div>
+
+      <!-- RIGHT ORDER HISTORY -->
+
+      <div class="order-history-content">
+        <div class="order-history-header">
+          <div>
+            <h2>Order History</h2>
+
+            <p>View your previous orders and order details.</p>
+          </div>
+
+          <a href="menu.html" class="shop-btn"> Order Again </a>
+        </div>
+
+        <!-- Loading -->
+
+        <div id="orderLoading" class="order-loading">
+          Loading your orders...
+        </div>
+
+        <!-- Empty State -->
+
+        <div id="emptyOrders" class="empty-orders" style="display: none">
+          <div class="empty-icon">🛒</div>
+
+          <h3>No Orders Yet</h3>
+
+          <p>You haven't placed any orders yet.</p>
+
+          <a href="menu.html"> Start Shopping </a>
+        </div>
+
+        <!-- Orders -->
+
+        <div id="orderHistoryList" class="order-history-list"></div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Bite Co. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/shared/supabase.js"></script>
+    <script src="../js/user/navbar.js"></script>
+    <script src="../js/user/cart.js"></script>
+    <script src="../js/user/profile.js"></script>
+  </body>
+</html>

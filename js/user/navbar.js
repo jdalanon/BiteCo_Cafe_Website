@@ -1,145 +1,81 @@
-// =====================================================
-// MOBILE MENU
-// =====================================================
+// Mobile Menu Toggle
 
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
 if (menuBtn && navLinks) {
-
-    menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
-
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 }
 
+// Profile Dropdown Toggle
 
-// =====================================================
-// PROFILE DROPDOWN
-// =====================================================
+const profileBtn = document.getElementById("profileBtn");
 
-const profileBtn =
-    document.getElementById("profileBtn");
-
-const profileMenu =
-    document.getElementById("profileMenu");
-
+const profileMenu = document.getElementById("profileMenu");
 
 if (profileBtn && profileMenu) {
+  profileBtn.addEventListener("click", (event) => {
+    event.stopPropagation();
 
-    profileBtn.addEventListener("click", (event) => {
-
-        event.stopPropagation();
-
-        profileMenu.classList.toggle("show");
-
-    });
-
+    profileMenu.classList.toggle("show");
+  });
 }
 
 
-// =====================================================
-// ORDER SUBMENU
-// =====================================================
+// View Order Submenu Toggle
 
-const orderMenuBtn =
-    document.getElementById("orderMenuBtn");
+const orderMenuBtn = document.getElementById("orderMenuBtn");
 
-const orderSubmenu =
-    document.getElementById("orderSubmenu");
-
+const orderSubmenu = document.getElementById("orderSubmenu");
 
 if (orderMenuBtn && orderSubmenu) {
+  orderMenuBtn.addEventListener("click", (event) => {
+    event.stopPropagation();
 
-    orderMenuBtn.addEventListener("click", (event) => {
-
-        event.stopPropagation();
-
-        orderSubmenu.classList.toggle("show");
-
-    });
-
+    orderSubmenu.classList.toggle("show");
+  });
 }
 
 
-// =====================================================
-// CLOSE PROFILE DROPDOWN
-// =====================================================
+// Close profile dropdown when clicking outside of it
 
 window.addEventListener("click", (event) => {
-
-    if (
-        profileMenu &&
-        !event.target.closest(".profile-dropdown")
-    ) {
-
-        profileMenu.classList.remove("show");
-
-    }
-
+  if (profileMenu && !event.target.closest(".profile-dropdown")) {
+    profileMenu.classList.remove("show");
+  }
 });
 
 
-// =====================================================
-// LOGOUT
-// =====================================================
+// Logout functionality
 
-const logoutBtn =
-    document.getElementById("logoutBtn");
-
+const logoutBtn = document.getElementById("logoutBtn");
 
 if (logoutBtn) {
+  logoutBtn.addEventListener("click", async (event) => {
+    event.preventDefault();
 
-    logoutBtn.addEventListener("click", async (event) => {
+    console.log("Logout button clicked");
 
-        event.preventDefault();
+    try {
+      const { error } = await window.db.auth.signOut();
 
-        console.log("Logout button clicked");
+      if (error) {
+        console.error("Logout Error:", error);
 
+        alert("Logout failed: " + error.message);
 
-        try {
+        return;
+      }
 
-            const { error } =
-                await window.db.auth.signOut();
+      // Remove stored user
+      localStorage.removeItem("currentUser");
 
-
-            if (error) {
-
-                console.error(
-                    "Logout Error:",
-                    error
-                );
-
-                alert(
-                    "Logout failed: " +
-                    error.message
-                );
-
-                return;
-
-            }
-
-
-            // Remove stored user
-            localStorage.removeItem(
-                "currentUser"
-            );
-
-
-            // Redirect
-            window.location.href =
-                "login.html";
-
-
-        } catch (error) {
-
-            console.error(
-                "Logout Error:",
-                error
-            );
-
-        }
-
-    });
-
+      // Redirect to login page
+      window.location.href = "login.html";
+    } catch (error) {
+      console.error("Logout Error:", error);
+    }
+  });
 }

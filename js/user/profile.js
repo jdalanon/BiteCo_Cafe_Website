@@ -1,9 +1,7 @@
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
 
-// ===============================
-// CHECK LOGIN
-// ===============================
+// Check if user is logged in
 
 if (!currentUser) {
 
@@ -16,9 +14,7 @@ if (!currentUser) {
 }
 
 
-// ===============================
-// LOAD PROFILE
-// ===============================
+// Load profile data into the page
 
 function loadProfile() {
 
@@ -38,32 +34,15 @@ function loadProfile() {
 
 
     // Dashboard
-    const profileFullName =
-        document.getElementById("profileFullName");
-
-    const profileRole =
-        document.getElementById("profileRole");
-
-    const firstname =
-        document.getElementById("firstname");
-
-    const lastname =
-        document.getElementById("lastname");
-
-    const email =
-        document.getElementById("email");
-
-    const address =
-        document.getElementById("address");
-
-    const payment =
-        document.getElementById("payment");
-
-    const role =
-        document.getElementById("role");
-
-    const createdAt =
-        document.getElementById("created_at");
+    const profileFullName = document.getElementById("profileFullName");
+    const profileRole = document.getElementById("profileRole");
+    const firstname = document.getElementById("firstname");
+    const lastname = document.getElementById("lastname");
+    const email = document.getElementById("email");
+    const address = document.getElementById("address");
+    const payment = document.getElementById("payment");
+    const role = document.getElementById("role");
+    const createdAt = document.getElementById("created_at");
 
 
     if (profileFullName) {
@@ -131,9 +110,7 @@ function loadProfile() {
 }
 
 
-// ===============================
-// EDIT / SAVE PROFILE
-// ===============================
+// Edit / Save profile functionality
 
 const editBtn =
     document.getElementById("editProfileBtn");
@@ -158,9 +135,7 @@ if (editBtn) {
             document.getElementById("payment");
 
 
-        // =========================
-        // ENABLE EDIT MODE
-        // =========================
+        // Enable edit mode if not already enabled
 
         if (!editMode) {
 
@@ -185,35 +160,25 @@ if (editBtn) {
         }
 
 
-        // =========================
-        // VALIDATION
-        // =========================
+        // Validation before saving
 
         if (address.value.trim() === "") {
-
             alert("Address is required.");
-
             address.focus();
-
             return;
 
         }
 
 
         if (payment.value === "") {
-
             alert("Please select a payment method.");
-
             payment.focus();
-
             return;
 
         }
 
 
-        // =========================
-        // UPDATE SUPABASE
-        // =========================
+        // Uupdate Supabase database with new profile data
 
         const { error } = await window.db
             .from("User")
@@ -252,9 +217,7 @@ if (editBtn) {
         }
 
 
-        // =========================
-        // UPDATE LOCAL STORAGE
-        // =========================
+        // Update localStorage with new profile data
 
         currentUser.firstname =
             firstname.value.trim();
@@ -275,16 +238,12 @@ if (editBtn) {
         );
 
 
-        // =========================
-        // UPDATE DISPLAY
-        // =========================
+        // Update the profile display with new data
 
         loadProfile();
 
 
-        // =========================
-        // DISABLE EDIT MODE
-        // =========================
+        // Disable edit mode after saving
 
         firstname.readOnly = true;
         lastname.readOnly = true;
