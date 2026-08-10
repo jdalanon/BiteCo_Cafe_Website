@@ -202,83 +202,179 @@ nav::after {
   transform: translateY(-2px);
 }
 
-/* Profile Dropdown */
+/* =====================================================
+   PROFILE DROPDOWN
+===================================================== */
+
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-btn {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease;
+}
+
+.profile-btn:hover {
+  background: var(--yellow);
+  transform: translateY(-2px);
+}
+
+
+/* Profile Menu */
 
 .profile-menu {
   position: absolute;
-  top: calc(100% + 12px);
+  top: 55px;
   right: 0;
   width: 240px;
-  padding: 18px;
   background: #ffffff;
   border-radius: 14px;
-  border: 1px solid #eee4d8;
-  box-shadow: 0 12px 35px rgba(75, 46, 43, 0.18);
+  padding: 15px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   display: none;
-  z-index: 2000;
+  z-index: 1000;
 }
 
 .profile-menu.show {
   display: block;
 }
 
+
+/* Profile Header */
+
 .profile-header {
-  text-align: center;
+  padding: 5px 8px 10px;
 }
 
 .profile-header h4 {
   margin: 0;
-  color: #4b2e2b;
-  font-size: 17px;
+  color: #151515;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .profile-header p {
-  margin: 5px 0 0;
+  margin: 3px 0 0;
   color: #777;
-  font-size: 13px;
+  font-size: 12px;
 }
+
+
+/* Divider */
 
 .profile-menu hr {
   border: none;
-  border-top: 1px solid #eee4d8;
-  margin: 14px 0;
+  border-top: 1px solid #eeeeee;
+  margin: 10px 0;
 }
 
-.profile-menu > a {
+
+/* Main Menu Items */
+
+.profile-menu-item {
   display: block;
-  padding: 10px 12px;
-  color: #4b2e2b;
+  padding: 11px 12px;
+  color: #333;
   text-decoration: none;
   border-radius: 8px;
+  font-size: 14px;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: 0.2s ease;
 }
 
-.profile-menu > a:hover {
-  background: #e5f1fb;
-
-  color: #2f80d0;
+.profile-menu-item:hover {
+  background: #f3f7fc;
+  color: var(--blue);
 }
+
+
+/* Order Submenu */
+
+.order-dropdown {
+  width: 100%;
+}
+
+.order-menu-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 12px;
+  border: none;
+  background: transparent;
+  color: #333;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.order-menu-btn:hover {
+  background: #f3f7fc;
+  color: var(--blue);
+}
+
+
+/* Order Submenu */
+
+.order-submenu {
+  display: none;
+  margin: 3px 0 5px 10px;
+  border-left: 3px solid var(--yellow);
+}
+
+.order-submenu.show {
+  display: block;
+}
+
+.order-submenu a {
+  display: block;
+  padding: 9px 12px;
+  color: #666;
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.order-submenu a:hover {
+  background: #f3f7fc;
+  color: var(--blue);
+}
+
 
 /* Logout Button */
 
-.logout-btn {
+.profile-menu .logout-btn {
   width: 100%;
-  margin-top: 10px;
-  padding: 11px 15px;
+  padding: 11px 12px;
   border: none;
   border-radius: 8px;
-  background: #ef4444;
-  color: white;
+  background: #151515;
+  color: #ffffff;
+  font-family: inherit;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  text-align: left;
+  transition: 0.3s ease;
 }
 
-.logout-btn:hover {
-  background: #dc2626;
-  transform: translateY(-1px);
+.profile-menu .logout-btn:hover {
+  background: var(--blue);
 }
 
 /* Cart */
@@ -3227,17 +3323,6 @@ footer {
   box-shadow: 0 0 0 3px rgba(47, 120, 201, 0.15);
 }
 
-/* Save Button */
-
-.edit-btn.save-mode {
-  background: #2f78c9;
-  color: white;
-}
-
-.edit-btn.save-mode:hover {
-  background: #1f5fa5;
-}
-
 /* Small Yellow Line */
 
 .profile-info::after {
@@ -3398,4 +3483,15 @@ footer {
     max-width: none;
   }
 
+}
+
+/* Save Button */
+
+.edit-btn.save-mode {
+  background: #2f78c9;
+  color: white;
+}
+
+.edit-btn.save-mode:hover {
+  background: #1f5fa5;
 }
