@@ -7,9 +7,7 @@ const categoryButtons =
 let allMenuItems = [];
 
 
-/* =========================================
-   LOAD ALL MENU ITEMS
-========================================= */
+/* Load all Menu Items */
 
 async function loadHomepageMenu() {
 
@@ -71,9 +69,7 @@ async function loadHomepageMenu() {
 }
 
 
-/* =========================================
-   DISPLAY MENU ITEMS
-========================================= */
+/* Display Menu Items */
 
 function displayMenuItems(items) {
 
@@ -126,9 +122,7 @@ function displayMenuItems(items) {
 }
 
 
-/* =========================================
-   CATEGORY FILTER
-========================================= */
+/* Category Filter */
 
 categoryButtons.forEach(button => {
 
@@ -170,8 +164,6 @@ categoryButtons.forEach(button => {
 });
 
 
-/* =========================================
-   INITIAL LOAD
-========================================= */
+/* Initial Load */
 
 loadHomepageMenu();

@@ -1,7 +1,3 @@
-/* ================================
-   GLOBAL
-================================ */
-
 * {
   margin: 0;
   padding: 0;
@@ -30,32 +26,23 @@ body {
 }
 
 
-/* ================================
-   LOGIN CONTAINER
-================================ */
+/* Login Container */
 
 .login-container {
   width: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 
-/* ================================
-   LOGIN CARD
-================================ */
+/* Login Card */
 
 .login-card {
   width: 430px;
-
   background: #ffffff;
-
   border-radius: 22px;
-
   overflow: hidden;
-
   box-shadow:
     0 15px 40px rgba(75, 46, 43, 0.15);
 
@@ -63,9 +50,7 @@ body {
 }
 
 
-/* ================================
-   BLUE TOP DESIGN
-================================ */
+/* Blue Top Design */
 
 .login-top {
   height: 95px;
@@ -86,15 +71,11 @@ body {
 
 .login-top::after {
   content: "";
-
   position: absolute;
-
   bottom: -1px;
   left: 0;
-
   width: 150px;
   height: 35px;
-
   background: #f6c343;
 
   clip-path: polygon(
@@ -106,22 +87,15 @@ body {
 }
 
 
-/* ================================
-   LOGO
-================================ */
+/* Logo */
 
 .logo-wrapper {
   width: 105px;
   height: 105px;
-
   border-radius: 50%;
-
   background: #ffffff;
-
   position: relative;
-
   margin: -52px auto 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,16 +109,12 @@ body {
 .logo {
   width: 82px;
   height: 82px;
-
   object-fit: cover;
-
   border-radius: 50%;
 }
 
 
-/* ================================
-   LOGIN CONTENT
-================================ */
+/* Login Content */
 
 .login-content {
   padding: 25px 40px 40px;
@@ -152,12 +122,9 @@ body {
 
 .login-card h2 {
   text-align: center;
-
   color: #4b2e2b;
-
   font-size: 28px;
   font-weight: 700;
-
   margin-bottom: 8px;
 }
 
@@ -166,55 +133,37 @@ body {
 
 .welcome-text {
   text-align: center;
-
   color: #777;
-
   font-size: 14px;
-
   line-height: 1.6;
-
   margin-bottom: 28px;
 }
 
 
-/* ================================
-   INPUT GROUP
-================================ */
+/* Input Card */
 
 .input-group {
   display: flex;
   flex-direction: column;
-
   margin-bottom: 18px;
 }
 
 .input-group label {
   margin-bottom: 7px;
-
   color: #4b2e2b;
-
   font-size: 14px;
-
   font-weight: 600;
 }
 
 .input-group input {
   width: 100%;
-
   padding: 13px 15px;
-
   border: 1px solid #ddd;
-
   border-radius: 10px;
-
   background: #fafafa;
-
   color: #4b2e2b;
-
   font-size: 14px;
-
   outline: none;
-
   transition: 0.25s;
 }
 
@@ -227,50 +176,33 @@ body {
 
 .input-group input:focus {
   border-color: #2f80c9;
-
   background: #ffffff;
-
   box-shadow:
     0 0 0 3px rgba(47, 128, 201, 0.12);
 }
 
 
-/* ================================
-   LOGIN BUTTON
-================================ */
+/* Login Button */
 
 .login-btn {
   width: 100%;
-
   padding: 14px;
-
   margin-top: 8px;
-
   border: none;
-
   border-radius: 10px;
-
   background: #f6c343;
-
   color: #3f3020;
-
   font-size: 16px;
-
   font-weight: 700;
-
   cursor: pointer;
-
   transition: all 0.25s ease;
-
   box-shadow:
     0 5px 12px rgba(246, 195, 67, 0.25);
 }
 
 .login-btn:hover {
   background: #eeb52c;
-
   transform: translateY(-2px);
-
   box-shadow:
     0 8px 18px rgba(246, 195, 67, 0.35);
 }
@@ -280,27 +212,19 @@ body {
 }
 
 
-/* ================================
-   REGISTER
-================================ */
+/* Register */
 
 .register-text {
   margin-top: 25px;
-
   text-align: center;
-
   color: #777;
-
   font-size: 14px;
 }
 
 .register-text a {
   color: #2f80c9;
-
   text-decoration: none;
-
   font-weight: 700;
-
   transition: 0.2s;
 }
 
@@ -311,9 +235,7 @@ body {
 }
 
 
-/* ================================
-   RESPONSIVE
-================================ */
+/* Responsive */
 
 @media (max-width: 600px) {
 
@@ -323,7 +245,6 @@ body {
 
   .login-card {
     width: 100%;
-
     max-width: 430px;
   }
 

@@ -1,12 +1,7 @@
-/* ================================
-   GLOBAL
-================================ */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   font-family: "Poppins", sans-serif;
 }
 
@@ -24,16 +19,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 30px;
-
   color: #4b2e2b;
 }
 
 
-/* ================================
-   REGISTER CONTAINER
-================================ */
+/* Register Container */
 
 .register-container {
   width: 100%;
@@ -44,29 +35,20 @@ body {
 }
 
 
-/* ================================
-   REGISTER CARD
-================================ */
+/* Register Card */
 
 .register-card {
   width: 500px;
-
   background: #ffffff;
-
   border-radius: 22px;
-
   overflow: hidden;
-
   position: relative;
-
   box-shadow:
     0 15px 40px rgba(75, 46, 43, 0.15);
 }
 
 
-/* ================================
-   BLUE HEADER
-================================ */
+/* Blue Header */
 
 .register-top {
   height: 95px;
@@ -87,17 +69,12 @@ body {
 
 .register-top::after {
   content: "";
-
   position: absolute;
-
   bottom: -1px;
   left: 0;
-
   width: 165px;
   height: 35px;
-
   background: #f6c343;
-
   clip-path: polygon(
     0 0,
     100% 0,
@@ -107,28 +84,19 @@ body {
 }
 
 
-/* ================================
-   LOGO
-================================ */
+/* Logo */
 
 .logo-wrapper {
   width: 105px;
   height: 105px;
-
   border-radius: 50%;
-
   background: #ffffff;
-
   position: relative;
-
   margin: -52px auto 0;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   z-index: 2;
-
   box-shadow:
     0 8px 20px rgba(0, 0, 0, 0.15);
 }
@@ -136,35 +104,25 @@ body {
 .logo {
   width: 82px;
   height: 82px;
-
   object-fit: cover;
-
   border-radius: 50%;
 }
 
 
-/* ================================
-   CONTENT
-================================ */
+/* Content */
 
 .register-content {
   padding: 25px 40px 38px;
 }
 
 
-/* ================================
-   TITLE
-================================ */
+/* Title */
 
 .register-card h2 {
   text-align: center;
-
   color: #4b2e2b;
-
   font-size: 28px;
-
   font-weight: 700;
-
   margin-bottom: 8px;
 }
 
@@ -173,24 +131,17 @@ body {
 
 .welcome-text {
   text-align: center;
-
   color: #777;
-
   font-size: 14px;
-
   line-height: 1.6;
-
   margin-bottom: 25px;
 }
 
 
-/* ================================
-   NAME ROW
-================================ */
+/* Name Row */
 
 .row {
   display: flex;
-
   gap: 15px;
 }
 
@@ -199,50 +150,33 @@ body {
 }
 
 
-/* ================================
-   INPUT GROUP
-================================ */
+/* Input Group */
 
 .input-group {
   display: flex;
-
   flex-direction: column;
-
   margin-bottom: 17px;
 }
 
 .input-group label {
   margin-bottom: 7px;
-
   color: #4b2e2b;
-
   font-size: 14px;
-
   font-weight: 600;
 }
 
 
-/* ================================
-   INPUTS
-================================ */
+/* Inputs */
 
 .input-group input {
   width: 100%;
-
   padding: 13px 15px;
-
   border: 1px solid #ddd;
-
   border-radius: 10px;
-
   background: #fafafa;
-
   color: #4b2e2b;
-
   font-size: 14px;
-
   outline: none;
-
   transition: 0.25s;
 }
 
@@ -255,65 +189,43 @@ body {
 
 .input-group input:focus {
   border-color: #2f80c9;
-
   background: #ffffff;
-
   box-shadow:
     0 0 0 3px rgba(47, 128, 201, 0.12);
 }
 
 
-/* ================================
-   PASSWORD REQUIREMENTS
-================================ */
+/* Password requirements */
 
 .input-group small {
   margin-top: 7px;
-
   color: #888;
-
   font-size: 11px;
-
   line-height: 1.5;
 }
 
 
-/* ================================
-   REGISTER BUTTON
-================================ */
+/* Register Button */
 
 .register-btn {
   width: 100%;
-
   padding: 14px;
-
   margin-top: 5px;
-
   border: none;
-
   border-radius: 10px;
-
   background: #f6c343;
-
   color: #3f3020;
-
   font-size: 16px;
-
   font-weight: 700;
-
   cursor: pointer;
-
   transition: all 0.25s ease;
-
   box-shadow:
     0 5px 12px rgba(246, 195, 67, 0.25);
 }
 
 .register-btn:hover {
   background: #eeb52c;
-
   transform: translateY(-2px);
-
   box-shadow:
     0 8px 18px rgba(246, 195, 67, 0.35);
 }
@@ -323,27 +235,19 @@ body {
 }
 
 
-/* ================================
-   LOGIN LINK
-================================ */
+/* Login Link */
 
 .login-text {
   margin-top: 22px;
-
   text-align: center;
-
   color: #777;
-
   font-size: 14px;
 }
 
 .login-text a {
   color: #2f80c9;
-
   text-decoration: none;
-
   font-weight: 700;
-
   transition: 0.2s;
 }
 
@@ -354,9 +258,7 @@ body {
 }
 
 
-/* ================================
-   RESPONSIVE
-================================ */
+/* Responsive */
 
 @media (max-width: 600px) {
 
@@ -366,7 +268,6 @@ body {
 
   .register-card {
     width: 100%;
-
     max-width: 500px;
   }
 
@@ -384,7 +285,6 @@ body {
 
   .row {
     flex-direction: column;
-
     gap: 0;
   }
 }
