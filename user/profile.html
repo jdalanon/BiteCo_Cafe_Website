@@ -48,8 +48,8 @@
         <div class="nav-actions">
           <div class="profile-dropdown">
             <button class="profile-btn" id="profileBtn">👤</button>
-
             <div class="profile-menu" id="profileMenu">
+              <!-- Profile Header -->
               <div class="profile-header">
                 <h4 id="profile-name">Guest</h4>
                 <p id="profile-email"></p>
@@ -57,9 +57,29 @@
 
               <hr />
 
-              <a href="profile.html">My Profile</a>
+              <!-- My Profile -->
+              <a href="profile.html" class="profile-menu-item">
+                👤 My Profile
+              </a>
 
-              <button class="logout-btn">Logout</button>
+              <!-- Orders -->
+              <div class="order-dropdown">
+                <button class="order-menu-btn" id="orderMenuBtn">
+                  🛍️ Order
+                  <span>▾</span>
+                </button>
+
+                <div class="order-submenu" id="orderSubmenu">
+                  <a href="view-order.html"> 📦 View Order </a>
+
+                  <a href="order-history.html"> 🕘 Order History </a>
+                </div>
+              </div>
+
+              <hr />
+
+              <!-- Logout -->
+              <button class="logout-btn" id="logoutBtn">🚪 Logout</button>
             </div>
           </div>
 
