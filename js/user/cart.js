@@ -93,7 +93,7 @@ function updateCart() {
         `;
   });
 
-  total.innerText = totalPrice.toFixed(2);
+  total.innerText = ₱${totalPrice.toFixed(2)};
 
   localStorage.setItem("cart", JSON.stringify(cart));
 }
