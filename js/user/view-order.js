@@ -9,17 +9,6 @@ async function loadCurrentOrder() {
     return;
   }
 
-  // Load profile information
-  const fullName =
-    `${user.firstname || ""} ${user.lastname || ""}`.trim();
-
-  document.getElementById("profileFullName").textContent =
-    fullName || "Guest";
-
-  document.getElementById("profileRole").textContent =
-    user.role || "User";
-
-
   // Get user's latest order
   const { data: orders, error } = await window.db
     .from("Order")
@@ -42,10 +31,7 @@ async function loadCurrentOrder() {
     return;
   }
 
-
-  // No order found
   if (!orders || orders.length === 0) {
-
     document.getElementById("orderItems").innerHTML = `
       <div class="empty-order">
         You don't have any orders yet.
@@ -55,11 +41,8 @@ async function loadCurrentOrder() {
     return;
   }
 
-
   const order = orders[0];
 
-
-  // Order information
   document.getElementById("orderId").textContent =
     order.order_id || "-";
 
@@ -80,8 +63,6 @@ async function loadCurrentOrder() {
   document.getElementById("orderTotal").textContent =
     Number(order.total_amount || 0).toFixed(2);
 
-
-  // Load items
   displayOrderItems(order);
 }
 
