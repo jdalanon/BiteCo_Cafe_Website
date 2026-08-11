@@ -368,3 +368,25 @@ function escapeHTML(value) {
 // =====================================================
 
 loadOrderHistory();
+
+
+// =====================================================
+// LOGOUT
+// =====================================================
+
+document
+    .getElementById("sidebarLogoutBtn")
+    ?.addEventListener("click", () => {
+
+        const confirmLogout = confirm(
+            "Are you sure you want to logout?"
+        );
+
+        if (!confirmLogout) {
+            return;
+        }
+
+        localStorage.removeItem("currentUser");
+
+        window.location.href = "login.html";
+    });

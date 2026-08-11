@@ -3721,17 +3721,11 @@ footer {
 
 .order-profile-card {
   position: relative;
-
   background: #ffffff;
-
   border-radius: 18px;
-
   overflow: hidden;
-
   text-align: center;
-
   min-height: 540px;
-
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -3741,7 +3735,6 @@ footer {
 
 .order-profile-cover {
   position: relative;
-
   height: 150px;
 
   background:
@@ -3863,6 +3856,25 @@ footer {
 .profile-shortcuts a.active {
   background: var(--blue);
   color: #ffffff;
+}
+
+.sidebar-logout-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #f5f5f5;
+    color: #b42318;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s ease;
+}
+
+.sidebar-logout-btn:hover {
+    background: #fee4e2;
 }
 
 
