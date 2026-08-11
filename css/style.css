@@ -4249,17 +4249,6 @@ footer {
     flex-direction: column;
   }
 
-  .order-card-footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .order-card-footer {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 20px;
-  }
-
   .order-card-footer .order-total {
     align-items: flex-end;
     width: 100%;
