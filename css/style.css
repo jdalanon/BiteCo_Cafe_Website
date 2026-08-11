@@ -3715,7 +3715,6 @@ footer {
   align-items: stretch;
 }
 
-
 /* =====================================================
    LEFT PROFILE CARD
 ===================================================== */
@@ -4113,6 +4112,30 @@ footer {
   font-weight: 700;
 }
 
+/* Order History - Total Amount */
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  padding-top: 15px;
+}
+
+.total-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #888;
+  white-space: nowrap;
+}
+
+.total-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2f78c4;
+  white-space: nowrap;
+  margin-left: auto;
+}
 
 /* =====================================================
    ORDER FOOTER
@@ -4220,5 +4243,15 @@ footer {
 
   .order-total {
     text-align: left;
+    gap: 15px;
   }
+
+  .total-label {
+    font-size: 16px;
+  }
+
+  .total-price {
+    font-size: 22px;
+  }
+
 }
